@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../css/bootstrap.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
@@ -469,36 +470,79 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <div id="contenido-anterior">
-            <!-- Aquí se cargará el contenido de tu página anterior de forma asíncrona -->
-          </div>
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">RESERVAS</h4>
+                    <p class="card-description">
+                    </p>
+                    <div class="table-responsive pt-3">
+                      <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th>Fecha</th>
+                            <th>Nombres</th>
+                            <th>Estado</th>
+                            <th>Ver más</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <th>16/11/2023</th>
+                            <th>Emmanuel Sanchez</th>
+                            <td><label class="badge badge-warning">Pendiente</label></td>
+                            <th><button type="button" class="btn btn-dark btn-icon-text">
+                                Ver más                        
+                              </button></th>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Detalles de reserva</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+              
+                    <!-- Modal Body -->
+                    <div class="modal-body">
+                      <!-- Aquí puedes mostrar los datos de la reserva -->
+                      <div class="form-group">
+                        <label for="fecha">Fecha:</label>
+                        <input type="text" class="form-control" id="fecha">
+                      </div>
+                      <div class="form-group">
+                        <label for="nombres">Nombres:</label>
+                        <input type="text" class="form-control" id="nombres">
+                      </div>
+                      <div class="form-group">
+                        <label for="estado">Estado:</label>
+                        <input type="text" class="form-control" id="estado">
+                      </div>
+                    </div>
+              
+                    <!-- Modal Footer -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+              
+                  </div>
+                </div>
+              </div>
+              
         </div>
       </div>
-      <!-- content-wrapper ends -->
-      <!-- partial:partials/_footer.html -->
-      <!-- <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-
-        </div>
-      </footer> -->
-      <!-- partial -->
+     
     </div>
-    <!-- main-panel ends -->
+
   </div>
-  <!-- page-body-wrapper ends -->
+
   </div>
-  <!-- container-scroller -->
-
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      // Cargar el contenido de la página anterior de forma asíncrona
-      $("#contenido-anterior").load("../views/index.html");
-
-      // Puedes agregar más lógica de inicialización o manipulación del DOM aquí
-    });
-  </script>
-
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
@@ -522,6 +566,29 @@
   <!-- End custom js for this page-->
   <!-- Preloader -->
   <script src="./js/preloader.js"></script>
+  <!-- En tu HTML existente -->
+
+<!-- Al final del cuerpo del documento -->
+<script>
+    // Función para mostrar los datos en la modal al hacer clic en el botón "Editar"
+    $(document).ready(function () {
+      $("button.btn-dark").click(function () {
+        // Obtener los datos de la fila de la tabla
+        var fecha = $(this).closest("tr").find("td:eq(0)").text();
+        var nombres = $(this).closest("tr").find("td:eq(1)").text();
+        var estado = $(this).closest("tr").find("td:eq(2)").text();
+  
+        // Mostrar los datos en la modal
+        $("#fecha").val(fecha);
+        $("#nombres").val(nombres);
+        $("#estado").val(estado);
+  
+        // Mostrar la modal
+        $("#myModal").modal("show");
+      });
+    });
+  </script>
+  
 </body>
 
 </html>
