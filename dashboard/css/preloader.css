@@ -1,0 +1,286 @@
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #ffffff;
+    transition: .3s all ease;
+}
+
+.preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader.loaded .triangle,
+.preloader.loaded .pen {
+    animation: none;
+}
+
+.preloader-body {
+    text-align: center;
+}
+
+.preloader-body p {
+    position: relative;
+    right: -8px;
+}
+
+.wrapper-triangle {
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    width: 304px;
+    height: 250px;
+    transform: translate(-50%, -50%);
+}
+
+.line-triangle {
+    position: absolute;
+    width: 250px;
+    height: 54px;
+    border: 1px solid transparent;
+    transform-origin: 0 100%;
+}
+
+.line-triangle:nth-last-of-type(1) {
+    left: 313px;
+    bottom: -21px;
+    transform: rotate(-120deg);
+    transform-origin: 0 100%;
+}
+
+.line-triangle:nth-last-of-type(2) {
+    left: 156px;
+    top: -54px;
+    transform: rotate(120deg);
+    transform-origin: 0 100%;
+}
+
+.line-triangle:nth-last-of-type(3) {
+    top: 217px;
+    left: 0;
+}
+
+.triangle:nth-of-type(1) {
+    animation: tri1 1.5s linear infinite;
+}
+
+@keyframes tri1 {
+    0% {
+        opacity: 0;
+    }
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.triangle:nth-of-type(2) {
+    animation: tri2 1.5s linear infinite;
+}
+
+@keyframes tri2 {
+    0% {
+        opacity: 0;
+    }
+
+    14.28571% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.triangle:nth-of-type(3) {
+    animation: tri3 1.5s linear infinite;
+}
+
+@keyframes tri3 {
+    0% {
+        opacity: 0;
+    }
+
+    28.57143% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.triangle:nth-of-type(4) {
+    animation: tri4 1.5s linear infinite;
+}
+
+@keyframes tri4 {
+    0% {
+        opacity: 0;
+    }
+
+    42.85714% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.triangle:nth-of-type(5) {
+    animation: tri5 1.5s linear infinite;
+}
+
+@keyframes tri5 {
+    0% {
+        opacity: 0;
+    }
+
+    57.14286% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.triangle:nth-of-type(6) {
+    animation: tri6 1.5s linear infinite;
+}
+
+@keyframes tri6 {
+    0% {
+        opacity: 0;
+    }
+
+    71.42857% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.triangle:nth-of-type(7) {
+    animation: tri7 1.5s linear infinite;
+}
+
+@keyframes tri7 {
+    0% {
+        opacity: 0;
+    }
+
+    85.71429% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.triangle {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border: 31px solid transparent;
+    border-bottom: 54px solid #6046b6;
+    animation: tri 1.5s linear infinite;
+}
+
+.triangle:nth-of-type(1) {
+    left: 0px;
+}
+
+.triangle:nth-of-type(2) {
+    left: 31px;
+}
+
+.triangle:nth-of-type(3) {
+    left: 63px;
+}
+
+.triangle:nth-of-type(4) {
+    left: 94px;
+}
+
+.triangle:nth-of-type(5) {
+    left: 125px;
+}
+
+.triangle:nth-of-type(6) {
+    left: 156px;
+}
+
+.triangle:nth-of-type(7) {
+    left: 188px;
+}
+
+.triangle:nth-child(even) {
+    transform: rotate(180deg);
+    top: 0;
+}
+
+.triangle:nth-child(1) {
+    animation: none;
+}
+
+.line:nth-child(2) .triangle:nth-child(1):before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    left: -22px;
+    bottom: -77px;
+    background: transparent;
+    border: 13px solid transparent;
+    border-bottom: 21px solid #F1ECDB;
+    animation: tri 1.5s linear infinite;
+}
+
+.pen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 312.5px;
+    transform-origin: 50% 0;
+    animation: move 1.5s cubic-bezier(0, 0, 0.5, 0.85) infinite;
+}
+
+@keyframes tri {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: scale(2.45);
+    }
+
+    100% {
+        transform: scale(0.5);
+    }
+}
