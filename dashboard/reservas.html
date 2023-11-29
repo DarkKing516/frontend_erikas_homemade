@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="path-to/node_modules/mdi/css/materialdesignicons.min.css"/>
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
@@ -474,6 +475,7 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">RESERVAS</h4>
+                    <button type="button" class="btn btn-inverse-primary btn-fw" data-toggle="modal" data-target="#crearReservaModal">Crear Reserva</button>
                     <p class="card-description">
                     </p>
                     <div class="table-responsive pt-3">
@@ -487,24 +489,51 @@
                           </tr>
                         </thead>
                         <tbody>
-                            <th>16/11/2023</th>
-                            <th>Emmanuel Sanchez</th>
-                            <td><label class="badge badge-warning">Pendiente</label></td>
-                            <th><button type="button" class="btn btn-dark btn-icon-text">
-                                Ver más                        
-                              </button></th>
+                            <tbody>
+                                <tr>
+                                  <th>16/11/2023</th>
+                                  <th>Emmanuel Sanchez</th>
+                                  <td><label class="badge badge-warning">Pendiente</label></td>
+                                  <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
+                                </tr>
+                                <tr>
+                                  <th>25/12/2023</th>
+                                  <th>Maria Rodriguez</th>
+                                  <td><label class="badge badge-success">Aprobado</label></td>
+                                  <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
+                                </tr>
+                                <tr>
+                                  <th>05/09/2023</th>
+                                  <th>Juan Perez</th>
+                                  <td><label class="badge badge-danger">Rechazado</label></td>
+                                  <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
+                                </tr>
+                                <tr>
+                                  <th>18/07/2023</th>
+                                  <th>Isabella Gomez</th>
+                                  <td><label class="badge badge-warning">Pendiente</label></td>
+                                  <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
+                                </tr>
+                                <tr>
+                                  <th>30/03/2023</th>
+                                  <th>Luis Hernandez</th>
+                                  <td><label class="badge badge-success">Aprobado</label></td>
+                                  <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
+                                </tr>
+                              </tbody>
+                              
                         </tbody>
                       </table>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="modal" id="myModal">
+              <div class="modal" id="ModalEditar">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <!-- Modal Header -->
                     <div class="modal-header">
-                      <h4 class="modal-title">Detalles de reserva</h4>
+                      <h4 class="modal-title">Editar reserva</h4>
                       <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
               
@@ -513,27 +542,74 @@
                       <!-- Aquí puedes mostrar los datos de la reserva -->
                       <div class="form-group">
                         <label for="fecha">Fecha:</label>
-                        <input type="text" class="form-control" id="fecha">
+                        <input type="text" class="form-control" id="fecha" disabled>
                       </div>
                       <div class="form-group">
                         <label for="nombres">Nombres:</label>
-                        <input type="text" class="form-control" id="nombres">
+                        <input type="text" class="form-control" id="nombres" disabled>
                       </div>
                       <div class="form-group">
                         <label for="estado">Estado:</label>
-                        <input type="text" class="form-control" id="estado">
+                        <select class="form-control" id="estado">
+                          <option value="pendiente">Pendiente</option>
+                          <option value="aprobado">Aprobado</option>
+                          <option value="rechazado">Rechazado</option>
+                        </select>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                        <textarea class="form-control" id="descripcion" rows="4" placeholder="Descripción" disabled></textarea>
                       </div>
                     </div>
+                    
               
                     <!-- Modal Footer -->
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                       <button type="button" class="btn btn-primary">Guardar cambios</button>
+                      <button type="button" class="btn btn-danger">Deshabilitar</button>
                     </div>
               
                   </div>
                 </div>
               </div>
+              <!-- Modal -->
+                <div class="modal fade" id="crearReservaModal" tabindex="-1" role="dialog" aria-labelledby="crearReservaModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="crearReservaModalLabel">Crear Reserva</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                        <!-- Aquí puedes agregar los campos para crear la reserva -->
+                        <form>
+                            <div class="form-group">
+                            <label for="fechaReserva">Fecha</label>
+                            <input type="text" class="form-control" id="fechaReserva" placeholder="Fecha">
+                            </div>
+                            <div class="form-group">
+                            <label for="nombreCliente">Nombre del Cliente</label>
+                            <input type="text" class="form-control" id="nombreCliente" placeholder="Nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripción</label>
+                                <textarea class="form-control" id="descripcion" rows="4" placeholder="Ingresa una descripción"></textarea>
+                              </div>
+                            <!-- Otros campos para la reserva -->
+                        </form>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar Reserva</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+  
               
         </div>
       </div>
@@ -584,7 +660,7 @@
         $("#estado").val(estado);
   
         // Mostrar la modal
-        $("#myModal").modal("show");
+        $("#ModalEditar").modal("show");
       });
     });
   </script>
