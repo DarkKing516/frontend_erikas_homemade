@@ -11,7 +11,7 @@
     // body.addClass('sidebar-hidden');
 
     // Mostrar la vista previa con íconos
-    body.addClass('sidebar-icon-only');
+    // body.addClass('sidebar-icon-only');
     // body.addClass('sidebar-absolute');
 
     //Add active class to nav-link based on url dynamically
