@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
-  <head>
+<head>
     <title>Sign In</title>
     <meta name="format-detection" content="telephone=no" />
     <meta
@@ -26,38 +26,38 @@
     <link rel="stylesheet" href="../css/signin.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/signin.js"></script>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="body">
-      <form action="" class="form_main">
-        <p class="heading">Iniciar Sesión</p>
-        <div class="inputContainer">
-          <i class="bi bi-envelope inputIcon"></i>
-          <input
-            type="email"
-            class="inputField"
-            id="email"
-            placeholder="Email"
-          />
-        </div>
+        <form action="" class="form_main" id="loginForm" onsubmit="return validateLoginForm()">
+            <p class="heading">Iniciar Sesión</p>
+            <div class="inputContainer">
+                <i class="bi bi-envelope inputIcon"></i>
+                <input
+                    type="email"
+                    class="inputField"
+                    id="email"
+                    placeholder="Email"
+                />
+            </div>
 
-        <div class="inputContainer">
-          <i class="bi bi-lock-fill inputIcon"></i>
-          <input
-            type="password"
-            class="inputField"
-            id="password"
-            placeholder="Contraseña"
-          />
-        </div>
+            <div class="inputContainer">
+                <i class="bi bi-lock-fill inputIcon"></i>
+                <input
+                    type="password"
+                    class="inputField"
+                    id="password"
+                    placeholder="Contraseña"
+                />
+            </div>
 
-        <button type="submit" id="button">Ingresar</button>
-        <div style="z-index: 5; text-align: center">
-          <a class="forgotLink" href="./forgot.html">Olvidé mi contraseña</a>
-          <a class="forgotLink" href="#">Registrarme</a>
-        </div>
-      </form>
+            <button type="submit" id="button">Ingresar</button>
+            <div style="z-index: 5; text-align: center">
+                <a class="forgotLink" href="./forgot.html">Olvidé mi contraseña</a>
+                <a class="forgotLink" href="#">Registrarme</a>
+            </div>
+        </form>
     </div>
-  </body>
+</body>
 </html>

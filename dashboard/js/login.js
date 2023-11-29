@@ -5,8 +5,8 @@ var usuarioRegistrado = {
 };
 
 function validateLoginForm() {
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
+    var email = document.getElementById("exampleInputEmail1").value;
+    var password = document.getElementById("exampleInputPassword1").value;
 
     // Validar que el correo tenga un formato válido
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -28,10 +28,10 @@ function validateLoginForm() {
             title: "Inicio de Sesión Exitoso",
             text: "Bienvenido",
             showCancelButton: false, // Ocultar el botón de cancelar
-            confirmButtonText: "Ir a la página de inicio", // Cambiar el texto del botón de confirmación
+            confirmButtonText: "Ir al dashboard", // Cambiar el texto del botón de confirmación
         }).then(() => {
-            // Redirigir a la página de inicio después de hacer clic en el botón de confirmación
-            window.location.href = "../dashboard/index.html";
+            // Redirigir al dashboard después de hacer clic en el botón de confirmación
+            window.location.href = "../../index.html";
         });
     } else if (email === usuarioRegistrado.correo) {
         // Correo válido, pero contraseña incorrecta

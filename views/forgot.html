@@ -25,11 +25,12 @@
     />
     <link rel="stylesheet" href="../css/signin.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/forgot.js"></script>
   </head>
 
   <body>
     <div class="body">
-      <form action="" class="form_main">
+      <form action="" class="form_main" onsubmit="return recoverPassword()">
         <p class="heading">Recuperar Contraseña</p>
         <p class="labelForgot">
           Enviaremos un mensaje a tu correo para recuperar tu contraseña
@@ -44,7 +45,9 @@
           />
         </div>
 
-        <button type="submit" id="button">Enviar Correo</button>
+        <button type="button" id="button" onclick="recoverPassword()">
+          Enviar Correo
+        </button>
 
         <a class="forgotLink" href="./signin.html">Recordé mi contraseña</a>
       </form>
