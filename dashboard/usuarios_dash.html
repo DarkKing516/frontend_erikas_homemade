@@ -27,6 +27,7 @@
   <script src="js/usuarios.js"></script>
 
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
   <script src="ruta/a/tu/usuarios.js"></script>
@@ -49,7 +50,7 @@
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="icon-menu"></span>
         </button>
-        <ul class="navbar-nav mr-lg-2">
+        <!-- <ul class="navbar-nav mr-lg-2">
           <li class="nav-item nav-search d-none d-lg-block">
             <div class="input-group">
               <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
@@ -61,7 +62,7 @@
                 aria-describedby="search">
             </div>
           </li>
-        </ul>
+        </ul> -->
         <ul class="navbar-nav navbar-nav-right">
           <!-- <li class="nav-item dropdown">
               <a class="nav-link count-indicator dropdown-toggle"
@@ -375,23 +376,19 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Usuarios</h4>
-                  <button type="button" class="btn btn-inverse-success btn-fw" data-toggle="modal"
-                    data-target="#myModal">
-                    Agregar
-                  </button>
-                  <br>
                   <div class="table-responsive">
-                    <table id="userTable" class="table table-striped">
+                    <table id="userTable" class="table table hover row-border" style="width:100%">
                       <thead>
                         <tr>
                           <th></th>
-                          <th>Rol</th>
-                          <th>Estado</th>
                           <th>Nombre</th>
-                          <th>Teléfono</th>
-                          <th>Documento</th>
-                          <th>Correo</th>
                           <th>Usuario</th>
+                          <th>Rol</th>
+                          <th>Documento</th>
+                          <th>Teléfono</th>
+                          <th>Correo</th>
+                          <th>Estado</th>
+                          <th>Acción</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -399,13 +396,23 @@
                           <td class="py-1">
                             <img src="https://content.wepik.com/statics/20247441/preview-page0.jpg" alt="image" />
                           </td>
-                          <td><label class="badge badge-outline-primary">Administrador</label></td>
-                          <td><label class="badge btn-inverse-success">Activo</label></td>
                           <td>1234</td>
-                          <td>122-426-7292</td>
-                          <td>5123123</td>
-                          <td>1234@gmail.com</td>
                           <td>1234_user</td>
+                          <td><label class="badge badge-outline-primary change-rol">Administrador</label></td>
+                          <td>5123123</td>
+                          <td>122-426-7292</td>
+                          <td>1234@gmail.com</td>
+                          <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
+                          <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                              <button type="button" class="btn btn-inverse-warning">
+                                <i class="mdi mdi-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-inverse-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
                         </tr>
                         <tr class="user-row">
                           <td class="py-1">
@@ -413,13 +420,23 @@
                               src="https://img.freepik.com/vector-premium/perfil-avatar-ilustraciones-vectoriales-sitio-web-redes-sociales-icono-perfil-usuario_495897-224.jpg"
                               alt="image" />
                           </td>
-                          <td><label class="badge badge-outline-primary">Administrador</label></td>
-                          <td><label class="badge btn-inverse-success">Activo</label></td>
                           <td>Jacob</td>
-                          <td>123-456-7890</td>
-                          <td>53275531</td>
-                          <td>jacob@email.com</td>
                           <td>jacob_user</td>
+                          <td><label class="badge badge-outline-primary change-rol">Administrador</label></td>
+                          <td>53275531</td>
+                          <td>123-456-7890</td>
+                          <td>jacob@email.com</td>
+                          <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
+                          <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                              <button type="button" class="btn btn-inverse-warning">
+                                <i class="mdi mdi-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-inverse-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
                         </tr>
                         <tr class="user-row">
                           <td class="py-1">
@@ -427,61 +444,111 @@
                               src="https://img.freepik.com/vector-premium/marco-gradiente-historias-sociales-avatar_41737-3.jpg"
                               alt="image" />
                           </td>
-                          <td><label class="badge badge-outline-primary">Administrador</label></td>
-                          <td><label class="badge btn-inverse-success">Activo</label></td>
                           <td>Messsy</td>
-                          <td>987-654-3210</td>
-                          <td>53275532</td>
-                          <td>messsy@email.com</td>
                           <td>messsy_user</td>
+                          <td><label class="badge badge-outline-primary change-rol">Administrador</label></td>
+                          <td>53275532</td>
+                          <td>987-654-3210</td>
+                          <td>messsy@email.com</td>
+                          <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
+                          <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                              <button type="button" class="btn btn-inverse-warning">
+                                <i class="mdi mdi-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-inverse-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
                         </tr>
                         <tr class="user-row">
                           <td class="py-1">
                             <img src="https://example.com/avatar1.jpg" alt="image" />
                           </td>
-                          <td><label class="badge badge-outline-primary">Trabajador</label></td>
-                          <td><label class="badge btn-inverse-success">Activo</label></td>
                           <td>Alice</td>
-                          <td>111-222-3333</td>
-                          <td>12345678</td>
-                          <td>alice@email.com</td>
                           <td>alice_user</td>
+                          <td><label class="badge badge-outline-primary change-rol">Trabajador</label></td>
+                          <td>12345678</td>
+                          <td>111-222-3333</td>
+                          <td>alice@email.com</td>
+                          <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
+                          <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                              <button type="button" class="btn btn-inverse-warning">
+                                <i class="mdi mdi-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-inverse-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
                         </tr>
                         <tr class="user-row">
                           <td class="py-1">
                             <img src="https://example.com/avatar2.jpg" alt="image" />
                           </td>
-                          <td><label class="badge badge-outline-primary">Trabajador</label></td>
-                          <td><label class="badge btn-inverse-success">Activo</label></td>
                           <td>Bob</td>
-                          <td>444-555-6666</td>
-                          <td>87654321</td>
-                          <td>bob@email.com</td>
                           <td>bob_user</td>
+                          <td><label class="badge badge-outline-primary change-rol">Trabajador</label></td>
+                          <td>87654321</td>
+                          <td>444-555-6666</td>
+                          <td>bob@email.com</td>
+                          <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
+                          <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                              <button type="button" class="btn btn-inverse-warning">
+                                <i class="mdi mdi-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-inverse-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
                         </tr>
                         <tr class="user-row">
                           <td class="py-1">
                             <img src="https://example.com/avatar3.jpg" alt="image" />
                           </td>
-                          <td><label class="badge badge-outline-primary">Trabajador</label></td>
-                          <td><label class="badge btn-inverse-danger">Inactivo</label></td>
                           <td>Charlie</td>
-                          <td>777-888-9999</td>
-                          <td>13579246</td>
-                          <td>charlie@email.com</td>
                           <td>charlie_user</td>
+                          <td><label class="badge badge-outline-primary change-rol">Trabajador</label></td>
+                          <td>13579246</td>
+                          <td>777-888-9999</td>
+                          <td>charlie@email.com</td>
+                          <td><label class="badge btn-inverse-danger" hover change-status-cursor>Inactivo</label></td>
+                          <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                              <button type="button" class="btn btn-inverse-warning">
+                                <i class="mdi mdi-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-inverse-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
                         </tr>
                         <tr class="user-row">
                           <td class="py-1">
                             <img src="https://example.com/avatar4.jpg" alt="image" />
                           </td>
-                          <td><label class="badge badge-outline-primary">Trabajador</label></td>
-                          <td><label class="badge btn-inverse-danger">Inactivo</label></td>
                           <td>Diana</td>
-                          <td>101-202-3030</td>
-                          <td>98765432</td>
-                          <td>diana@email.com</td>
                           <td>diana_user</td>
+                          <td><label class="badge badge-outline-primary change-rol">Trabajador</label></td>
+                          <td>98765432</td>
+                          <td>101-202-3030</td>
+                          <td>diana@email.com</td>
+                          <td><label class="badge btn-inverse-danger" hover change-status-cursor>Inactivo</label></td>
+                          <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                              <button type="button" class="btn btn-inverse-warning">
+                                <i class="mdi mdi-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-inverse-danger">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
                         </tr>
 
                       </tbody>
@@ -601,3 +668,21 @@
 </body>
 
 </html>
+
+<style>
+  .top{
+    min-width: 9px;
+    display: flex;
+    min-height: 50px;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .swal2-popup {
+    min-height: 400px !important;
+}
+.swal2-select {
+  width: 100%;
+  margin: 10px 0; /* Puedes ajustar según sea necesario */
+  
+}
+</style>
