@@ -21,6 +21,9 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <!-- endinject -->
 
 </head>
@@ -360,9 +363,74 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <div id="contenido-anterior">
 
+          <!-- Contenido principal -->
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Clientes</h4>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            <button type="button" class="btn btn-inverse-success btn-fw" data-toggle="modal"
+                              data-target="#myModal">
+                              Agregar
+                            </button>
+                          </th>
+                          <th>nombre</th>
+                          <th>Teléfono</th>
+                          <th>Documento</th>
+                          <th>Correo</th>
+                          <th>Usuario</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="table-info">
+                          <td class="py-1">
+                            <img src="https://content.wepik.com/statics/20247441/preview-page0.jpg" alt="image" />
+                          </td>
+                          <td>1234</td>
+                          <td>122-426-7292</td>
+                          <td>5123123</td>
+                          <td>1234@gmail.com</td>
+                          <td>1234_user</td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">
+                            <img
+                              src="https://img.freepik.com/vector-premium/perfil-avatar-ilustraciones-vectoriales-sitio-web-redes-sociales-icono-perfil-usuario_495897-224.jpg"
+                              alt="image" />
+                          </td>
+                          <td>Jacob</td>
+                          <td>123-456-7890</td>
+                          <td>53275531</td>
+                          <td>jacob@email.com</td>
+                          <td>jacob_user</td>
+                        </tr>
+                        <tr>
+                          <td class="py-1">
+                            <img
+                              src="https://img.freepik.com/vector-premium/marco-gradiente-historias-sociales-avatar_41737-3.jpg"
+                              alt="image" />
+                          </td>
+                          <td>Messsy</td>
+                          <td>987-654-3210</td>
+                          <td>53275532</td>
+                          <td>messsy@email.com</td>
+                          <td>messsy_user</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          <!-- Fin del contenido principal -->
+
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
@@ -388,6 +456,60 @@
   </div>
   <!-- container-scroller -->
 
+
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Registro de Usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Contenido del formulario -->
+          <form class="forms-sample">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
+            </div>
+            <div class="form-group">
+              <label for="documento">Documento</label>
+              <input type="text" class="form-control" id="documento" placeholder="Documento">
+            </div>
+            <div class="form-group">
+              <label for="correo">Correo</label>
+              <input type="email" class="form-control" id="correo" placeholder="Correo">
+            </div>
+            <div class="form-group">
+              <label for="usuario">Usuario</label>
+              <input type="text" class="form-control" id="usuario" placeholder="Usuario">
+            </div>
+            <div class="form-group">
+              <label for="contrasena">Contraseña</label>
+              <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
+            </div>
+            <div class="form-group">
+              <label for="rol">Rol</label>
+              <input type="text" class="form-control" id="rol" value="Cliente" disabled>
+            </div>
+            <button type="submit" class="btn btn-primary mr-2">Registrar</button>
+            <button class="btn btn-light">Cancelar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
@@ -410,14 +532,6 @@
   <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      // Cargar el contenido de la página anterior de forma asíncrona
-      $("#contenido-anterior").load("../views/index.html");
-
-      // Puedes agregar más lógica de inicialización o manipulación del DOM aquí
-    });
-  </script>
   <script src="js/preloader.js"></script>
 </body>
 
