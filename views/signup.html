@@ -11,7 +11,6 @@
         content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8" />
-
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css"
         href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500" />
@@ -21,27 +20,47 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="../css/signin.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../js/signin.js"></script>
+    <script src="../js/register.js"></script>
 </head>
 
 <body>
     <div class="body">
-        <form action="" class="form_main" id="loginForm" onsubmit="return validateLoginForm()">
-            <p class="heading">Iniciar Sesión</p>
+        <form action="" style="min-width: 400px;" class="form_main" id="registerForm"
+            onsubmit="return validateRegisterForm()">
+            <p class="heading">Registrarse</p>
+            <div class="inputContainer">
+                <i class="bi bi-person inputIcon"></i>
+                <input type="text" class="inputField" id="exampleInputName" placeholder="Nombre" />
+            </div>
+
+            <div class="inputContainer">
+                <i class="bi bi-telephone inputIcon"></i>
+                <input type="tel" class="inputField" id="exampleInputPhone" placeholder="Teléfono" />
+            </div>
+
+            <div class="inputContainer">
+                <i class="bi bi-card-text inputIcon"></i>
+                <input type="text" class="inputField" id="exampleInputDocument" placeholder="Documento" />
+            </div>
+
             <div class="inputContainer">
                 <i class="bi bi-envelope inputIcon"></i>
-                <input type="email" class="inputField" id="email" placeholder="Email" />
+                <input type="email" class="inputField" id="exampleInputEmail1" placeholder="Correo" />
+            </div>
+
+            <div class="inputContainer">
+                <i class="bi bi-person-fill inputIcon"></i>
+                <input type="text" class="inputField" id="exampleInputUsername1" placeholder="Usuario" />
             </div>
 
             <div class="inputContainer">
                 <i class="bi bi-lock-fill inputIcon"></i>
-                <input type="password" class="inputField" id="password" placeholder="Contraseña" />
+                <input type="password" class="inputField" id="exampleInputPassword1" placeholder="Contraseña" />
             </div>
 
-            <button type="submit" id="button">Ingresar</button>
+            <button type="submit" id="button">Registrarse</button>
             <div style="z-index: 5; text-align: center">
-                <a class="forgotLink" href="./forgot.html">Olvidé mi contraseña</a>
-                <a class="forgotLink" href="./signup.html">Registrarme</a>
+                <a class="forgotLink" href="./signin.html">Ya tengo una cuenta</a>
             </div>
         </form>
     </div>

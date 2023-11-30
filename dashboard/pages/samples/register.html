@@ -5,7 +5,10 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Skydash Admin</title>
+  <title>Erika's HomeMade</title>
+  <link rel="shortcut icon" href="https://cdn.pixabay.com/photo/2023/04/17/07/26/ai-generated-7931805_960_720.jpg" />
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/513/513865.png" />
+  <link rel="shortcut icon" href="./images/logo.png" />
   <!-- plugins:css -->
   <link rel="stylesheet" href="../../vendors/feather/feather.css">
   <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
@@ -16,7 +19,9 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/favicon.png" />
+  <!-- Agrega esto en la sección <head> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../../js/register.js"></script>
 </head>
 
 <body>
@@ -27,43 +32,47 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="../../images/logo.svg" alt="logo">
+                <img src="../../images/logo-lg.png" alt="logo">
               </div>
-              <h4>New here?</h4>
-              <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
-              <form class="pt-3">
+              <h4>¿Nuevo aquí?</h4>
+              <h6 class="font-weight-light">Registrarse es fácil. Solo se necesitan unos pocos pasos</h6>
+              <form class="pt-3" onsubmit="return validateRegisterForm()">
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username">
+                  <input type="text" class="form-control form-control-lg" id="exampleInputName" placeholder="Nombre">
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
+                  <input type="tel" class="form-control form-control-lg" id="exampleInputPhone" placeholder="Teléfono">
                 </div>
                 <div class="form-group">
-                  <select class="form-control form-control-lg" id="exampleFormControlSelect2">
-                    <option>Country</option>
-                    <option>United States of America</option>
-                    <option>United Kingdom</option>
-                    <option>India</option>
-                    <option>Germany</option>
-                    <option>Argentina</option>
-                  </select>
+                  <input type="text" class="form-control form-control-lg" id="exampleInputDocument"
+                    placeholder="Documento">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Correo">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-lg" id="exampleInputUsername1"
+                    placeholder="Usuario">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1"
+                    placeholder="Contraseña">
                 </div>
                 <div class="mb-4">
                   <div class="form-check">
                     <label class="form-check-label text-muted">
                       <input type="checkbox" class="form-check-input">
-                      I agree to all Terms & Conditions
+                      Acepto todos los Términos y Condiciones
                     </label>
                   </div>
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN UP</a>
+                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
+                    Registrarse
+                  </button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Already have an account? <a href="login.html" class="text-primary">Login</a>
+                  ¿Ya tienes una cuenta?<a href="login.html" class="text-primary">Iniciar sesión</a>
                 </div>
               </form>
             </div>

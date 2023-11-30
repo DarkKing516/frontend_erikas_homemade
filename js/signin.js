@@ -28,9 +28,9 @@ function validateLoginForm() {
             title: "Inicio de Sesión Exitoso",
             text: "Bienvenido",
             showCancelButton: false, // Ocultar el botón de cancelar
-            confirmButtonText: "Ir a la página de inicio", // Cambiar el texto del botón de confirmación
+            confirmButtonText: "Ir al dashboard", // Cambiar el texto del botón de confirmación
         }).then(() => {
-            // Redirigir a la página de inicio después de hacer clic en el botón de confirmación
+            // Redirigir al dashboard después de hacer clic en el botón de confirmación
             window.location.href = "../dashboard/index.html";
         });
     } else if (email === usuarioRegistrado.correo) {
