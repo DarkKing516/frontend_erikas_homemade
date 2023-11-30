@@ -70,7 +70,7 @@ $(document).ready(function () {
     // Inicializar DataTable
     $('#userTable').DataTable({
         "pagingType": "full_numbers",
-        "pageLength": 5
+        // "pageLength": 5
     });
 });
 
