@@ -332,7 +332,7 @@
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="index.html">
-              <i class="icon-grid menu-icon"></i>
+              <i class="mdi mdi-home"></i>
               <span class="menu-title">Home</span>
             </a>
           </li>
@@ -343,10 +343,17 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="dashboard.html">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Usuarios</span>
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="icon-head menu-icon"></i>
+              <span class="menu-title">usuarios</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="usuarios_dash.html"> Usuarios </a></li>
+                <li class="nav-item"> <a class="nav-link" href="usuarios_dash.html"> Clientes </a></li>
+              </ul>
+            </div>
           </li>
         </ul>
       </nav>
