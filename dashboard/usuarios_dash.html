@@ -137,9 +137,9 @@
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item close-session">
                 <i class="ti-power-off text-primary"></i>
-                Logout
+                Cerrar sesion
               </a>
             </div>
           </li>
@@ -353,6 +353,19 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="mdi mdi-settings"></i>
+              <span class="menu-title">Configuración</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="roles.html"> Roles </a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="permisos.html"> Permisos </a></li> -->
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">usuarios</span>
               <i class="menu-arrow"></i>
@@ -360,9 +373,53 @@
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="usuarios_dash.html"> Usuarios </a></li>
-                <li class="nav-item"> <a class="nav-link" href="clientes_dash.html"> Clientes </a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="clientes_dash.html"> Clientes </a></li> -->
               </ul>
             </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="mdi mdi-content-cut"></i>
+              <span class="menu-title">Productos</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="#"> Productos </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> T. Productos </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="mdi mdi-content-cut"></i>
+              <span class="menu-title">Servicios</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="#"> Servicios </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> T. Servicios </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pedidos.html">
+              <i class="mdi mdi-content-cut"></i>
+              <span class="menu-title">Pedidos</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ventas.html">
+              <i class="mdi mdi-content-cut"></i>
+              <span class="menu-title">Ventas</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reservas.html">
+              <i class="mdi mdi-content-cut"></i>
+              <span class="menu-title">Reservas</span>
+            </a>
           </li>
         </ul>
       </nav>
@@ -393,22 +450,23 @@
                       </thead>
                       <tbody>
                         <tr class="table-info user-row"">
-                          <td class="py-1">
-                            <img src="https://content.wepik.com/statics/20247441/preview-page0.jpg" alt="image" />
+                          <td class=" py-1">
+                          <img src="https://content.wepik.com/statics/20247441/preview-page0.jpg" alt="image" />
                           </td>
                           <td>1234</td>
                           <td>1234_user</td>
-                          <td><label class="badge badge-outline-primary change-rol">Administrador</label></td>
+                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Administrador</label>
+                          </td>
                           <td>5123123</td>
                           <td>122-426-7292</td>
                           <td>1234@gmail.com</td>
                           <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning">
+                              <button type="button" class="btn btn-inverse-warning edit-user">
                                 <i class="mdi mdi-pencil"></i>
                               </button>
-                              <button type="button" class="btn btn-inverse-danger">
+                              <button type="button" class="btn btn-inverse-danger delete-user">
                                 <i class="mdi mdi-delete"></i>
                               </button>
                             </div>
@@ -422,17 +480,18 @@
                           </td>
                           <td>Jacob</td>
                           <td>jacob_user</td>
-                          <td><label class="badge badge-outline-primary change-rol">Administrador</label></td>
+                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Administrador</label>
+                          </td>
                           <td>53275531</td>
                           <td>123-456-7890</td>
                           <td>jacob@email.com</td>
                           <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning">
+                              <button type="button" class="btn btn-inverse-warning edit-user">
                                 <i class="mdi mdi-pencil"></i>
                               </button>
-                              <button type="button" class="btn btn-inverse-danger">
+                              <button type="button" class="btn btn-inverse-danger delete-user">
                                 <i class="mdi mdi-delete"></i>
                               </button>
                             </div>
@@ -446,17 +505,18 @@
                           </td>
                           <td>Messsy</td>
                           <td>messsy_user</td>
-                          <td><label class="badge badge-outline-primary change-rol">Administrador</label></td>
+                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Administrador</label>
+                          </td>
                           <td>53275532</td>
                           <td>987-654-3210</td>
                           <td>messsy@email.com</td>
                           <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning">
+                              <button type="button" class="btn btn-inverse-warning edit-user">
                                 <i class="mdi mdi-pencil"></i>
                               </button>
-                              <button type="button" class="btn btn-inverse-danger">
+                              <button type="button" class="btn btn-inverse-danger delete-user">
                                 <i class="mdi mdi-delete"></i>
                               </button>
                             </div>
@@ -464,21 +524,21 @@
                         </tr>
                         <tr class="user-row">
                           <td class="py-1">
-                            <img src="https://example.com/avatar1.jpg" alt="image" />
+                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="image" />
                           </td>
                           <td>Alice</td>
                           <td>alice_user</td>
-                          <td><label class="badge badge-outline-primary change-rol">Trabajador</label></td>
+                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Trabajador</label></td>
                           <td>12345678</td>
                           <td>111-222-3333</td>
                           <td>alice@email.com</td>
                           <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning">
+                              <button type="button" class="btn btn-inverse-warning edit-user">
                                 <i class="mdi mdi-pencil"></i>
                               </button>
-                              <button type="button" class="btn btn-inverse-danger">
+                              <button type="button" class="btn btn-inverse-danger delete-user">
                                 <i class="mdi mdi-delete"></i>
                               </button>
                             </div>
@@ -486,21 +546,21 @@
                         </tr>
                         <tr class="user-row">
                           <td class="py-1">
-                            <img src="https://example.com/avatar2.jpg" alt="image" />
+                            <img src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" alt="image" />
                           </td>
                           <td>Bob</td>
                           <td>bob_user</td>
-                          <td><label class="badge badge-outline-primary change-rol">Trabajador</label></td>
+                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Trabajador</label></td>
                           <td>87654321</td>
                           <td>444-555-6666</td>
                           <td>bob@email.com</td>
                           <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning">
+                              <button type="button" class="btn btn-inverse-warning edit-user">
                                 <i class="mdi mdi-pencil"></i>
                               </button>
-                              <button type="button" class="btn btn-inverse-danger">
+                              <button type="button" class="btn btn-inverse-danger delete-user">
                                 <i class="mdi mdi-delete"></i>
                               </button>
                             </div>
@@ -508,21 +568,22 @@
                         </tr>
                         <tr class="user-row">
                           <td class="py-1">
-                            <img src="https://example.com/avatar3.jpg" alt="image" />
+                            <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359554_960_720.png"
+                              alt="image" />
                           </td>
                           <td>Charlie</td>
                           <td>charlie_user</td>
-                          <td><label class="badge badge-outline-primary change-rol">Trabajador</label></td>
+                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Trabajador</label></td>
                           <td>13579246</td>
                           <td>777-888-9999</td>
                           <td>charlie@email.com</td>
-                          <td><label class="badge btn-inverse-danger" hover change-status-cursor>Inactivo</label></td>
+                          <td><label class="badge btn-inverse-danger hover-cursor change-status">Inactivo</label></td>
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning">
+                              <button type="button" class="btn btn-inverse-warning edit-user">
                                 <i class="mdi mdi-pencil"></i>
                               </button>
-                              <button type="button" class="btn btn-inverse-danger">
+                              <button type="button" class="btn btn-inverse-danger delete-user">
                                 <i class="mdi mdi-delete"></i>
                               </button>
                             </div>
@@ -530,21 +591,23 @@
                         </tr>
                         <tr class="user-row">
                           <td class="py-1">
-                            <img src="https://example.com/avatar4.jpg" alt="image" />
+                            <img
+                              src="https://images.vexels.com/media/users/3/137047/isolated/preview/5831a17a290077c646a48c4db78a81bb-icono-de-perfil-de-usuario-azul.png"
+                              alt="image" />
                           </td>
                           <td>Diana</td>
                           <td>diana_user</td>
-                          <td><label class="badge badge-outline-primary change-rol">Trabajador</label></td>
+                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Trabajador</label></td>
                           <td>98765432</td>
                           <td>101-202-3030</td>
                           <td>diana@email.com</td>
-                          <td><label class="badge btn-inverse-danger" hover change-status-cursor>Inactivo</label></td>
+                          <td><label class="badge btn-inverse-danger hover-cursor change-status">Inactivo</label></td>
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning">
+                              <button type="button" class="btn btn-inverse-warning edit-user">
                                 <i class="mdi mdi-pencil"></i>
                               </button>
-                              <button type="button" class="btn btn-inverse-danger">
+                              <button type="button" class="btn btn-inverse-danger delete-user">
                                 <i class="mdi mdi-delete"></i>
                               </button>
                             </div>
@@ -564,18 +627,7 @@
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright
-              © 2021. Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap
-                admin template</a> from BootstrapDash.
-              All rights reserved.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted
-              & made with <i class="ti-heart text-danger ml-1"></i></span>
-          </div>
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed
-              by <a href="https://www.themewagon.com/" target="_blank">Themewagon</a></span>
-          </div>
+          <!-- footer  -->
         </footer>
         <!-- partial -->
       </div>
@@ -598,48 +650,127 @@
           </button>
         </div>
         <div class="modal-body">
-          <!-- Contenido del formulario -->
+          <!-- Contenido del formulario con Bootstrap grid system -->
           <form class="forms-sample" onsubmit="return validateForm()">
-            <div class="form-group">
-              <label for="nombre">Nombre</label>
-              <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                  <label for="documento">Documento</label>
+                  <input type="text" class="form-control" id="documento" placeholder="Documento">
+                </div>
+                <div class="form-group">
+                  <label for="usuario">Usuario</label>
+                  <input type="text" class="form-control" id="usuario" placeholder="Usuario">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="telefono">Teléfono</label>
+                  <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
+                </div>
+                <div class="form-group">
+                  <label for="correo">Correo</label>
+                  <input type="email" class="form-control" id="correo" placeholder="Correo">
+                </div>
+                <div class="form-group">
+                  <label for="contrasena">Contraseña</label>
+                  <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="telefono">Teléfono</label>
-              <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
+
+            <!-- Fila adicional para el rol -->
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="rol">Rol</label>
+                <select class="form-control" id="rol">
+                  <option value="trabajador">Trabajador</option>
+                  <option value="administrador">Administrador</option>
+                  <option value="cliente">Cliente</option>
+                </select>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="documento">Documento</label>
-              <input type="text" class="form-control" id="documento" placeholder="Documento">
+
+            <!-- Botones -->
+            <div class="form-row">
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-primary mr-2">Registrar</button>
+                <button class="btn btn-light">Cancelar</button>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="correo">Correo</label>
-              <input type="email" class="form-control" id="correo" placeholder="Correo">
-            </div>
-            <div class="form-group">
-              <label for="usuario">Usuario</label>
-              <input type="text" class="form-control" id="usuario" placeholder="Usuario">
-            </div>
-            <div class="form-group">
-              <label for="contrasena">Contraseña</label>
-              <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
-            </div>
-            <div class="form-group">
-              <label for="rol">Rol</label>
-              <select class="form-control" id="rol">
-                <option value="trabajador">Trabajador</option>
-                <option value="administrador">Administrador</option>
-                <option value="cliente">Cliente</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-primary mr-2">Registrar</button>
-            <button class="btn btn-light">Cancelar</button>
           </form>
         </div>
       </div>
     </div>
   </div>
 
+
+
+
+  <!-- Modal para editar usuario -->
+  <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editUserModalLabel">Editar Usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="forms-sample">
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" class="form-control" id="nombre" value="Datos de Usuario">
+                </div>
+                <div class="form-group">
+                  <label for="documento">Documento</label>
+                  <input type="text" class="form-control" id="documento" value="Datos de Usuario">
+                </div>
+                <div class="form-group">
+                  <label for="usuario">Usuario</label>
+                  <input type="text" class="form-control" id="usuario" value="Datos de Usuario">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="telefono">Teléfono</label>
+                  <input type="text" class="form-control" id="telefono" value="Datos de Usuario">
+                </div>
+                <div class="form-group">
+                  <label for="correo">Correo</label>
+                  <input type="email" class="form-control" id="correo" value="Datos@Usuario">
+                </div>
+                <div class="form-group">
+                  <label for="rol">Rol</label>
+                  <select class="form-control" id="rol">
+                    <option value="trabajador">Trabajador</option>
+                    <option value="administrador">Administrador</option>
+                    <option value="cliente">Cliente</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="form-row">
+              <div class="col-md-12">
+                <button class="btn btn-primary mr-2">Editar</button>
+                <button class="btn btn-light">Cancelar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -670,19 +801,22 @@
 </html>
 
 <style>
-  .top{
+  .top {
     min-width: 9px;
     display: flex;
     min-height: 50px;
     align-items: flex-end;
     justify-content: space-between;
   }
+
   .swal2-popup {
     min-height: 400px !important;
-}
-.swal2-select {
-  width: 100%;
-  margin: 10px 0; /* Puedes ajustar según sea necesario */
-  
-}
+  }
+
+  .swal2-select {
+    width: 100%;
+    margin: 10px 0;
+    /* Puedes ajustar según sea necesario */
+
+  }
 </style>

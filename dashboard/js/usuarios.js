@@ -102,6 +102,9 @@ $(document).ready(function () {
     $("#userTable_filter input").addClass("form-control form-control-sm");
 
     // Puedes agregar más personalizaciones según tus necesidades
+
+
+
 });
 
 
@@ -196,5 +199,68 @@ $(document).ready(function () {
             }
         });
     });
+
+
+
+
+
+
+
+
+
+
+
+
+    // Agrega evento clic para el botón de eliminación
+    $('.delete-user').on('click', function () {
+        // Mostrar SweetAlert de confirmación
+        Swal.fire({
+            title: 'Eliminar Usuario',
+            text: '¿Estás seguro de eliminar este usuario?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Sí, eliminar usuario'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Simular la eliminación (aquí deberías hacer la llamada a tu lógica de eliminación)
+                // ...
+
+                // Mostrar SweetAlert de éxito después de la eliminación
+                Swal.fire('Usuario eliminado', 'El usuario se ha eliminado con éxito.', 'success');
+            }
+        });
+    });
+
+
+
+
+
+
+    // Agregar evento clic para el botón edit-user
+    $('.edit-user').on('click', function () {
+        // Obtener la información del usuario (puedes ajustar esto según tu lógica)
+        var userInfo = {
+            nombre: "Datos de Usuario",
+            documento: "Datos de Usuario",
+            usuario: "Datos de Usuario",
+            telefono: "Datos de Usuario",
+            correo: "Datos@Usuario",
+            rol: "trabajador"
+        };
+
+        // Llenar la modal con la información del usuario
+        $('#editUserModal #nombre').val(userInfo.nombre);
+        $('#editUserModal #documento').val(userInfo.documento);
+        $('#editUserModal #usuario').val(userInfo.usuario);
+        $('#editUserModal #telefono').val(userInfo.telefono);
+        $('#editUserModal #correo').val(userInfo.correo);
+        $('#editUserModal #rol').val(userInfo.rol);
+
+        // Mostrar la modal
+        $('#editUserModal').modal('show');
+    });
+
 });
 

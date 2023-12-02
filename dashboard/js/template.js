@@ -124,3 +124,26 @@
   });
 
 })(jQuery);
+
+$(document).ready(function () {
+  // Agrega evento clic para el botón de cierre de sesión
+  $('.close-session').on('click', function () {
+      // Mostrar SweetAlert de confirmación
+      Swal.fire({
+          title: 'Cerrar Sesión',
+          text: '¿Estás seguro de cerrar sesión?',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#d33',
+          cancelButtonColor: '#3085d6',
+          confirmButtonText: 'Sí, cerrar sesión'
+      }).then((result) => {
+          if (result.isConfirmed) {
+              // Lógica de cierre de sesión aquí (si es necesario)
+              
+              // Redirigir al index
+              window.location.href = 'index.html';
+          }
+      });
+  });
+});
