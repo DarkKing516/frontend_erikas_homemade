@@ -30,7 +30,6 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
-  <script src="ruta/a/tu/usuarios.js"></script>
 
   <!-- endinject -->
 
@@ -342,22 +341,22 @@
           <li class="nav-item">
             <a class="nav-link" href="index.html">
               <i class="mdi mdi-home"></i>
-              <span class="menu-title">Home</span>
+              <span class="menu-title"> Home </span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="dashboard.html">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
+              <span class="menu-title"> Dashboard </span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" data-toggle="collapse" href="#config" aria-expanded="false" aria-controls="config">
               <i class="mdi mdi-settings"></i>
-              <span class="menu-title">Configuración</span>
+              <span class="menu-title"> Configuración </span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="auth">
+            <div class="collapse" id="config">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="roles.html"> Roles </a></li>
                 <!-- <li class="nav-item"> <a class="nav-link" href="permisos.html"> Permisos </a></li> -->
@@ -365,12 +364,12 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" data-toggle="collapse" href="#users" aria-expanded="false" aria-controls="users">
               <i class="icon-head menu-icon"></i>
-              <span class="menu-title">usuarios</span>
+              <span class="menu-title"> Usuarios</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="auth">
+            <div class="collapse" id="users">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="usuarios_dash.html"> Usuarios </a></li>
                 <!-- <li class="nav-item"> <a class="nav-link" href="clientes_dash.html"> Clientes </a></li> -->
@@ -378,12 +377,12 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" data-toggle="collapse" href="#products" aria-expanded="false" aria-controls="products">
               <i class="mdi mdi-content-cut"></i>
-              <span class="menu-title">Productos</span>
+              <span class="menu-title"> Productos </span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="auth">
+            <div class="collapse" id="products">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="#"> Productos </a></li>
                 <li class="nav-item"> <a class="nav-link" href="#"> T. Productos </a></li>
@@ -391,12 +390,12 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" data-toggle="collapse" href="#services" aria-expanded="false" aria-controls="services">
               <i class="mdi mdi-content-cut"></i>
-              <span class="menu-title">Servicios</span>
+              <span class="menu-title"> Servicios </span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="auth">
+            <div class="collapse" id="services">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="#"> Servicios </a></li>
                 <li class="nav-item"> <a class="nav-link" href="#"> T. Servicios </a></li>
@@ -406,19 +405,19 @@
           <li class="nav-item">
             <a class="nav-link" href="pedidos.html">
               <i class="mdi mdi-content-cut"></i>
-              <span class="menu-title">Pedidos</span>
+              <span class="menu-title"> Pedidos </span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="ventas.html">
               <i class="mdi mdi-content-cut"></i>
-              <span class="menu-title">Ventas</span>
+              <span class="menu-title"> Ventas </span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="reservas.html">
               <i class="mdi mdi-content-cut"></i>
-              <span class="menu-title">Reservas</span>
+              <span class="menu-title"> Reservas </span>
             </a>
           </li>
         </ul>
@@ -449,9 +448,9 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr class="table-info user-row"">
+                        <tr class="table-info user-row">
                           <td class=" py-1">
-                          <img src="https://content.wepik.com/statics/20247441/preview-page0.jpg" alt="image" />
+                            <img src="https://content.wepik.com/statics/20247441/preview-page0.jpg" alt="image" />
                           </td>
                           <td>1234</td>
                           <td>1234_user</td>
@@ -818,5 +817,9 @@
     margin: 10px 0;
     /* Puedes ajustar según sea necesario */
 
+  }
+
+  .table.dataTable.no-footer {
+    border-bottom: none
   }
 </style>

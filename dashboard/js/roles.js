@@ -71,8 +71,10 @@ $(document).ready(function () {
     var dataTableConfig = {
         // "pagingType": "full_numbers",
         "lengthChange": false,
-        "pageLength": 5,
-        "searching": true,
+        // "pageLength": 5,
+        "searching": false,
+        "info": false,
+        "paginate": false,
         "language": {
             "search": "Buscar:",
             "zeroRecords": "No se encontraron resultados",
@@ -96,7 +98,7 @@ $(document).ready(function () {
     $("#userTable_filter").detach().appendTo(".top");
 
     // Mover el botón "Agregar" al lado del cuadro de búsqueda
-    $(".top").append('<button type="button" class="btn btn-inverse-success btn-fw ml-2" data-toggle="modal" data-target="#myModal"  style="margin: 5px">Agregar</button>');
+    $(".top").append('<button type="button" class="btn btn-inverse-success btn-fw ml-2" data-toggle="modal" data-target="#myModal">Agregar</button>');
 
     // También puedes personalizar el estilo del cuadro de búsqueda si es necesario
     $("#userTable_filter input").addClass("form-control form-control-sm");
@@ -169,66 +171,25 @@ $(document).ready(function () {
 
 
 
-    $('#userTable').on('click', 'td .change-rol', function () {
-        // Obtener la fila correspondiente
-        var row = $(this).closest('tr');
-
-        // Mostrar SweetAlert con el campo de selección
-        Swal.fire({
-            title: 'Cambiar Rol',
-            html: '<select id="rolSelect" class="form-control">' +
-                '<option value="administrador">Administrador</option>' +
-                '<option value="cliente">Cliente</option>' +
-                '<option value="trabajador">Trabajador</option>' +
-                '</select>',
-            icon: 'info',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Cambiar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Obtener el valor seleccionado del select
-                var nuevoRol = $('#rolSelect').val();
-
-                // Actualizar el contenido del label con el nuevo rol
-                row.find('.change-rol').text(nuevoRol);
-
-                // Mostrar SweetAlert de éxito
-                Swal.fire('¡Rol cambiado!', 'El rol se ha cambiado correctamente.', 'success');
-            }
-        });
-    });
-
-
-
-
-
-
-
-
-
-
-
 
     // Agrega evento clic para el botón de eliminación
-    $('.delete-user').on('click', function () {
+    $('.delete-role').on('click', function () {
         // Mostrar SweetAlert de confirmación
         Swal.fire({
-            title: 'Eliminar Usuario',
-            text: '¿Estás seguro de eliminar este usuario?',
+            title: 'Eliminar Rol',
+            text: '¿Estás seguro de eliminar este rol?',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d33',
             cancelButtonColor: '#3085d6',
-            confirmButtonText: 'Sí, eliminar usuario'
+            confirmButtonText: 'Sí, eliminar rol'
         }).then((result) => {
             if (result.isConfirmed) {
                 // Simular la eliminación (aquí deberías hacer la llamada a tu lógica de eliminación)
                 // ...
 
                 // Mostrar SweetAlert de éxito después de la eliminación
-                Swal.fire('Usuario eliminado', 'El usuario se ha eliminado con éxito.', 'success');
+                Swal.fire('Rol eliminado', 'El Rol se ha eliminado con éxito.', 'success');
             }
         });
     });
@@ -239,7 +200,7 @@ $(document).ready(function () {
 
 
     // Agregar evento clic para el botón edit-user
-    $('.edit-user').on('click', function () {
+    $('.edit-role').on('click', function () {
         // Obtener la información del usuario (puedes ajustar esto según tu lógica)
         var userInfo = {
             nombre: "Datos de Usuario",
