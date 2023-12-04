@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="js/usuarios.js"></script>
+  <script src="js/productos.js"></script>
 
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css" />
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
@@ -431,35 +431,30 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Usuarios</h4>
+                  <h4 class="card-title">Productos</h4>
                   <div class="table-responsive">
                     <table id="userTable" class="table table hover row-border" style="width:100%">
                       <thead>
                         <tr>
                           <th></th>
                           <th>Nombre</th>
-                          <th>Usuario</th>
-                          <th>Rol</th>
-                          <th>Documento</th>
-                          <th>Teléfono</th>
-                          <th>Correo</th>
+                          <th>Imagen</th>
+                          <th>Descripción</th>
+                          <th>Precio</th>
                           <th>Estado</th>
+                          <th>Tipo Producto</th>
                           <th>Acción</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr class="table-info user-row">
-                          <td class=" py-1">
-                            <img src="https://content.wepik.com/statics/20247441/preview-page0.jpg" alt="image" />
-                          </td>
-                          <td>1234</td>
-                          <td>1234_user</td>
-                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Administrador</label>
-                          </td>
-                          <td>5123123</td>
-                          <td>122-426-7292</td>
-                          <td>1234@gmail.com</td>
+                        <tr class="user-row">
+                            <td></td>
+                          <td>Collar de tela</td>
+                          <td><img src="./images/productos/hqdefault.jpg" alt="Imagen 1" style="width: 80px; height: 80px;"></td>
+                          <td>Hermosos collares de tela, disponible con varios colores y presentación</td>
+                          <td>20000</td>
                           <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
+                          <td>Accesorios</td>
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
                               <button type="button" class="btn btn-inverse-warning edit-user">
@@ -472,111 +467,13 @@
                           </td>
                         </tr>
                         <tr class="user-row">
-                          <td class="py-1">
-                            <img
-                              src="https://img.freepik.com/vector-premium/perfil-avatar-ilustraciones-vectoriales-sitio-web-redes-sociales-icono-perfil-usuario_495897-224.jpg"
-                              alt="image" />
-                          </td>
-                          <td>Jacob</td>
-                          <td>jacob_user</td>
-                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Administrador</label>
-                          </td>
-                          <td>53275531</td>
-                          <td>123-456-7890</td>
-                          <td>jacob@email.com</td>
-                          <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
-                          <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning edit-user">
-                                <i class="mdi mdi-pencil"></i>
-                              </button>
-                              <button type="button" class="btn btn-inverse-danger delete-user">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="user-row">
-                          <td class="py-1">
-                            <img
-                              src="https://img.freepik.com/vector-premium/marco-gradiente-historias-sociales-avatar_41737-3.jpg"
-                              alt="image" />
-                          </td>
-                          <td>Messsy</td>
-                          <td>messsy_user</td>
-                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Administrador</label>
-                          </td>
-                          <td>53275532</td>
-                          <td>987-654-3210</td>
-                          <td>messsy@email.com</td>
-                          <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
-                          <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning edit-user">
-                                <i class="mdi mdi-pencil"></i>
-                              </button>
-                              <button type="button" class="btn btn-inverse-danger delete-user">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="user-row">
-                          <td class="py-1">
-                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="image" />
-                          </td>
-                          <td>Alice</td>
-                          <td>alice_user</td>
-                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Trabajador</label></td>
-                          <td>12345678</td>
-                          <td>111-222-3333</td>
-                          <td>alice@email.com</td>
-                          <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
-                          <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning edit-user">
-                                <i class="mdi mdi-pencil"></i>
-                              </button>
-                              <button type="button" class="btn btn-inverse-danger delete-user">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="user-row">
-                          <td class="py-1">
-                            <img src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" alt="image" />
-                          </td>
-                          <td>Bob</td>
-                          <td>bob_user</td>
-                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Trabajador</label></td>
-                          <td>87654321</td>
-                          <td>444-555-6666</td>
-                          <td>bob@email.com</td>
-                          <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
-                          <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning edit-user">
-                                <i class="mdi mdi-pencil"></i>
-                              </button>
-                              <button type="button" class="btn btn-inverse-danger delete-user">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="user-row">
-                          <td class="py-1">
-                            <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359554_960_720.png"
-                              alt="image" />
-                          </td>
-                          <td>Charlie</td>
-                          <td>charlie_user</td>
-                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Trabajador</label></td>
-                          <td>13579246</td>
-                          <td>777-888-9999</td>
-                          <td>charlie@email.com</td>
+                            <td></td>
+                          <td>Buso y sudadera TikTok</td>
+                          <td><img src="./images/productos/prenda vestir.jpg" alt="Imagen 1" style="width: 80px; height: 80px;"></td>
+                          <td>Sudadera y buso con estanpados de la aplicación TikTok</td>
+                          <td>60000</td>
                           <td><label class="badge btn-inverse-danger hover-cursor change-status">Inactivo</label></td>
+                          <td> Prendas de vestir</td>
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
                               <button type="button" class="btn btn-inverse-warning edit-user">
@@ -589,18 +486,13 @@
                           </td>
                         </tr>
                         <tr class="user-row">
-                          <td class="py-1">
-                            <img
-                              src="https://images.vexels.com/media/users/3/137047/isolated/preview/5831a17a290077c646a48c4db78a81bb-icono-de-perfil-de-usuario-azul.png"
-                              alt="image" />
-                          </td>
-                          <td>Diana</td>
-                          <td>diana_user</td>
-                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Trabajador</label></td>
-                          <td>98765432</td>
-                          <td>101-202-3030</td>
-                          <td>diana@email.com</td>
+                            <td></td>
+                          <td>Muñecos de nieve</td>
+                          <td><img src="./images/productos/manualidades.jpg" alt="Imagen 1" style="width: 80px; height: 80px;"></td>
+                          <td>Muñecos de nieve muy lindos de diferentes colores</td>
+                          <td>25000</td>
                           <td><label class="badge btn-inverse-danger hover-cursor change-status">Inactivo</label></td>
+                          <td>Manuealidades</td>
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
                               <button type="button" class="btn btn-inverse-warning edit-user">
@@ -643,7 +535,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Registro de Usuario</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Registro de productos</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -658,26 +550,24 @@
                   <input type="text" class="form-control" id="nombre" placeholder="Nombre">
                 </div>
                 <div class="form-group">
-                  <label for="documento">Documento</label>
-                  <input type="text" class="form-control" id="documento" placeholder="Documento">
+                    <label for="imagen">Imagen</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="imagen" placeholder="Seleccione una imagen" readonly>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="document.getElementById('fileInput').click();">Buscar</button>
+                        </div>
+                    </div>
+                    <input type="file" id="fileInput" style="display:none;" onchange="updateImageDisplay()">
                 </div>
                 <div class="form-group">
-                  <label for="usuario">Usuario</label>
-                  <input type="text" class="form-control" id="usuario" placeholder="Usuario">
+                  <label for="usuario">Descripción</label>
+                  <input type="text" class="form-control" id="descripcion" placeholder="Descripcion">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="telefono">Teléfono</label>
-                  <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
-                </div>
-                <div class="form-group">
-                  <label for="correo">Correo</label>
-                  <input type="email" class="form-control" id="correo" placeholder="Correo">
-                </div>
-                <div class="form-group">
-                  <label for="contrasena">Contraseña</label>
-                  <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
+                  <label for="telefono">Precio</label>
+                  <input type="text" class="form-control" id="precio" placeholder="Precio">
                 </div>
               </div>
             </div>
@@ -685,11 +575,11 @@
             <!-- Fila adicional para el rol -->
             <div class="form-row">
               <div class="form-group col-md-12">
-                <label for="rol">Rol</label>
-                <select class="form-control" id="rol">
-                  <option value="trabajador">Trabajador</option>
-                  <option value="administrador">Administrador</option>
-                  <option value="cliente">Cliente</option>
+                <label for="tipo_producto">Tipo Producto</label>
+                <select class="form-control" id="tipo_producto">
+                  <option value="Accesorios">Accesorios</option>
+                  <option value="Prendas_vestir">Prendas de vestir</option>
+                  <option value="manualidades">Manualidades</option>
                 </select>
               </div>
             </div>
@@ -716,7 +606,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="editUserModalLabel">Editar Usuario</h5>
+          <h5 class="modal-title" id="editUserModalLabel">Editar Producto</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -730,29 +620,31 @@
                   <input type="text" class="form-control" id="nombre" value="Datos de Usuario">
                 </div>
                 <div class="form-group">
-                  <label for="documento">Documento</label>
-                  <input type="text" class="form-control" id="documento" value="Datos de Usuario">
+                    <label for="imagen">Imagen</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="imagen" placeholder="Seleccione una imagen" readonly>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="document.getElementById('fileInput').click();">Buscar</button>
+                        </div>
+                    </div>
+                    <input type="file" id="fileInput" style="display:none;" onchange="updateImageDisplay()">
                 </div>
                 <div class="form-group">
-                  <label for="usuario">Usuario</label>
-                  <input type="text" class="form-control" id="usuario" value="Datos de Usuario">
+                  <label for="usuario">Descripción</label>
+                  <input type="text" class="form-control" id="descripcion" value="Datos de Usuario">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="telefono">Teléfono</label>
-                  <input type="text" class="form-control" id="telefono" value="Datos de Usuario">
+                  <label for="telefono">Precio</label>
+                  <input type="text" class="form-control" id="precio" value="Datos de Usuario">
                 </div>
                 <div class="form-group">
-                  <label for="correo">Correo</label>
-                  <input type="email" class="form-control" id="correo" value="Datos@Usuario">
-                </div>
-                <div class="form-group">
-                  <label for="rol">Rol</label>
-                  <select class="form-control" id="rol">
-                    <option value="trabajador">Trabajador</option>
-                    <option value="administrador">Administrador</option>
-                    <option value="cliente">Cliente</option>
+                  <label for="tipo_producto">Tipos de productos</label>
+                  <select class="form-control" id="tipo_producto">
+                    <option value="Accesorios">Accesorios</option>
+                    <option value="Prendas_vestir">Prendas de vestir</option>
+                    <option value="Manualidades">Manualidades</option>
                   </select>
                 </div>
               </div>
