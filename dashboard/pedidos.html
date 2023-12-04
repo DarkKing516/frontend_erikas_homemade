@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <!-- Required meta tags -->
@@ -21,9 +21,20 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="js/usuarios.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
+  <script src="ruta/a/tu/usuarios.js"></script>
+
   <!-- endinject -->
 
 </head>
+
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
@@ -38,21 +49,19 @@
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="icon-menu"></span>
         </button>
-        <!-- <ul class="navbar-nav mr-lg-2">
-            <li class="nav-item nav-search d-none d-lg-block">
-              <div class="input-group">
-                <div class="input-group-prepend hover-cursor"
-                  id="navbar-search-icon">
-                  <span class="input-group-text" id="search">
-                    <i class="icon-search"></i>
-                  </span>
-                </div>
-                <input type="text" class="form-control" id="navbar-search-input"
-                  placeholder="Search now"
-                  aria-label="search" aria-describedby="search">
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item nav-search d-none d-lg-block">
+            <div class="input-group">
+              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                <span class="input-group-text" id="search">
+                  <i class="icon-search"></i>
+                </span>
               </div>
-            </li>
-          </ul> -->
+              <input type="text" class="form-control" id="navbar-search-input" placeholder="Buscar" aria-label="search"
+                aria-describedby="search">
+            </div>
+          </li>
+        </ul>
         <ul class="navbar-nav navbar-nav-right">
           <!-- <li class="nav-item dropdown">
               <a class="nav-link count-indicator dropdown-toggle"
@@ -246,7 +255,7 @@
             <div class="events pt-4 px-3">
               <div class="wrapper d-flex mb-2">
                 <i class="ti-control-record text-primary mr-2"></i>
-                <span>Feb 11 2023</span>
+                <span>Feb 11 2018</span>
               </div>
               <p class="mb-0 font-weight-thin text-gray">Creating component
                 page build a js</p>
@@ -255,7 +264,7 @@
             <div class="events pt-4 px-3">
               <div class="wrapper d-flex mb-2">
                 <i class="ti-control-record text-primary mr-2"></i>
-                <span>Feb 7 2023</span>
+                <span>Feb 7 2018</span>
               </div>
               <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
               <p class="text-gray mb-0 ">Call Sarah Graves</p>
