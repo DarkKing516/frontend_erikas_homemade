@@ -554,7 +554,7 @@
                     <a class="nav-link" href="servicios.html"> Servicios </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#"> T. Servicios </a>
+                    <a class="nav-link" href="tipo_servicios.html"> T. Servicios </a>
                   </li>
                 </ul>
               </div>
@@ -579,255 +579,290 @@
             </li>
           </ul>
         </nav>
-      <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-md-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <p class="card-title mb-0">Pedidos</p>
-                  <div class="table-responsive">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>  
-                          <th>Id</th>
-                          <th>Cliente</th>
-                          <th>Fecha de creación</th>
-                          <th>Fecha estimada de entrega</th>
-                          <th>Subtotal</th>
-                          <th>Estado</th>
-                          <th>detalles</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="font-weight-bold">1</td>
-                          <td>Emmanuel Sánchez Herrera</td>
-                          <td class="font-weight-bold">15 feb 2023</td>
-                          <td>21 Sep 2023</td>
-                          <td class="font-weight-bold">$ 50.000</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-success">Entregado</div>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-primary" onclick="mostrarDetallesPedido(1)">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-eye" viewBox="0 0 16 16">
-                                <path
-                                  d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z">
-                                </path>
-                                <path
-                                  d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0">
-                                </path>
-                              </svg>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="font-weight-bold">2</td>
-                          <td>Nelson David Valencia Alzate</td>
-                          <td class="font-weight-bold">24 sep 2020</td>
-                          <td>13 Jun 2023</td>
-                          <td class="font-weight-bold">$ 35.000</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-primary">Completado</div>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-primary" onclick="mostrarDetallesPedido(2)">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-eye" viewBox="0 0 16 16">
-                                <path
-                                  d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z">
-                                </path>
-                                <path
-                                  d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0">
-                                </path>
-                              </svg>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="font-weight-bold">3</td>
-                          <td>Jhon Michael Contreras Rojas</td>
-                          <td class="font-weight-bold">10 ene 2022</td>
-                          <td>28 Sep 2023</td>
-                          <td class="font-weight-bold">$ 73.000</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-info">En proceso</div>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-primary" onclick="mostrarDetallesPedido(3)">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-eye" viewBox="0 0 16 16">
-                                <path
-                                  d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z">
-                                </path>
-                                <path
-                                  d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0">
-                                </path>
-                              </svg>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="font-weight-bold">4</td>
-                          <td>Danilo Vergara López</td>
-                          <td class="font-weight-bold">4 dec 2020</td>
-                          <td>30 Jun 2023</td>
-                          <td class="font-weight-bold">$ 120.000</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-warning">Por hacer</div>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-primary" onclick="mostrarDetallesPedido(4)">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-eye" viewBox="0 0 16 16">
-                                <path
-                                  d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z">
-                                </path>
-                                <path
-                                  d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0">
-                                </path>
-                              </svg>
-                            </button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <!-- Contenido principal -->
+            <div class="row">
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Tipos de servicios</h4>
+                    <div class="table-responsive">
+                      <table
+                        id="userTable"
+                        class="table table hover row-border"
+                        style="width: 100%"
+                      >
+                        <thead>
+                          <tr>
+                            <th>Nombre</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="user-row">
+                            <td>Manualidades</td>
+                            <td>
+                              <label
+                                class="badge btn-inverse-success hover-cursor change-status"
+                                >Activo</label
+                              >
+                            </td>
+                            <td>
+                              <div
+                                class="btn-group"
+                                role="group"
+                                aria-label="Basic example"
+                              >
+                                <button
+                                  type="button"
+                                  class="btn btn-inverse-warning edit-role"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn-inverse-danger delete-role"
+                                >
+                                  <i class="mdi mdi-delete"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="user-row">
+                            <td>Confeccion de prenda</td>
+                            <td>
+                              <label
+                                class="badge btn-inverse-success hover-cursor change-status"
+                                >Activo</label
+                              >
+                            </td>
+                            <td>
+                              <div
+                                class="btn-group"
+                                role="group"
+                                aria-label="Basic example"
+                              >
+                                <button
+                                  type="button"
+                                  class="btn btn-inverse-warning edit-role"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn-inverse-danger delete-role"
+                                >
+                                  <i class="mdi mdi-delete"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="user-row">
+                            <td>Arreglo de Prenda</td>
+                            <td>
+                              <label
+                                class="badge btn-inverse-success hover-cursor change-status"
+                                >Activo</label
+                              >
+                            </td>
+                            <td>
+                              <div
+                                class="btn-group"
+                                role="group"
+                                aria-label="Basic example"
+                              >
+                                <button
+                                  type="button"
+                                  class="btn btn-inverse-warning edit-role"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn-inverse-danger delete-role"
+                                >
+                                  <i class="mdi mdi-delete"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- Fin del contenido principal -->
           </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <!-- footer  -->
+          </footer>
+          <!-- partial -->
         </div>
-        <div class="modal" tabindex="-1" role="dialog" id="detallesModal">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Detalles del Pedido</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    <!-- Agregar Rol -->
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-5"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Registro de tipo de servicio</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Contenido del formulario con Bootstrap grid system -->
+            <form
+              class="your-custom-form-class"
+              id="addRoleForm"
+              onsubmit="return validateForm()"
+            >
+              <div class="form-group">
+                <label for="roleName">Nombre del tipo de servicio</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="roleName"
+                  placeholder="Ingrese el nombre del tipo de servicio"
+                  required
+                />
+              </div>
+
+
+              <!-- Botones -->
+              <div class="form-group">
+                <button type="submit" class="btn btn-inverse-primary btn-fw">
+                  Agregar tipo de servicio
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light"
+                  data-dismiss="modal"
+                >
+                  Cancelar
                 </button>
               </div>
-              <div class="modal-body" id="detallesModalBody">
-                <!-- Aquí se mostrarán los detalles del pedido -->
-              </div>
-            </div>
+            </form>
           </div>
         </div>
-
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. Premium <a
-                href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash.
-              All rights reserved.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i
-                class="ti-heart text-danger ml-1"></i></span>
-          </div>
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed by <a
-                href="https://www.themewagon.com/" target="_blank">Themewagon</a></span>
-          </div>
-        </footer>
-        <!-- partial -->
       </div>
-      <!-- main-panel ends -->
     </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
-  <script>
-    // Datos simulados de pedidos
-    const pedidos = [
-        {
-            idPedido: 1,
-            cliente: "Emmanuel Sánchez Herrera",
-            fechaCreacionPedido: "15 feb 2023	",
-            fechaEntregaPedido: "21 Sep 2018",
-            descripcionPedido: "Confección de 4 blusas estilo ombliguera",
-            totalDetalle: 25000,
-            totalPedido: 50000,
-            evidenciaPago: "/dashboard/images/dashboard/recibo1.png",
-            estadoPedido: "Entregado"
-        },
-        {
-            idPedido: 2,
-            cliente: "Nelson David Valencia Alzate	",
-            fechaCreacionPedido: "24 sep 2020",
-            fechaEntregaPedido: "13 Jun 2018",
-            descripcionPedido: "Entubar bota de pantalon",
-            totalDetalle: 17500,
-            totalPedido: 35000,
-            evidenciaPago: "/dashboard/images/dashboard/recibo1.png",
-            estadoPedido: "completado"
-        },
-        {
-            idPedido: 3,
-            cliente: "Jhon Michael Contreras Rojas",
-            fechaCreacionPedido: "10 ene 2022",
-            fechaEntregaPedido: "	28 Sep 2018",
-            descripcionPedido: "2 muñecas de trapo navideñas",
-            totalDetalle: 36500,
-            totalPedido: 73000,
-            evidenciaPago: "/dashboard/images/dashboard/recibo2.png",
-            estadoPedido: "En proceso"
-        },
-        {
-            idPedido: 4,
-            cliente: "Danilo Vergara López	",
-            fechaCreacionPedido: "4 dec 2020",
-            fechaEntregaPedido: "30 Jun 2018",
-            descripcionPedido: "Entubar bota de pantalon",
-            totalDetalle: 60000,
-            totalPedido: 120000,
-            evidenciaPago: "/dashboard/images/dashboard/recibo2.png",
-            estadoPedido: "Por hacer"
-        },
 
-    ];
+    <!-- Modal para editar usuario -->
+    <div
+      class="modal fade"
+      id="editUserModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="editUserModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editUserModalLabel">Editar Tipo de servicio</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="forms-sample">
+              <div class="form-group">
+                <label for="roleName">Nombre del tipo de servicio</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="roleName"
+                  placeholder="Ingrese el nombre del tipo de servicio"
+                  value="Nombre tipo de servicio"
+                />
+              </div>
+              <!-- Botones -->
+              <div class="form-row">
+                <div class="col-md-12">
+                  <button class="btn btn-primary mr-2">Editar</button>
+                  <button class="btn btn-light">Cancelar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    // Función para mostrar los detalles en el modal
-    function mostrarDetallesPedido(idPedido) {
-      const pedidoSeleccionado = pedidos.find(pedido => pedido.idPedido === idPedido);
-      const detallesModalBody = document.getElementById("detallesModalBody");
-      detallesModalBody.innerHTML = `
-            <p><strong>ID del Pedido:</strong> ${pedidoSeleccionado.idPedido}</p>
-            <p><strong>Cliente:</strong> ${pedidoSeleccionado.cliente}</p>
-            <p><strong>Fecha de Creación:</strong> ${pedidoSeleccionado.fechaCreacionPedido}</p>
-            <p><strong>Fecha de Entrega:</strong> ${pedidoSeleccionado.fechaEntregaPedido}</p>
-            <p><strong>Descripción del Pedido:</strong> ${pedidoSeleccionado.descripcionPedido}</p>
-            <p><strong>Total Detalle:</strong> ${pedidoSeleccionado.totalDetalle}</p>
-            <p><strong>Total Pedido:</strong> ${pedidoSeleccionado.totalPedido}</p>
-            <p><strong>Evidencia de Pago:</strong> <img src="${pedidoSeleccionado.evidenciaPago}" alt="Evidencia de Pago"></p>
-            <p><strong>Estado del Pedido:</strong> ${pedidoSeleccionado.estadoPedido}</p>
-        `;
-      $('#detallesModal').modal('show'); // Muestra el modal
-    }
-  </script>
-  <!-- plugins:js -->
-  <script src="vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <script src="vendors/chart.js/Chart.min.js"></script>
-  <script src="vendors/datatables.net/jquery.dataTables.js"></script>
-  <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
-  <script src="js/dataTables.select.min.js"></script>
+    <!-- plugins:js -->
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="vendors/chart.js/Chart.min.js"></script>
+    <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="js/dataTables.select.min.js"></script>
 
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/hoverable-collapse.js"></script>
-  <script src="js/template.js"></script>
-  <script src="js/settings.js"></script>
-  <script src="js/todolist.js"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <script src="js/dashboard.js"></script>
-  <script src="js/Chart.roundedBarCharts.js"></script>
-  <!-- End custom js for this page-->
-</body>
-
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="js/off-canvas.js"></script>
+    <script src="js/hoverable-collapse.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="js/dashboard.js"></script>
+    <script src="js/Chart.roundedBarCharts.js"></script>
+    <!-- End custom js for this page-->
+    <script src="js/preloader.js"></script>
+  </body>
 </html>
+
+<style>
+  .top {
+    min-width: 9px;
+    display: flex;
+    min-height: 50px;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .swal2-popup {
+    min-height: 400px !important;
+  }
+
+  .swal2-select {
+    width: 100%;
+    margin: 10px 0;
+    /* Puedes ajustar según sea necesario */
+  }
+
+  .table.dataTable.no-footer {
+    border-bottom: none;
+  }
+</style>

@@ -3,27 +3,20 @@ var correoExistente = "1234@gmail.com";
 function validateForm() {
     // Obtener los valores de los campos
     var nombre = document.getElementById('nombre').value;
-    var telefono = document.getElementById('telefono').value;
-    var documento = document.getElementById('documento').value;
-    var correo = document.getElementById('correo').value;
-    var usuario = document.getElementById('usuario').value;
-    var contrasena = document.getElementById('contrasena').value;
-    var rol = document.getElementById('rol').value;
+    var tipo_servicio = document.getElementById('tipo_servicio').value;
+    var descripcion = document.getElementById('descripcion').value;
+    var precio = document.getElementById('precio').value;
+    var estado = document.getElementById('estado').value;
+    var estado_catalogo = document.getElementById('estado_catalogo').value;
+    var img = document.getElementById('img').value;
 
     // Validar que todos los campos estén llenos
-    if (nombre === '' || telefono === '' || documento === '' || correo === '' || usuario === '' || contrasena === '' || rol === '') {
+    if (nombre === '' || tipo_servicio === '' || descripcion === '' || precio === '' || estado === '' || estado_catalogo === '' || img === '') {
         // Mostrar un mensaje de error con SweetAlert
         Swal.fire({
             icon: 'error',
             title: 'Error',
             text: 'Por favor, completa todos los campos',
-        });
-    } else if (correo === correoExistente) {
-        // Si el correo es igual al correo existente, mostrar un mensaje de error
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'El correo electrónico ya está registrado. Por favor, utiliza otro correo electrónico.',
         });
     } else {
         // Aquí puedes agregar más validaciones según tus necesidades
@@ -39,7 +32,7 @@ function validateForm() {
             // ...
 
             // Redirigir a la página de inicio después de hacer clic en el botón de confirmación
-            window.location.href = "usuarios_dash.html.html";
+            window.location.href = "servicios.html";
         });
     }
 
@@ -169,33 +162,36 @@ $(document).ready(function () {
 
 
 
-    $('#userTable').on('click', 'td .change-rol', function () {
+    $('#userTable').on('click', 'td .change-status-cat.btn-inverse-success, td .change-status-cat.btn-inverse-danger', function () {
         // Obtener la fila correspondiente
         var row = $(this).closest('tr');
 
-        // Mostrar SweetAlert con el campo de selección
+        // Determinar el estado actual
+        var currentState = row.find('.change-status-cat').hasClass('btn-inverse-success') ? 'Activo' : 'Inactivo';
+
+        // Mostrar SweetAlert de confirmación
         Swal.fire({
-            title: 'Cambiar Rol',
-            html: '<select id="rolSelect" class="form-control">' +
-                '<option value="administrador">Administrador</option>' +
-                '<option value="cliente">Cliente</option>' +
-                '<option value="trabajador">Trabajador</option>' +
-                '</select>',
-            icon: 'info',
+            title: 'Cambiar estado',
+            text: '¿Estás seguro de cambiar el estado?',
+            icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Cambiar'
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Sí, cambiar estado'
         }).then((result) => {
             if (result.isConfirmed) {
-                // Obtener el valor seleccionado del select
-                var nuevoRol = $('#rolSelect').val();
-
-                // Actualizar el contenido del label con el nuevo rol
-                row.find('.change-rol').text(nuevoRol);
+                // Cambiar la clase y el texto de la etiqueta según el nuevo estado
+                var estadoLabel = row.find('.change-status-cat');
+                if (currentState === 'Activo') {
+                    estadoLabel.removeClass('btn-inverse-success').addClass('btn-inverse-danger');
+                    estadoLabel.text('Inactivo');
+                } else {
+                    estadoLabel.removeClass('btn-inverse-danger').addClass('btn-inverse-success');
+                    estadoLabel.text('Activo');
+                }
 
                 // Mostrar SweetAlert de éxito
-                Swal.fire('¡Rol cambiado!', 'El rol se ha cambiado correctamente.', 'success');
+                Swal.fire('¡Estado cambiado!', 'El estado se ha cambiado correctamente.', 'success');
             }
         });
     });
@@ -215,20 +211,20 @@ $(document).ready(function () {
     $('.delete-user').on('click', function () {
         // Mostrar SweetAlert de confirmación
         Swal.fire({
-            title: 'Eliminar Usuario',
-            text: '¿Estás seguro de eliminar este usuario?',
+            title: 'Eliminar Servicio',
+            text: '¿Estás seguro de eliminar este Servicio?',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d33',
             cancelButtonColor: '#3085d6',
-            confirmButtonText: 'Sí, eliminar usuario'
+            confirmButtonText: 'Sí, eliminar Servicio'
         }).then((result) => {
             if (result.isConfirmed) {
                 // Simular la eliminación (aquí deberías hacer la llamada a tu lógica de eliminación)
                 // ...
 
                 // Mostrar SweetAlert de éxito después de la eliminación
-                Swal.fire('Usuario eliminado', 'El usuario se ha eliminado con éxito.', 'success');
+                Swal.fire('Servicio eliminado', 'El Servicio se ha eliminado con éxito.', 'success');
             }
         });
     });
@@ -242,21 +238,23 @@ $(document).ready(function () {
     $('.edit-user').on('click', function () {
         // Obtener la información del usuario (puedes ajustar esto según tu lógica)
         var userInfo = {
-            nombre: "Datos de Usuario",
-            documento: "Datos de Usuario",
-            usuario: "Datos de Usuario",
-            telefono: "Datos de Usuario",
-            correo: "Datos@Usuario",
-            rol: "trabajador"
+            nombre: "Datos del servicio",
+            tipo_servicio: "Datos del servicio",
+            descripcion: "Datos del servicio",
+            precio: "Datos del servicio",
+            estado: "activo",
+            estado_catalogo: "activo",
+            img: "datos del servicio"
         };
 
         // Llenar la modal con la información del usuario
         $('#editUserModal #nombre').val(userInfo.nombre);
-        $('#editUserModal #documento').val(userInfo.documento);
-        $('#editUserModal #usuario').val(userInfo.usuario);
-        $('#editUserModal #telefono').val(userInfo.telefono);
-        $('#editUserModal #correo').val(userInfo.correo);
-        $('#editUserModal #rol').val(userInfo.rol);
+        $('#editUserModal #tipo_servicio').val(userInfo.tipo_servicio);
+        $('#editUserModal #descripcion').val(userInfo.descripcion);
+        $('#editUserModal #precio').val(userInfo.precio);
+        $('#editUserModal #estado').val(userInfo.estado);
+        $('#editUserModal #estado_catalogo').val(userInfo.estado_catalogo);
+        $('#editUserModal #img').val(userInfo.img);
 
         // Mostrar la modal
         $('#editUserModal').modal('show');

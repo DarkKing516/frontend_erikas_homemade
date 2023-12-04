@@ -551,7 +551,7 @@
               <div class="collapse" id="services">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="servicios.html"> Servicios </a>
+                    <a class="nav-link" href="#"> Servicios </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#"> T. Servicios </a>
@@ -579,255 +579,572 @@
             </li>
           </ul>
         </nav>
-      <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-md-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <p class="card-title mb-0">Pedidos</p>
-                  <div class="table-responsive">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>  
-                          <th>Id</th>
-                          <th>Cliente</th>
-                          <th>Fecha de creación</th>
-                          <th>Fecha estimada de entrega</th>
-                          <th>Subtotal</th>
-                          <th>Estado</th>
-                          <th>detalles</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="font-weight-bold">1</td>
-                          <td>Emmanuel Sánchez Herrera</td>
-                          <td class="font-weight-bold">15 feb 2023</td>
-                          <td>21 Sep 2023</td>
-                          <td class="font-weight-bold">$ 50.000</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-success">Entregado</div>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-primary" onclick="mostrarDetallesPedido(1)">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-eye" viewBox="0 0 16 16">
-                                <path
-                                  d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z">
-                                </path>
-                                <path
-                                  d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0">
-                                </path>
-                              </svg>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="font-weight-bold">2</td>
-                          <td>Nelson David Valencia Alzate</td>
-                          <td class="font-weight-bold">24 sep 2020</td>
-                          <td>13 Jun 2023</td>
-                          <td class="font-weight-bold">$ 35.000</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-primary">Completado</div>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-primary" onclick="mostrarDetallesPedido(2)">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-eye" viewBox="0 0 16 16">
-                                <path
-                                  d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z">
-                                </path>
-                                <path
-                                  d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0">
-                                </path>
-                              </svg>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="font-weight-bold">3</td>
-                          <td>Jhon Michael Contreras Rojas</td>
-                          <td class="font-weight-bold">10 ene 2022</td>
-                          <td>28 Sep 2023</td>
-                          <td class="font-weight-bold">$ 73.000</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-info">En proceso</div>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-primary" onclick="mostrarDetallesPedido(3)">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-eye" viewBox="0 0 16 16">
-                                <path
-                                  d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z">
-                                </path>
-                                <path
-                                  d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0">
-                                </path>
-                              </svg>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="font-weight-bold">4</td>
-                          <td>Danilo Vergara López</td>
-                          <td class="font-weight-bold">4 dec 2020</td>
-                          <td>30 Jun 2023</td>
-                          <td class="font-weight-bold">$ 120.000</td>
-                          <td class="font-weight-medium">
-                            <div class="badge badge-warning">Por hacer</div>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-primary" onclick="mostrarDetallesPedido(4)">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-eye" viewBox="0 0 16 16">
-                                <path
-                                  d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z">
-                                </path>
-                                <path
-                                  d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0">
-                                </path>
-                              </svg>
-                            </button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <!-- Contenido principal -->
+            <div class="row">
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Roles y Permisos</h4>
+                    <div class="table-responsive">
+                      <table
+                        id="userTable"
+                        class="table table hover row-border"
+                        style="width: 100%"
+                      >
+                        <thead>
+                          <tr>
+                            <th>Nombre</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="user-row">
+                            <td>Administrador</td>
+                            <td>
+                              <label
+                                class="badge btn-inverse-success hover-cursor change-status"
+                                >Activo</label
+                              >
+                            </td>
+                            <td>
+                              <div
+                                class="btn-group"
+                                role="group"
+                                aria-label="Basic example"
+                              >
+                                <button
+                                  type="button"
+                                  class="btn btn-inverse-warning edit-role"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn-inverse-danger delete-role"
+                                >
+                                  <i class="mdi mdi-delete"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="user-row">
+                            <td>Trabajador</td>
+                            <td>
+                              <label
+                                class="badge btn-inverse-success hover-cursor change-status"
+                                >Activo</label
+                              >
+                            </td>
+                            <td>
+                              <div
+                                class="btn-group"
+                                role="group"
+                                aria-label="Basic example"
+                              >
+                                <button
+                                  type="button"
+                                  class="btn btn-inverse-warning edit-role"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn-inverse-danger delete-role"
+                                >
+                                  <i class="mdi mdi-delete"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="user-row">
+                            <td>Cliente</td>
+                            <td>
+                              <label
+                                class="badge btn-inverse-success hover-cursor change-status"
+                                >Activo</label
+                              >
+                            </td>
+                            <td>
+                              <div
+                                class="btn-group"
+                                role="group"
+                                aria-label="Basic example"
+                              >
+                                <button
+                                  type="button"
+                                  class="btn btn-inverse-warning edit-role"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn-inverse-danger delete-role"
+                                >
+                                  <i class="mdi mdi-delete"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="user-row">
+                            <td>Test</td>
+                            <td>
+                              <label
+                                class="badge btn-inverse-danger hover-cursor change-status"
+                                >Inactivo</label
+                              >
+                            </td>
+                            <td>
+                              <div
+                                class="btn-group"
+                                role="group"
+                                aria-label="Basic example"
+                              >
+                                <button
+                                  type="button"
+                                  class="btn btn-inverse-warning edit-role"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn-inverse-danger delete-role"
+                                >
+                                  <i class="mdi mdi-delete"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- Fin del contenido principal -->
           </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <!-- footer  -->
+          </footer>
+          <!-- partial -->
         </div>
-        <div class="modal" tabindex="-1" role="dialog" id="detallesModal">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Detalles del Pedido</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    <!-- Agregar Rol -->
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-5"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Registro de Rol</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Contenido del formulario con Bootstrap grid system -->
+            <form
+              class="your-custom-form-class"
+              id="addRoleForm"
+              onsubmit="return validateForm()"
+            >
+              <div class="form-group">
+                <label for="roleName">Nombre del Rol</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="roleName"
+                  placeholder="Ingrese el nombre del rol"
+                  required
+                />
+              </div>
+
+              <!-- Botón para agregar permisos -->
+              <div class="form-group">
+                <button
+                  type="button"
+                  class="btn btn-success btn-fw"
+                  onclick="openAddPermissionModal()"
+                >
+                  Agregar Permiso
                 </button>
               </div>
-              <div class="modal-body" id="detallesModalBody">
-                <!-- Aquí se mostrarán los detalles del pedido -->
+
+              <!-- Lista de permisos seleccionados -->
+              <div class="form-group" id="selectedPermissions">
+                <!-- Los permisos seleccionados se agregarán aquí dinámicamente -->
               </div>
+
+              <!-- Botones -->
+              <div class="form-group">
+                <button type="submit" class="btn btn-inverse-primary btn-fw">
+                  Agregar Rol
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light"
+                  data-dismiss="modal"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para agregar permisos -->
+    <div
+      class="modal fade"
+      id="addPermissionModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+      style="overflow-y: auto"
+    >
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Permisos</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Contenido del formulario con Bootstrap grid system -->
+            <div class="form-group">
+              <label>Buscar permisos:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="permissionSearch"
+                oninput="filterPermissions()"
+                placeholder="Buscar permisos"
+              />
+            </div>
+            <div class="form-group">
+              <label>Selecciona los permisos:</label>
+              <div class="form-check" id="permissionsList">
+                <!-- Los permisos se agregarán aquí dinámicamente -->
+              </div>
+            </div>
+            <div class="form-group text-right">
+              <button
+                type="button"
+                class="btn btn-success"
+                onclick="addSelectedPermissions()"
+              >
+                Agregar Permiso/s
+              </button>
             </div>
           </div>
         </div>
-
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. Premium <a
-                href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash.
-              All rights reserved.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i
-                class="ti-heart text-danger ml-1"></i></span>
-          </div>
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed by <a
-                href="https://www.themewagon.com/" target="_blank">Themewagon</a></span>
-          </div>
-        </footer>
-        <!-- partial -->
       </div>
-      <!-- main-panel ends -->
     </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
-  <script>
-    // Datos simulados de pedidos
-    const pedidos = [
-        {
-            idPedido: 1,
-            cliente: "Emmanuel Sánchez Herrera",
-            fechaCreacionPedido: "15 feb 2023	",
-            fechaEntregaPedido: "21 Sep 2018",
-            descripcionPedido: "Confección de 4 blusas estilo ombliguera",
-            totalDetalle: 25000,
-            totalPedido: 50000,
-            evidenciaPago: "/dashboard/images/dashboard/recibo1.png",
-            estadoPedido: "Entregado"
-        },
-        {
-            idPedido: 2,
-            cliente: "Nelson David Valencia Alzate	",
-            fechaCreacionPedido: "24 sep 2020",
-            fechaEntregaPedido: "13 Jun 2018",
-            descripcionPedido: "Entubar bota de pantalon",
-            totalDetalle: 17500,
-            totalPedido: 35000,
-            evidenciaPago: "/dashboard/images/dashboard/recibo1.png",
-            estadoPedido: "completado"
-        },
-        {
-            idPedido: 3,
-            cliente: "Jhon Michael Contreras Rojas",
-            fechaCreacionPedido: "10 ene 2022",
-            fechaEntregaPedido: "	28 Sep 2018",
-            descripcionPedido: "2 muñecas de trapo navideñas",
-            totalDetalle: 36500,
-            totalPedido: 73000,
-            evidenciaPago: "/dashboard/images/dashboard/recibo2.png",
-            estadoPedido: "En proceso"
-        },
-        {
-            idPedido: 4,
-            cliente: "Danilo Vergara López	",
-            fechaCreacionPedido: "4 dec 2020",
-            fechaEntregaPedido: "30 Jun 2018",
-            descripcionPedido: "Entubar bota de pantalon",
-            totalDetalle: 60000,
-            totalPedido: 120000,
-            evidenciaPago: "/dashboard/images/dashboard/recibo2.png",
-            estadoPedido: "Por hacer"
-        },
 
-    ];
+    <script>
+      // Array para almacenar los permisos seleccionados
+      var selectedPermissions = [];
 
-    // Función para mostrar los detalles en el modal
-    function mostrarDetallesPedido(idPedido) {
-      const pedidoSeleccionado = pedidos.find(pedido => pedido.idPedido === idPedido);
-      const detallesModalBody = document.getElementById("detallesModalBody");
-      detallesModalBody.innerHTML = `
-            <p><strong>ID del Pedido:</strong> ${pedidoSeleccionado.idPedido}</p>
-            <p><strong>Cliente:</strong> ${pedidoSeleccionado.cliente}</p>
-            <p><strong>Fecha de Creación:</strong> ${pedidoSeleccionado.fechaCreacionPedido}</p>
-            <p><strong>Fecha de Entrega:</strong> ${pedidoSeleccionado.fechaEntregaPedido}</p>
-            <p><strong>Descripción del Pedido:</strong> ${pedidoSeleccionado.descripcionPedido}</p>
-            <p><strong>Total Detalle:</strong> ${pedidoSeleccionado.totalDetalle}</p>
-            <p><strong>Total Pedido:</strong> ${pedidoSeleccionado.totalPedido}</p>
-            <p><strong>Evidencia de Pago:</strong> <img src="${pedidoSeleccionado.evidenciaPago}" alt="Evidencia de Pago"></p>
-            <p><strong>Estado del Pedido:</strong> ${pedidoSeleccionado.estadoPedido}</p>
-        `;
-      $('#detallesModal').modal('show'); // Muestra el modal
-    }
-  </script>
-  <!-- plugins:js -->
-  <script src="vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <script src="vendors/chart.js/Chart.min.js"></script>
-  <script src="vendors/datatables.net/jquery.dataTables.js"></script>
-  <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
-  <script src="js/dataTables.select.min.js"></script>
+      // Función para abrir la modal de permisos
+      function openAddPermissionModal() {
+        $("#addPermissionModal").modal("show");
+      }
 
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/hoverable-collapse.js"></script>
-  <script src="js/template.js"></script>
-  <script src="js/settings.js"></script>
-  <script src="js/todolist.js"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <script src="js/dashboard.js"></script>
-  <script src="js/Chart.roundedBarCharts.js"></script>
-  <!-- End custom js for this page-->
-</body>
+      // Función para agregar un permiso a la lista
+      function addPermission(permission) {
+        // Verificar duplicados
+        if (!selectedPermissions.includes(permission)) {
+          selectedPermissions.push(permission);
+          updateSelectedPermissions();
+        }
+      }
 
+      // Función para quitar un permiso de la lista
+      function removePermission(permission) {
+        selectedPermissions = selectedPermissions.filter(
+          (item) => item !== permission
+        );
+        updateSelectedPermissions();
+      }
+
+      // Función para actualizar la lista de permisos seleccionados en el formulario principal
+      function updateSelectedPermissions() {
+        var selectedPermissionsDiv = $("#selectedPermissions");
+        var addPermissionButton = $("#addPermissionButton");
+
+        selectedPermissionsDiv.empty();
+
+        // Agregar los permisos seleccionados a la lista
+        selectedPermissions.forEach(function (permission) {
+          selectedPermissionsDiv.append(
+            '<label class="badge badge-outline-primary">' +
+              permission +
+              '<button type="button" class="close" aria-label="Close" onclick="removePermission(\'' +
+              permission +
+              "')\">" +
+              '<span aria-hidden="true">&times;</span></button></label>&nbsp;'
+          );
+        });
+
+        // Ocultar o mostrar el botón de agregar permisos según la cantidad de permisos seleccionados
+        if (selectedPermissions.length > 0) {
+          addPermissionButton.show();
+        } else {
+          addPermissionButton.hide();
+        }
+      }
+
+      // Permisos disponibles
+      var availablePermissions = [
+        "Permiso 1",
+        "Permiso 2",
+        "Permiso 3",
+        "Permiso 4",
+        "Permiso 5",
+        "Permiso 6",
+        "Permiso 7",
+        "Permiso 8",
+        "Permiso 9",
+        "Permiso 10",
+        "Permiso 11",
+        "Permiso 12",
+      ];
+
+      // Función para filtrar los permisos
+      function filterPermissions() {
+        var searchTerm = $("#permissionSearch").val().toLowerCase();
+        var permissionsList = $("#permissionsList");
+
+        permissionsList.empty();
+
+        // Filtrar y mostrar los permisos disponibles
+        availablePermissions.forEach(function (permission) {
+          if (permission.toLowerCase().includes(searchTerm)) {
+            permissionsList.append(
+              '<div class="form-check">' +
+                '<input type="checkbox" class="form-check-input" id="' +
+                permission +
+                '" value="' +
+                permission +
+                '">' +
+                '<label class="form-check-label" for="' +
+                permission +
+                '">' +
+                permission +
+                "</label>" +
+                "</div>"
+            );
+          }
+        });
+      }
+
+      // Función para agregar permisos seleccionados al formulario principal
+      function addSelectedPermissions() {
+        // Obtener permisos seleccionados
+        var selectedPermissionsDiv = $("#selectedPermissions");
+        var selectedPermissionsCheckboxes = $(
+          "#addPermissionModal input:checked"
+        );
+
+        // Agregar permisos seleccionados a la lista
+        selectedPermissionsCheckboxes.each(function () {
+          addPermission($(this).val());
+        });
+
+        // Cerrar la modal de permisos
+        $("#addPermissionModal").modal("hide");
+      }
+      // Función para quitar un permiso de la lista
+      function removePermission(permission) {
+        selectedPermissions = selectedPermissions.filter(
+          (item) => item !== permission
+        );
+        updateSelectedPermissions(); // Añadir esta línea para actualizar la visualización
+      }
+
+      // ...
+
+      // Función para agregar permisos seleccionados al formulario principal
+      function addSelectedPermissions() {
+        // Obtener permisos seleccionados
+        var selectedPermissionsDiv = $("#selectedPermissions");
+        var selectedPermissionsCheckboxes = $(
+          "#addPermissionModal input:checked"
+        );
+
+        // Limpiar la lista actual
+        selectedPermissions = [];
+
+        // Agregar permisos seleccionados a la lista
+        selectedPermissionsCheckboxes.each(function () {
+          addPermission($(this).val());
+        });
+
+        // Cerrar la modal de permisos
+        $("#addPermissionModal").modal("hide");
+      }
+      // Función para abrir la modal de permisos
+      function open1AddPermissionModal() {
+        // Llamar a filterPermissions() para cargar los permisos al abrir la modal
+        filterPermissions();
+      }
+    </script>
+
+    <!-- Modal para editar usuario -->
+    <div
+      class="modal fade"
+      id="editUserModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="editUserModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editUserModalLabel">Editar Usuario</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="forms-sample">
+              <div class="form-group">
+                <label for="roleName">Nombre del Rol</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="roleName"
+                  placeholder="Ingrese el nombre del rol"
+                  value="Nombre Rol"
+                />
+              </div>
+              <div
+                class="form-group"
+                id="selectedPermissions"
+                bis_skin_checked="1"
+              >
+                <label class="badge badge-outline-primary"
+                  >Permiso 1<button
+                    type="button"
+                    class="close"
+                    aria-label="Close"
+                    onclick="removePermission('Permiso 1')"
+                  >
+                    <span aria-hidden="true">×</span>
+                  </button></label
+                >&nbsp;<label class="badge badge-outline-primary"
+                  >Permiso 2<button
+                    type="button"
+                    class="close"
+                    aria-label="Close"
+                    onclick="removePermission('Permiso 2')"
+                  >
+                    <span aria-hidden="true">×</span>
+                  </button></label
+                >&nbsp;<label class="badge badge-outline-primary"
+                  >Permiso 3<button
+                    type="button"
+                    class="close"
+                    aria-label="Close"
+                    onclick="removePermission('Permiso 3')"
+                  >
+                    <span aria-hidden="true">×</span>
+                  </button></label
+                >&nbsp;
+              </div>
+              <!-- Botones -->
+              <div class="form-row">
+                <div class="col-md-12">
+                  <button class="btn btn-primary mr-2">Editar</button>
+                  <button class="btn btn-light">Cancelar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- plugins:js -->
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="vendors/chart.js/Chart.min.js"></script>
+    <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="js/dataTables.select.min.js"></script>
+
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="js/off-canvas.js"></script>
+    <script src="js/hoverable-collapse.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="js/dashboard.js"></script>
+    <script src="js/Chart.roundedBarCharts.js"></script>
+    <!-- End custom js for this page-->
+    <script src="js/preloader.js"></script>
+  </body>
 </html>
+
+<style>
+  .top {
+    min-width: 9px;
+    display: flex;
+    min-height: 50px;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .swal2-popup {
+    min-height: 400px !important;
+  }
+
+  .swal2-select {
+    width: 100%;
+    margin: 10px 0;
+    /* Puedes ajustar según sea necesario */
+  }
+
+  .table.dataTable.no-footer {
+    border-bottom: none;
+  }
+</style>
