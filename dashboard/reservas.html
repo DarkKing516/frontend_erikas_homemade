@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="stylesheet" href="path-to/node_modules/mdi/css/materialdesignicons.min.css" />
   <!-- endinject -->
@@ -26,6 +27,8 @@
   <!-- endinject -->
   <!-- Preloader -->
   <link rel="stylesheet" href="./css/preloader.css">
+  <script src="./js/reservas.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body>
@@ -76,76 +79,7 @@
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="icon-menu"></span>
         </button>
-        <!-- <ul class="navbar-nav mr-lg-2">
-            <li class="nav-item nav-search d-none d-lg-block">
-              <div class="input-group">
-                <div class="input-group-prepend hover-cursor"
-                  id="navbar-search-icon">
-                  <span class="input-group-text" id="search">
-                    <i class="icon-search"></i>
-                  </span>
-                </div>
-                <input type="text" class="form-control" id="navbar-search-input"
-                  placeholder="Search now"
-                  aria-label="search" aria-describedby="search">
-              </div>
-            </li>
-          </ul> -->
         <ul class="navbar-nav navbar-nav-right">
-          <!-- <li class="nav-item dropdown">
-              <a class="nav-link count-indicator dropdown-toggle"
-                id="notificationDropdown" href="#"
-                data-toggle="dropdown">
-                <i class="icon-bell mx-0"></i>
-                <span class="count"></span>
-              </a>
-              <div
-                class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
-                aria-labelledby="notificationDropdown">
-                <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-success">
-                      <i class="ti-info-alt mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">Application
-                      Error</h6>
-                    <p class="font-weight-light small-text mb-0 text-muted">
-                      Just now
-                    </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-warning">
-                      <i class="ti-settings mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">Settings</h6>
-                    <p class="font-weight-light small-text mb-0 text-muted">
-                      Private message
-                    </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-info">
-                      <i class="ti-user mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">New user
-                      registration</h6>
-                    <p class="font-weight-light small-text mb-0 text-muted">
-                      2 days ago
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li> -->
           <li class="nav-item">
             <a class="nav-link" href="../views/signin.html">
               <i class="icon-head menu-icon"></i>
@@ -368,201 +302,252 @@
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="index.html">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Home</span>
+              <i class="mdi mdi-home"></i>
+              <span class="menu-title"> Home </span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="dashboard.html">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
+              <span class="menu-title"> Dashboard </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#config" aria-expanded="false" aria-controls="config">
+              <i class="mdi mdi-settings"></i>
+              <span class="menu-title"> Configuración </span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="config">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="roles.html"> Roles </a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="permisos.html"> Permisos </a></li> -->
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#users" aria-expanded="false" aria-controls="users">
+              <i class="icon-head menu-icon"></i>
+              <span class="menu-title"> Usuarios</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="users">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="usuarios_dash.html"> Usuarios </a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="clientes_dash.html"> Clientes </a></li> -->
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#products" aria-expanded="false" aria-controls="products">
+              <i class="mdi mdi-content-cut"></i>
+              <span class="menu-title"> Productos </span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="products">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="#"> Productos </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> T. Productos </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#services" aria-expanded="false" aria-controls="services">
+              <i class="mdi mdi-content-cut"></i>
+              <span class="menu-title"> Servicios </span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="services">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="#"> Servicios </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> T. Servicios </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pedidos.html">
+              <i class="mdi mdi-content-cut"></i>
+              <span class="menu-title"> Pedidos </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ventas.html">
+              <i class="mdi mdi-content-cut"></i>
+              <span class="menu-title"> Ventas </span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="reservas.html">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">reservas</span>
+              <i class="mdi mdi-content-cut"></i>
+              <span class="menu-title"> Reservas </span>
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="icon-head menu-icon"></i>
-              <span class="menu-title">usuarios</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="usuarios_dash.html"> Usuarios </a></li>
-                <li class="nav-item"> <a class="nav-link" href="clientes_dash.html"> Clientes </a></li>
-              </ul>
-            </div>
           </li>
         </ul>
       </nav>
       <!-- partial -->
-      <<div class="main-panel">
+      <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                <h4 class="card-title">RESERVAS</h4>
-                <button type="button" class="btn btn-inverse-primary btn-fw" data-toggle="modal"
-                  data-target="#crearReservaModal">Crear Reserva</button>
-                <p class="card-description">
-                </p>
-                <div class="table-responsive">
-                  <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th>ID</th>
-                        <th>Fecha Creación</th>
-                        <th>Fecha reserva</th>
-                        <th>Nombre</th>
-                        <th>Estado</th>
-                        <th>Funciones</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th>01</th>
-                        <th>20/11/2023</th>
-                        <th>27/11/2023</th>
-                        <th>Emmanuel Sanchez</th>
-                        <td><label class="badge badge-warning">Pendiente</label></td>
-                        <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
-                      </tr>
-                      <tr>
-                        <th>02</th>
-                        <th>15/12/2023</th>
-                        <th>20/12/2023</th>
-                        <th>Maria Rodriguez</th>
-                        <td><label class="badge badge-success">Aprobado</label></td>
-                        <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
-                      </tr>
-                      <tr>
-                        <th>03</th>
-                        <th>10/09/2023</th>
-                        <th>12/09/2023</th>
-                        <th>Juan Perez</th>
-                        <td><label class="badge badge-danger">Rechazado</label></td>
-                        <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
-                      </tr>
-                      <tr>
-                        <th>04</th>
-                        <th>18/07/2023</th>
-                        <th>20/07/2023</th>
-                        <th>Isabella Gomez</th>
-                        <td><label class="badge badge-warning">Pendiente</label></td>
-                        <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
-                      </tr>
-                      <tr>
-                        <th>05</th>
-                        <th>01/04/2023</th>
-                        <th>05/04/2023</th>
-                        <th>Luis Hernandez</th>
-                        <td><label class="badge badge-success">Aprobado</label></td>
-                        <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
-                      </tr>
-                    </tbody>
-                    
-                  </table>
+                  <h4 class="card-title">RESERVAS</h4>
+                  <button type="button" class="btn btn-inverse-primary btn-fw" data-toggle="modal"
+                    data-target="#crearReservaModal">Crear Reserva</button>
+                  <p class="card-description">
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Fecha Creación</th>
+                          <th>Fecha reserva</th>
+                          <th>Nombre</th>
+                          <th>Estado</th>
+                          <th>Funciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>01</th>
+                          <th>20/11/2023</th>
+                          <th>27/11/2023</th>
+                          <th>Emmanuel Sanchez</th>
+                          <td><label class="badge badge-warning">Pendiente</label></td>
+                          <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
+                        </tr>
+                        <tr>
+                          <th>02</th>
+                          <th>15/12/2023</th>
+                          <th>20/12/2023</th>
+                          <th>Maria Rodriguez</th>
+                          <td><label class="badge badge-success">Aprobado</label></td>
+                          <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
+                        </tr>
+                        <tr>
+                          <th>03</th>
+                          <th>10/09/2023</th>
+                          <th>12/09/2023</th>
+                          <th>Juan Perez</th>
+                          <td><label class="badge badge-danger">Rechazado</label></td>
+                          <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
+                        </tr>
+                        <tr>
+                          <th>04</th>
+                          <th>18/07/2023</th>
+                          <th>20/07/2023</th>
+                          <th>Isabella Gomez</th>
+                          <td><label class="badge badge-warning">Pendiente</label></td>
+                          <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
+                        </tr>
+                        <tr>
+                          <th>05</th>
+                          <th>01/04/2023</th>
+                          <th>05/04/2023</th>
+                          <th>Luis Hernandez</th>
+                          <td><label class="badge badge-success">Aprobado</label></td>
+                          <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
+                        </tr>
+                      </tbody>
+
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="modal" id="ModalEditar">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                  <h4 class="modal-title">Editar reserva</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal Body -->
-                <div class="modal-body">
-                  <!-- Aquí puedes mostrar los datos de la reserva -->
-                  <div class="form-group">
-                    <label for="fecha">Fecha:</label>
-                    <input type="text" class="form-control" id="fecha" disabled>
-                  </div>
-                  <div class="form-group">
-                    <label for="nombres">Nombres:</label>
-                    <input type="text" class="form-control" id="nombres" disabled>
-                  </div>
-                  <div class="form-group">
-                    <label for="estado">Estado:</label>
-                    <select class="form-control" id="estado">
-                      <option value="pendiente">Pendiente</option>
-                      <option value="aprobado">Aprobado</option>
-                      <option value="rechazado">Rechazado</option>
-                    </select>
+            <div class="modal" id="ModalEditar">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Editar reserva</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
 
-                  <div class="form-group">
-                    <label for="descripcion">Descripción</label>
-                    <textarea class="form-control" id="descripcion" rows="4" placeholder="Descripción"
-                      disabled></textarea>
-                  </div>
-                </div>
-
-
-                <!-- Modal Footer -->
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-primary">Guardar cambios</button>
-                  <button type="button" class="btn btn-danger">Deshabilitar</button>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <!-- Modal -->
-          <div class="modal fade" id="crearReservaModal" tabindex="-1" role="dialog"
-            aria-labelledby="crearReservaModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="crearReservaModalLabel">Crear Reserva</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <!-- Aquí puedes agregar los campos para crear la reserva -->
-                  <form>
+                  <!-- Modal Body -->
+                  <div class="modal-body">
+                    <!-- Aquí puedes mostrar los datos de la reserva -->
                     <div class="form-group">
-                      <label for="fechaReserva">Fecha</label>
-                      <input type="text" class="form-control" id="fechaReserva" placeholder="Fecha">
+                      <label for="fecha">Fecha:</label>
+                      <input type="text" class="form-control" id="fecha" disabled>
                     </div>
                     <div class="form-group">
-                      <label for="nombreCliente">Nombre del Cliente</label>
-                      <input type="text" class="form-control" id="nombreCliente" placeholder="Nombre">
+                      <label for="nombres">Nombres:</label>
+                      <input type="text" class="form-control" id="nombres" disabled>
                     </div>
+                    <div class="form-group">
+                      <label for="estado">Estado:</label>
+                      <select class="form-control" id="estado">
+                        <option value="pendiente">Pendiente</option>
+                        <option value="aprobado">Aprobado</option>
+                        <option value="rechazado">Rechazado</option>
+                      </select>
+                    </div>
+
                     <div class="form-group">
                       <label for="descripcion">Descripción</label>
-                      <textarea class="form-control" id="descripcion" rows="4"
-                        placeholder="Ingresa una descripción"></textarea>
+                      <textarea class="form-control" id="descripcion" rows="4" placeholder="Descripción"
+                        disabled></textarea>
                     </div>
-                    <!-- Otros campos para la reserva -->
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-primary">Guardar Reserva</button>
+                  </div>
+
+
+                  <!-- Modal Footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="guardarCambiosBtn">Guardar cambios</button>
+                    <button type="button" class="btn btn-danger">Deshabilitar</button>
+                  </div>
+
                 </div>
               </div>
             </div>
+            <!-- Modal -->
+            <div class="modal fade" id="crearReservaModal" tabindex="-1" role="dialog"
+              aria-labelledby="crearReservaModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="crearReservaModalLabel">Crear Reserva</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Aquí puedes agregar los campos para crear la reserva -->
+                    <form>
+                      <div class="form-group">
+                        <label for="fechaReserva">Fecha</label>
+                        <input type="text" class="form-control" id="fechaReserva" placeholder="Fecha">
+                      </div>
+                      <div class="form-group">
+                        <label for="nombreCliente">Nombre del Cliente</label>
+                        <input type="text" class="form-control" id="nombreCliente" placeholder="Nombre">
+                      </div>
+                      <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                        <textarea class="form-control" id="descripcion" rows="4"
+                          placeholder="Ingresa una descripción"></textarea>
+                      </div>
+                      <!-- Otros campos para la reserva -->
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="guardarReservaBtn">Guardar Reserva</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
           </div>
-
-
         </div>
+
       </div>
 
     </div>
-
-  </div>
 
   </div>
   <!-- plugins:js -->
@@ -589,6 +574,44 @@
   <!-- Preloader -->
   <script src="./js/preloader.js"></script>
   <!-- En tu HTML existente -->
+  <script>
+    document.getElementById('guardarReservaBtn').addEventListener('click', function () {
+      // Obtener valores de los campos
+      const fechaReserva = document.getElementById('fechaReserva').value.trim();
+      const nombreCliente = document.getElementById('nombreCliente').value.trim();
+      const descripcion = document.getElementById('descripcion').value.trim();
+  
+      // Validar campos
+      if (fechaReserva === '' || nombreCliente === '' || descripcion === '') {
+        Swal.fire('Error', 'Por favor, completa todos los campos.', 'error');
+      } else {
+        // Si todos los campos están completos, guardar la reserva
+        // Aquí puedes agregar el código para guardar la reserva en tu base de datos o hacer la acción correspondiente
+        Swal.fire('¡Reserva guardada!', '', 'success');
+      }
+    });
+  </script>
+  <script>
+    // Agregamos un listener al botón de "Guardar cambios"
+    document.getElementById('guardarCambiosBtn').addEventListener('click', function () {
+      // Mostrar SweetAlert para confirmar la acción
+      Swal.fire({
+        title: '¿Estás seguro de querer guardar los cambios?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, guardar cambios',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Si el usuario confirma, realizar la lógica para guardar los cambios aquí
+          Swal.fire('¡Los cambios han sido guardados!', '', 'success');
+        } else {
+          // Si el usuario cancela, mostrar un mensaje de cancelación
+          Swal.fire('Los cambios han sido cancelados', '', 'info');
+        }
+      });
+    });
+  </script>
 
   <!-- Al final del cuerpo del documento -->
   <script>
