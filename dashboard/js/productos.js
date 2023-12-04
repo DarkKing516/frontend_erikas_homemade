@@ -1,4 +1,3 @@
-var correoExistente = "1234@gmail.com";
 
 function validateForm() {
     // Obtener los valores de los campos

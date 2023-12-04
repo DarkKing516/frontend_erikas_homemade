@@ -86,7 +86,7 @@ $(document).ready(function () {
     $("#userTable_filter").detach().appendTo(".top");
 
     // Mover el botón "Agregar" al lado del cuadro de búsqueda
-    $(".top").append('<button type="button" class="btn btn-inverse-success btn-fw ml-2" data-toggle="modal" data-target="#myModal"  style="margin: 5px">Agregar Producto</button>');
+    $(".top").append('<button type="button" class="btn btn-inverse-success btn-fw ml-2" data-toggle="modal" data-target="#myModal"  style="margin: 5px">Agregar Ventas</button>');
 
     // También puedes personalizar el estilo del cuadro de búsqueda si es necesario
     $("#userTable_filter input").addClass("form-control form-control-sm");
