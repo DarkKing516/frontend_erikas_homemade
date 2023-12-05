@@ -4,11 +4,10 @@ var nombresExistentes = ["Accesorios", "Prestas de vestir", "Manualidades"];
 // Función para validar el formulario de roles
 function validateForm() {
   // Obtener los valores de los campos
-  var nombre = document.getElementById("roleName").value;
-  var rol = document.getElementById("rol").value;
+  var nombre = document.getElementById("t_productosName").value;
 
   // Validar que todos los campos estén llenos
-  if (nombre === "" || rol === "") {
+  if (nombre === "") {
     // Mostrar un mensaje de error con SweetAlert
     Swal.fire({
       icon: "error",
@@ -26,20 +25,12 @@ function validateForm() {
     Swal.fire({
       icon: "error",
       title: "Error",
-      text: "El nombre de rol ya está registrado. Por favor, utiliza otro.",
+      text: "El nombre del tipo de producto ya está registrado. Por favor, utiliza otro.",
     });
     return false; // Evitar que el formulario se envíe normalmente
   }
 
-  // Validar que el rol tenga al menos un permiso seleccionado
-  if (selectedPermissions.length === 0) {
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "Por favor, selecciona al menos un permiso para el rol.",
-    });
-    return false; // Evitar que el formulario se envíe normalmente
-  }
+
 
   // Aquí puedes agregar más validaciones según tus necesidades
 
@@ -50,7 +41,7 @@ function validateForm() {
     text: "Formulario enviado correctamente",
   }).then(() => {
     // Redirigir a la página de inicio después de hacer clic en el botón de confirmación
-    window.location.href = "roles.html";
+    window.location.href = "tipo_productos.html";
   });
 
   // Evitar que el formulario se envíe normalmente

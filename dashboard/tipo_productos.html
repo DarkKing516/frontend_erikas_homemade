@@ -742,28 +742,22 @@
               onsubmit="return validateForm()"
             >
               <div class="form-group">
-                <label for="roleName">Nombre del tipo del producto</label>
+                <label for="t_productosName">Nombre del tipo del producto</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="t_productoName"
-                  placeholder="Ingrese el nombre del tipo de rol"
-                  required
+                  id="t_productosName"
+                  placeholder="Ingrese el nombre del tipo de producto"
                 />
               </div>
 
               <!-- Botón para agregar permisos -->
             
 
-              <!-- Lista de permisos seleccionados -->
-              <div class="form-group" id="selectedPermissions">
-                <!-- Los permisos seleccionados se agregarán aquí dinámicamente -->
-              </div>
-
               <!-- Botones -->
               <div class="form-group">
                 <button type="submit" class="btn btn-inverse-primary btn-fw">
-                  Agregar Tipo de productos
+                  Agregar
                 </button>
                 <button
                   type="button"
@@ -779,210 +773,6 @@
       </div>
     </div>
 
-    <!-- Modal para agregar permisos -->
-    <div
-      class="modal fade"
-      id="addPermissionModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-      style="overflow-y: auto"
-    >
-      <div class="modal-dialog modal-dialog-scrollable" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Permisos</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <!-- Contenido del formulario con Bootstrap grid system -->
-            <div class="form-group">
-              <label>Buscar permisos:</label>
-              <input
-                type="text"
-                class="form-control"
-                id="permissionSearch"
-                oninput="filterPermissions()"
-                placeholder="Buscar permisos"
-              />
-            </div>
-            <div class="form-group">
-              <label>Selecciona los permisos:</label>
-              <div class="form-check" id="permissionsList">
-                <!-- Los permisos se agregarán aquí dinámicamente -->
-              </div>
-            </div>
-            <div class="form-group text-right">
-              <button
-                type="button"
-                class="btn btn-success"
-                onclick="addSelectedPermissions()"
-              >
-                Agregar Permiso/s
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      // Array para almacenar los permisos seleccionados
-      var selectedPermissions = [];
-
-      // Función para abrir la modal de permisos
-      function openAddPermissionModal() {
-        $("#addPermissionModal").modal("show");
-      }
-
-      // Función para agregar un permiso a la lista
-      function addPermission(permission) {
-        // Verificar duplicados
-        if (!selectedPermissions.includes(permission)) {
-          selectedPermissions.push(permission);
-          updateSelectedPermissions();
-        }
-      }
-
-      // Función para quitar un permiso de la lista
-      function removePermission(permission) {
-        selectedPermissions = selectedPermissions.filter(
-          (item) => item !== permission
-        );
-        updateSelectedPermissions();
-      }
-
-      // Función para actualizar la lista de permisos seleccionados en el formulario principal
-      function updateSelectedPermissions() {
-        var selectedPermissionsDiv = $("#selectedPermissions");
-        var addPermissionButton = $("#addPermissionButton");
-
-        selectedPermissionsDiv.empty();
-
-        // Agregar los permisos seleccionados a la lista
-        selectedPermissions.forEach(function (permission) {
-          selectedPermissionsDiv.append(
-            '<label class="badge badge-outline-primary">' +
-              permission +
-              '<button type="button" class="close" aria-label="Close" onclick="removePermission(\'' +
-              permission +
-              "')\">" +
-              '<span aria-hidden="true">&times;</span></button></label>&nbsp;'
-          );
-        });
-
-        // Ocultar o mostrar el botón de agregar permisos según la cantidad de permisos seleccionados
-        if (selectedPermissions.length > 0) {
-          addPermissionButton.show();
-        } else {
-          addPermissionButton.hide();
-        }
-      }
-
-      // Permisos disponibles
-      var availablePermissions = [
-        "Permiso 1",
-        "Permiso 2",
-        "Permiso 3",
-        "Permiso 4",
-        "Permiso 5",
-        "Permiso 6",
-        "Permiso 7",
-        "Permiso 8",
-        "Permiso 9",
-        "Permiso 10",
-        "Permiso 11",
-        "Permiso 12",
-      ];
-
-      // Función para filtrar los permisos
-      function filterPermissions() {
-        var searchTerm = $("#permissionSearch").val().toLowerCase();
-        var permissionsList = $("#permissionsList");
-
-        permissionsList.empty();
-
-        // Filtrar y mostrar los permisos disponibles
-        availablePermissions.forEach(function (permission) {
-          if (permission.toLowerCase().includes(searchTerm)) {
-            permissionsList.append(
-              '<div class="form-check">' +
-                '<input type="checkbox" class="form-check-input" id="' +
-                permission +
-                '" value="' +
-                permission +
-                '">' +
-                '<label class="form-check-label" for="' +
-                permission +
-                '">' +
-                permission +
-                "</label>" +
-                "</div>"
-            );
-          }
-        });
-      }
-
-      // Función para agregar permisos seleccionados al formulario principal
-      function addSelectedPermissions() {
-        // Obtener permisos seleccionados
-        var selectedPermissionsDiv = $("#selectedPermissions");
-        var selectedPermissionsCheckboxes = $(
-          "#addPermissionModal input:checked"
-        );
-
-        // Agregar permisos seleccionados a la lista
-        selectedPermissionsCheckboxes.each(function () {
-          addPermission($(this).val());
-        });
-
-        // Cerrar la modal de permisos
-        $("#addPermissionModal").modal("hide");
-      }
-      // Función para quitar un permiso de la lista
-      function removePermission(permission) {
-        selectedPermissions = selectedPermissions.filter(
-          (item) => item !== permission
-        );
-        updateSelectedPermissions(); // Añadir esta línea para actualizar la visualización
-      }
-
-      // ...
-
-      // Función para agregar permisos seleccionados al formulario principal
-      function addSelectedPermissions() {
-        // Obtener permisos seleccionados
-        var selectedPermissionsDiv = $("#selectedPermissions");
-        var selectedPermissionsCheckboxes = $(
-          "#addPermissionModal input:checked"
-        );
-
-        // Limpiar la lista actual
-        selectedPermissions = [];
-
-        // Agregar permisos seleccionados a la lista
-        selectedPermissionsCheckboxes.each(function () {
-          addPermission($(this).val());
-        });
-
-        // Cerrar la modal de permisos
-        $("#addPermissionModal").modal("hide");
-      }
-      // Función para abrir la modal de permisos
-      function open1AddPermissionModal() {
-        // Llamar a filterPermissions() para cargar los permisos al abrir la modal
-        filterPermissions();
-      }
-    </script>
-
     <!-- Modal para editar usuario -->
     <div
       class="modal fade"
@@ -995,7 +785,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="editUserModalLabel">Editar Usuario</h5>
+            <h5 class="modal-title" id="editUserModalLabel">Editar Tipo de producto</h5>
             <button
               type="button"
               class="close"
@@ -1008,53 +798,19 @@
           <div class="modal-body">
             <form class="forms-sample">
               <div class="form-group">
-                <label for="roleName">Nombre del Rol</label>
+                <label for="t_productosName">Nombre del tipo de producto</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="roleName"
-                  placeholder="Ingrese el nombre del rol"
-                  value="Nombre Rol"
+                  id="t_productosName"
+                  placeholder="Ingrese el nombre del tipo de producto"
+                  value="Nombre tipo producto"
                 />
-              </div>
-              <div
-                class="form-group"
-                id="selectedPermissions"
-                bis_skin_checked="1"
-              >
-                <label class="badge badge-outline-primary"
-                  >Permiso 1<button
-                    type="button"
-                    class="close"
-                    aria-label="Close"
-                    onclick="removePermission('Permiso 1')"
-                  >
-                    <span aria-hidden="true">×</span>
-                  </button></label
-                >&nbsp;<label class="badge badge-outline-primary"
-                  >Permiso 2<button
-                    type="button"
-                    class="close"
-                    aria-label="Close"
-                    onclick="removePermission('Permiso 2')"
-                  >
-                    <span aria-hidden="true">×</span>
-                  </button></label
-                >&nbsp;<label class="badge badge-outline-primary"
-                  >Permiso 3<button
-                    type="button"
-                    class="close"
-                    aria-label="Close"
-                    onclick="removePermission('Permiso 3')"
-                  >
-                    <span aria-hidden="true">×</span>
-                  </button></label
-                >&nbsp;
               </div>
               <!-- Botones -->
               <div class="form-row">
                 <div class="col-md-12">
-                  <button class="btn btn-primary mr-2">Editar</button>
+                  <button type="submit" class="btn btn-primary mr-2">Editar</button>
                   <button class="btn btn-light">Cancelar</button>
                 </div>
               </div>
