@@ -14,14 +14,23 @@
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
-  <!-- Plugin css for this page a--> 
+  <!-- Plugin css for this page -->
   <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="js/productos.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
+
   <!-- endinject -->
 
 </head>
@@ -41,20 +50,18 @@
           <span class="icon-menu"></span>
         </button>
         <!-- <ul class="navbar-nav mr-lg-2">
-            <li class="nav-item nav-search d-none d-lg-block">
-              <div class="input-group">
-                <div class="input-group-prepend hover-cursor"
-                  id="navbar-search-icon">
-                  <span class="input-group-text" id="search">
-                    <i class="icon-search"></i>
-                  </span>
-                </div>
-                <input type="text" class="form-control" id="navbar-search-input"
-                  placeholder="Search now"
-                  aria-label="search" aria-describedby="search">
+          <li class="nav-item nav-search d-none d-lg-block">
+            <div class="input-group">
+              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                <span class="input-group-text" id="search">
+                  <i class="icon-search"></i>
+                </span>
               </div>
-            </li>
-          </ul> -->
+              <input type="text" class="form-control" id="navbar-search-input" placeholder="Buscar" aria-label="search"
+                aria-describedby="search">
+            </div>
+          </li>
+        </ul> -->
         <ul class="navbar-nav navbar-nav-right">
           <!-- <li class="nav-item dropdown">
               <a class="nav-link count-indicator dropdown-toggle"
@@ -129,9 +136,9 @@
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item close-session">
                 <i class="ti-power-off text-primary"></i>
-                Logout
+                Cerrar sesion
               </a>
             </div>
           </li>
@@ -344,12 +351,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="reservas.html">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">reservas</span>
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#config" aria-expanded="false" aria-controls="config">
               <i class="mdi mdi-settings"></i>
               <span class="menu-title"> Configuración </span>
@@ -383,8 +384,8 @@
             </a>
             <div class="collapse" id="products">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#"> Productos </a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> T. Productos </a></li>
+                <li class="nav-item"> <a class="nav-link" href="productos.html"> Productos </a></li>
+                <li class="nav-item"> <a class="nav-link" href="tipo_productos.html"> T. Productos </a></li>
               </ul>
             </div>
           </li>
@@ -424,25 +425,100 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <div id="contenido-anterior">
 
+          <!-- Contenido principal -->
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Productos</h4>
+                  <div class="table-responsive">
+                    <table id="userTable" class="table table hover row-border" style="width:100%">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>Nombre</th>
+                          <th>Imagen</th>
+                          <th>Descripción</th>
+                          <th>Precio</th>
+                          <th>Estado</th>
+                          <th>Tipo Producto</th>
+                          <th>Acción</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="user-row">
+                            <td></td>
+                          <td>Collar de tela</td>
+                          <td><img src="./images/productos/hqdefault.jpg" alt="Imagen 1" style="width: 80px; height: 80px;"></td>
+                          <td>Hermosos collares de tela, disponible con varios colores y presentación</td>
+                          <td>20000</td>
+                          <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
+                          <td>Accesorios</td>
+                          <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                              <button type="button" class="btn btn-inverse-warning edit-user">
+                                <i class="mdi mdi-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-inverse-danger delete-user">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="user-row">
+                            <td></td>
+                          <td>Buso y sudadera TikTok</td>
+                          <td><img src="./images/productos/prenda vestir.jpg" alt="Imagen 1" style="width: 80px; height: 80px;"></td>
+                          <td>Sudadera y buso con estanpados de la aplicación TikTok</td>
+                          <td>60000</td>
+                          <td><label class="badge btn-inverse-danger hover-cursor change-status">Inactivo</label></td>
+                          <td> Prendas de vestir</td>
+                          <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                              <button type="button" class="btn btn-inverse-warning edit-user">
+                                <i class="mdi mdi-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-inverse-danger delete-user">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="user-row">
+                            <td></td>
+                          <td>Muñecos de nieve</td>
+                          <td><img src="./images/productos/manualidades.jpg" alt="Imagen 1" style="width: 80px; height: 80px;"></td>
+                          <td>Muñecos de nieve muy lindos de diferentes colores</td>
+                          <td>25000</td>
+                          <td><label class="badge btn-inverse-danger hover-cursor change-status">Inactivo</label></td>
+                          <td>Manuealidades</td>
+                          <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                              <button type="button" class="btn btn-inverse-warning edit-user">
+                                <i class="mdi mdi-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-inverse-danger delete-user">
+                                <i class="mdi mdi-delete"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          <!-- Fin del contenido principal -->
+
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright
-              © 2021. Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap
-                admin template</a> from BootstrapDash.
-              All rights reserved.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted
-              & made with <i class="ti-heart text-danger ml-1"></i></span>
-          </div>
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed
-              by <a href="https://www.themewagon.com/" target="_blank">Themewagon</a></span>
-          </div>
+          <!-- footer  -->
         </footer>
         <!-- partial -->
       </div>
@@ -451,6 +527,143 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
+
+
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Registro de productos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Contenido del formulario con Bootstrap grid system -->
+          <form class="forms-sample" onsubmit="return validateForm()">
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                    <label for="imagen">Imagen</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="imagen" placeholder="Seleccione una imagen" readonly>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="document.getElementById('fileInput').click();">Buscar</button>
+                        </div>
+                    </div>
+                    <input type="file" id="fileInput" style="display:none;" onchange="updateImageDisplay()">
+                </div>
+                <div class="form-group">
+                  <label for="usuario">Descripción</label>
+                  <input type="text" class="form-control" id="descripcion" placeholder="Descripcion">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="telefono">Precio</label>
+                  <input type="text" class="form-control" id="precio" placeholder="Precio">
+                </div>
+              </div>
+            </div>
+
+            <!-- Fila adicional para el rol -->
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="tipo_producto">Tipo Producto</label>
+                <select class="form-control" id="tipo_producto">
+                  <option value="Accesorios">Accesorios</option>
+                  <option value="Prendas_vestir">Prendas de vestir</option>
+                  <option value="manualidades">Manualidades</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="form-row">
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-primary mr-2">Registrar</button>
+                <button class="btn btn-light">Cancelar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Modal para editar usuario -->
+  <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editUserModalLabel">Editar Producto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="forms-sample">
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" class="form-control" id="nombre" value="Datos de Usuario">
+                </div>
+                <div class="form-group">
+                    <label for="imagen">Imagen</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="imagen" placeholder="Seleccione una imagen" readonly>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="document.getElementById('fileInput').click();">Buscar</button>
+                        </div>
+                    </div>
+                    <input type="file" id="fileInput" style="display:none;" onchange="updateImageDisplay()">
+                </div>
+                <div class="form-group">
+                  <label for="usuario">Descripción</label>
+                  <input type="text" class="form-control" id="descripcion" value="Datos de Usuario">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="telefono">Precio</label>
+                  <input type="text" class="form-control" id="precio" value="Datos de Usuario">
+                </div>
+                <div class="form-group">
+                  <label for="tipo_producto">Tipos de productos</label>
+                  <select class="form-control" id="tipo_producto">
+                    <option value="Accesorios">Accesorios</option>
+                    <option value="Prendas_vestir">Prendas de vestir</option>
+                    <option value="Manualidades">Manualidades</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="form-row">
+              <div class="col-md-12">
+                <button class="btn btn-primary mr-2">Editar</button>
+                <button class="btn btn-light">Cancelar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>
@@ -473,16 +686,32 @@
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      // Cargar el contenido de la página anterior de forma asíncrona
-      $("#contenido-anterior").load("../views/index.html");
-
-      // Puedes agregar más lógica de inicialización o manipulación del DOM aquí
-    });
-  </script>
   <script src="js/preloader.js"></script>
 </body>
 
 </html>
+
+<style>
+  .top {
+    min-width: 9px;
+    display: flex;
+    min-height: 50px;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .swal2-popup {
+    min-height: 400px !important;
+  }
+
+  .swal2-select {
+    width: 100%;
+    margin: 10px 0;
+    /* Puedes ajustar según sea necesario */
+
+  }
+
+  .table.dataTable.no-footer {
+    border-bottom: none
+  }
+</style>
