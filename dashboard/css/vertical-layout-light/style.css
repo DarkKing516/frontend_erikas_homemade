@@ -28524,6 +28524,12 @@ div.tagsinput span.tag a {
   margin-right: 1rem;
   color: #6C7383;
 }
+.sidebar .nav .nav-item .nav-link i {
+  font-size: 1rem;
+  line-height: 1;
+  margin-right: 1rem;
+  color: #6C7383;
+}
 
 .rtl .sidebar .nav .nav-item .nav-link i.menu-icon {
   margin-left: 2rem;
@@ -30593,3 +30599,9 @@ div.tagsinput span.tag a {
 }
 
 /*# sourceMappingURL=../maps/vertical-layout-light/style.css.map */
+.icon-sidebar{
+  font-size: 1rem;
+  line-height: 1;
+  margin-right: 1rem;
+  color: #6C7383;
+}
