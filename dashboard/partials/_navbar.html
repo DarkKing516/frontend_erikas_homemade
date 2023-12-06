@@ -16,7 +16,6 @@
 <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="js/roles.js"></script>
 
 <link
   rel="stylesheet"
@@ -195,25 +194,3 @@
     </button>
   </div>
 </nav>
-
-<script>
-  $(".close-session").on("click", function () {
-    // Mostrar SweetAlert de confirmación
-    Swal.fire({
-      title: "Cerrar Sesión",
-      text: "¿Estás seguro de cerrar sesión?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#d33",
-      cancelButtonColor: "#3085d6",
-      confirmButtonText: "Sí, cerrar sesión",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        // Lógica de cierre de sesión aquí (si es necesario)
-
-        // Redirigir al index
-        window.location.href = "index.html";
-      }
-    });
-  });
-</script>
