@@ -3,28 +3,28 @@
 
 <head>
   <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>Erika's HomeMade</title>
   <link rel="shortcut icon" href="https://cdn.pixabay.com/photo/2023/04/17/07/26/ai-generated-7931805_960_720.jpg" />
   <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/513/513865.png" />
   <link rel="shortcut icon" href="./images/logo.png" />
   <!-- plugins:css -->
-  <link rel="stylesheet" href="vendors/feather/feather.css">
-  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="vendors/feather/feather.css" />
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css" />
+  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css" />
   <!-- endinject -->
   <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
+  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css" />
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css" />
+  <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css" />
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="css/vertical-layout-light/style.css" />
+  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="js/pedidos.js"></script>
+
 
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css" />
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
@@ -32,7 +32,8 @@
   <script src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
 
   <!-- endinject -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="js/pedidos.js"></script>
+
 </head>
 
 <body>
@@ -274,13 +275,15 @@
                             <label class="badge btn-inverse-success hover-cursor change-status">Activo</label>
                           </td>
                           <td>
-                            <label class="badge btn-inverse-info hover-cursor mostrarDetallespedido">ver
-                              detalles</label>
+                            <div>
+                              <button type="button" class="btn btn-inverse-info see-details">
+                                <i class="mdi mdi-eye"></i>
+                              </button>
+                            </div>
                           </td>
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning" data-toggle="modal"
-                                data-target="#editPedidosmodal">
+                              <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal" data-target="#editUserModal">
                                 <i class="mdi mdi-pencil"></i>
                               </button>
                               <button type="button" class="btn btn-inverse-danger delete-user">
@@ -299,7 +302,9 @@
                             <label class="badge btn-inverse-success hover-cursor change-status">Activo</label>
                           </td>
                           <td>
-                            <label class="badge btn-inverse-info hover-cursor ver-detalles">ver detalles</label>
+                            <button type="button" class="btn btn-inverse-info see-details">
+                              <i class="mdi mdi-eye"></i>
+                            </button>
                           </td>
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
@@ -323,7 +328,9 @@
                             <label class="badge btn-inverse-success hover-cursor change-status">Activo</label>
                           </td>
                           <td>
-                            <label class="badge btn-inverse-info hover-cursor ver-detalles">ver detalles</label>
+                            <button type="button" class="btn btn-inverse-info see-details">
+                              <i class="mdi mdi-eye"></i>
+                            </button>
                           </td>
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
@@ -347,8 +354,9 @@
                             <label class="badge btn-inverse-success change-status">Activo</label>
                           </td>
                           <td>
-                            <button type="button" class="btn btn-inverse-info" data-toggle="modal"
-                              data-target="#detalles">Ver detalles
+                            <button type="button" class="btn btn-inverse-info see-details">
+                              <i class="mdi mdi-eye"></i>
+                            </button>
                           </td>
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
@@ -432,12 +440,12 @@
 
 
   <!-- Modal para editar usuario -->
-  <div class="modal fade" id="editPedidosmodal" tabindex="-1" role="dialog" aria-labelledby="editPedidosmodalLabel"
+  <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="editPedidosmodalLabel">Editar Servicio</h5>
+          <h5 class="modal-title" id="editUserModalLabel">Editar Servicio</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -445,9 +453,9 @@
         <div class="modal-body">
           <form class="forms-sample">
             <div class="form-group">
-              <label for="img">Img</label>
-              <input type="img" class="form-control" id="img" value="Datos del servicio">
-            </div>
+                <label for="img">Img</label>
+                <input type="img" class="form-control" id="img" accept="image/*">
+              </div>
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-group">
@@ -491,6 +499,8 @@
       </div>
     </div>
   </div>
+
+
   <div class="modal fade" id="detalles" tabindex="-1" role="dialog" aria-labelledby="editPedidosmodalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -505,7 +515,7 @@
           <form class="forms-sample">
             <div class="form-group">
               <label for="img">Img</label>
-              <input type="img" class="form-control" id="img" value="Datos del servicio">
+              <input type="img" class="form-control" id="img">
             </div>
             <div class="form-row">
               <div class="col-md-6">

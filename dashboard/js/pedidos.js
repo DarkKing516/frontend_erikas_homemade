@@ -190,6 +190,44 @@ $(document).ready(function () {
     });
 
 
+    // Agrega evento clic para el botón de ver detalles
+    $('.see-details').on('click', function () {
+        // Datos del pedido
+        const pedidoDetalles = {
+            idPedido: 1,
+            cliente: "Emmanuel Sánchez Herrera",
+            fechaCreacionPedido: "15 feb 2023",
+            fechaEntregaPedido: "21 Sep 2018",
+            descripcionPedido: "Confección de 4 blusas estilo ombliguera",
+            totalDetalle: 25000,
+            totalPedido: 50000,
+            evidenciaPago: "/dashboard/images/dashboard/recibo1.png",
+            estadoPedido: "Entregado",
+        };
+    
+        // Crear un string con los detalles del pedido formateados
+        const detallesTexto = `
+            <b>ID del Pedido:</b> ${pedidoDetalles.idPedido}<br>
+            <b>Cliente:</b> ${pedidoDetalles.cliente}<br>
+            <b>Fecha de Creación del Pedido:</b> ${pedidoDetalles.fechaCreacionPedido}<br>
+            <b>Fecha de Entrega del Pedido:</b> ${pedidoDetalles.fechaEntregaPedido}<br>
+            <b>Descripción del Pedido:</b> ${pedidoDetalles.descripcionPedido}<br>
+            <b>Total del Detalle:</b> ${pedidoDetalles.totalDetalle}<br>
+            <b>Total del Pedido:</b> ${pedidoDetalles.totalPedido}<br>
+            <b>Estado del Pedido:</b> ${pedidoDetalles.estadoPedido}
+        `;
+    
+        // Mostrar SweetAlert con los detalles del pedido
+        Swal.fire({
+            title: 'Detalles del Pedido',
+            html: detallesTexto,
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Cerrar'
+        });
+    });
 
 
 
@@ -221,69 +259,68 @@ $(document).ready(function () {
     });
 
 });
+// const pedidos = [
+//     {
+    //   idPedido: 1,
+    //   cliente: "Emmanuel Sánchez Herrera",
+    //   fechaCreacionPedido: "15 feb 2023	",
+    //   fechaEntregaPedido: "21 Sep 2018",
+    //   descripcionPedido: "Confección de 4 blusas estilo ombliguera",
+    //   totalDetalle: 25000,
+    //   totalPedido: 50000,
+    //   evidenciaPago: "/dashboard/images/dashboard/recibo1.png",
+    //   estadoPedido: "Entregado",
+//     },
+//     {
+//       idPedido: 2,
+//       cliente: "Nelson David Valencia Alzate	",
+//       fechaCreacionPedido: "24 sep 2020",
+//       fechaEntregaPedido: "13 Jun 2018",
+//       descripcionPedido: "Entubar bota de pantalon",
+//       totalDetalle: 17500,
+//       totalPedido: 35000,
+//       evidenciaPago: "/dashboard/images/dashboard/recibo1.png",
+//       estadoPedido: "completado",
+//     },
+//     {
+//       idPedido: 3,
+//       cliente: "Jhon Michael Contreras Rojas",
+//       fechaCreacionPedido: "10 ene 2022",
+//       fechaEntregaPedido: "	28 Sep 2018",
+//       descripcionPedido: "2 muñecas de trapo navideñas",
+//       totalDetalle: 36500,
+//       totalPedido: 73000,
+//       evidenciaPago: "/dashboard/images/dashboard/recibo2.png",
+//       estadoPedido: "En proceso",
+//     },
+//     {
+//       idPedido: 4,
+//       cliente: "Danilo Vergara López	",
+//       fechaCreacionPedido: "4 dec 2020",
+//       fechaEntregaPedido: "30 Jun 2018",
+//       descripcionPedido: "Entubar bota de pantalon",
+//       totalDetalle: 60000,
+//       totalPedido: 120000,
+//       evidenciaPago: "/dashboard/images/dashboard/recibo2.png",
+//       estadoPedido: "Por hacer",
+//     },
+//   ];
 
-const pedidos = [
-    {
-      idPedido: 1,
-      cliente: "Emmanuel Sánchez Herrera",
-      fechaCreacionPedido: "15 feb 2023	",
-      fechaEntregaPedido: "21 Sep 2018",
-      descripcionPedido: "Confección de 4 blusas estilo ombliguera",
-      totalDetalle: 25000,
-      totalPedido: 50000,
-      evidenciaPago: "/dashboard/images/dashboard/recibo1.png",
-      estadoPedido: "Entregado",
-    },
-    {
-      idPedido: 2,
-      cliente: "Nelson David Valencia Alzate	",
-      fechaCreacionPedido: "24 sep 2020",
-      fechaEntregaPedido: "13 Jun 2018",
-      descripcionPedido: "Entubar bota de pantalon",
-      totalDetalle: 17500,
-      totalPedido: 35000,
-      evidenciaPago: "/dashboard/images/dashboard/recibo1.png",
-      estadoPedido: "completado",
-    },
-    {
-      idPedido: 3,
-      cliente: "Jhon Michael Contreras Rojas",
-      fechaCreacionPedido: "10 ene 2022",
-      fechaEntregaPedido: "	28 Sep 2018",
-      descripcionPedido: "2 muñecas de trapo navideñas",
-      totalDetalle: 36500,
-      totalPedido: 73000,
-      evidenciaPago: "/dashboard/images/dashboard/recibo2.png",
-      estadoPedido: "En proceso",
-    },
-    {
-      idPedido: 4,
-      cliente: "Danilo Vergara López	",
-      fechaCreacionPedido: "4 dec 2020",
-      fechaEntregaPedido: "30 Jun 2018",
-      descripcionPedido: "Entubar bota de pantalon",
-      totalDetalle: 60000,
-      totalPedido: 120000,
-      evidenciaPago: "/dashboard/images/dashboard/recibo2.png",
-      estadoPedido: "Por hacer",
-    },
-  ];
-
-  function mostrarDetallesPedido(idPedido) {
-    const pedidoSeleccionado = pedidos.find(
-      (pedido) => pedido.idPedido === idPedido
-    );
-    const detallesModalBody = document.getElementById("detallesModalBody");
-    detallesModalBody.innerHTML = `
-        <p><strong>ID del Pedido:</strong> ${pedidoSeleccionado.idPedido}</p>
-        <p><strong>Cliente:</strong> ${pedidoSeleccionado.cliente}</p>
-        <p><strong>Fecha de Creación:</strong> ${pedidoSeleccionado.fechaCreacionPedido}</p>
-        <p><strong>Fecha de Entrega:</strong> ${pedidoSeleccionado.fechaEntregaPedido}</p>
-        <p><strong>Descripción del Pedido:</strong> ${pedidoSeleccionado.descripcionPedido}</p>
-        <p><strong>Total Detalle:</strong> ${pedidoSeleccionado.totalDetalle}</p>
-        <p><strong>Total Pedido:</strong> ${pedidoSeleccionado.totalPedido}</p>
-        <p><strong>Evidencia de Pago:</strong> <img src="${pedidoSeleccionado.evidenciaPago}" alt="Evidencia de Pago"></p>
-        <p><strong>Estado del Pedido:</strong> ${pedidoSeleccionado.estadoPedido}</p>
-    `;
-    $("#detallesModal").modal("show"); // Muestra el modal
-  }
+//   function mostrarDetallesPedido(idPedido) {
+//     const pedidoSeleccionado = pedidos.find(
+//       (pedido) => pedido.idPedido === idPedido
+//     );
+//     const detallesModalBody = document.getElementById("detallesModalBody");
+//     detallesModalBody.innerHTML = `
+//         <p><strong>ID del Pedido:</strong> ${pedidoSeleccionado.idPedido}</p>
+//         <p><strong>Cliente:</strong> ${pedidoSeleccionado.cliente}</p>
+//         <p><strong>Fecha de Creación:</strong> ${pedidoSeleccionado.fechaCreacionPedido}</p>
+//         <p><strong>Fecha de Entrega:</strong> ${pedidoSeleccionado.fechaEntregaPedido}</p>
+//         <p><strong>Descripción del Pedido:</strong> ${pedidoSeleccionado.descripcionPedido}</p>
+//         <p><strong>Total Detalle:</strong> ${pedidoSeleccionado.totalDetalle}</p>
+//         <p><strong>Total Pedido:</strong> ${pedidoSeleccionado.totalPedido}</p>
+//         <p><strong>Evidencia de Pago:</strong> <img src="${pedidoSeleccionado.evidenciaPago}" alt="Evidencia de Pago"></p>
+//         <p><strong>Estado del Pedido:</strong> ${pedidoSeleccionado.estadoPedido}</p>
+//     `;
+//     $("#detallesModal").modal("show"); // Muestra el modal
+//   }

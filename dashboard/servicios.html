@@ -438,9 +438,13 @@
                       </select>
                     </div>
                   </div>
-                <div class="form-group">
-                  <label for="estado_catalogo">Estado Catálogo</label>
-                  <input type="boolean" class="form-control" id="estado_catalogo" placeholder="Estado Catálogo">
+                  <div class="form-group">
+                    <label for="rol">Estado catálogo</label>
+                    <select class="form-control" id="rol">
+                      <option value="activo">activo</option>
+                      <option value="inactivo">inactivo</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
@@ -475,9 +479,9 @@
         </div>
         <div class="modal-body">
           <form class="forms-sample">
-            <div class="form-control">
+            <div class="form-group">
                 <label for="img">Img</label>
-                <input type="img" class="form-control" id="img" value="Datos del servicio">
+                <input type="file" class="form-control" id="img" accept="image/*" value="Datos del servicio" >
               </div>
             <div class="form-row">
               <div class="col-md-6">
