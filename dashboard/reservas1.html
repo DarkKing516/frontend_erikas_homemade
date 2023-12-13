@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Erika's HomeMade</title>
+  <link rel="shortcut icon" href="https://cdn.pixabay.com/photo/2023/04/17/07/26/ai-generated-7931805_960_720.jpg" />
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/513/513865.png" />
+  <link rel="shortcut icon" href="./images/logo.png" />
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="vendors/feather/feather.css" />
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css" />
+  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css" />
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css" />
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css" />
+  <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css" />
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/vertical-layout-light/style.css" />
+  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
+</head>
+
+<body>
+  <div class="preloader">
+    <div class="wrapper-triangle">
+      <div class="pen">
+        <div class="line-triangle">
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+        </div>
+        <div class="line-triangle">
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+        </div>
+        <div class="line-triangle">
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+          <div class="triangle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <div id="partials-navbar"></div>
+    <script>
+      $(document).ready(function () {
+        // Cargar el contenido de la página anterior de forma asíncrona
+        $("#partials-navbar").load("./partials/_navbar.html");
+
+        // Puedes agregar más lógica de inicialización o manipulación del DOM aquí
+      });
+    </script>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_settings-panel.html -->
+      <div class="theme-setting-wrapper">
+        <div id="settings-trigger"><i class="ti-settings"></i></div>
+        <div id="theme-settings" class="settings-panel">
+          <i class="settings-close ti-close"></i>
+          <p class="settings-heading">SIDEBAR SKINS</p>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+            <div class="img-ss rounded-circle bg-light border mr-3"></div>Light
+          </div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme">
+            <div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark
+          </div>
+          <p class="settings-heading mt-2">HEADER SKINS</p>
+          <div class="color-tiles mx-0 px-4">
+            <div class="tiles success"></div>
+            <div class="tiles warning"></div>
+            <div class="tiles danger"></div>
+            <div class="tiles info"></div>
+            <div class="tiles dark"></div>
+            <div class="tiles default"></div>
+          </div>
+        </div>
+      </div>
+      <div id="right-sidebar" class="settings-panel">
+        <i class="settings-close ti-close"></i>
+        <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab"
+              aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab"
+              aria-controls="chats-section">CHATS</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="setting-content">
+          <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel"
+            aria-labelledby="todo-section">
+            <div class="add-items d-flex px-3 mb-0">
+              <form class="form w-100">
+                <div class="form-group d-flex">
+                  <input type="text" class="form-control todo-list-input" placeholder="Add To-do">
+                  <button type="submit" class="add btn btn-primary todo-list-add-btn" id="add-task">Add</button>
+                </div>
+              </form>
+            </div>
+            <div class="list-wrapper px-3">
+              <ul class="d-flex flex-column-reverse todo-list">
+                <li>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox">
+                      Team review meeting at 3.00 PM
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox">
+                      Prepare for presentation
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox">
+                      Resolve all the low priority tickets due today
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li class="completed">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox" checked>
+                      Schedule meeting for next week
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li class="completed">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox" checked>
+                      Project review
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+              </ul>
+            </div>
+            <h4 class="px-3 text-muted mt-5 font-weight-light mb-0">Events</h4>
+            <div class="events pt-4 px-3">
+              <div class="wrapper d-flex mb-2">
+                <i class="ti-control-record text-primary mr-2"></i>
+                <span>Feb 11 2018</span>
+              </div>
+              <p class="mb-0 font-weight-thin text-gray">Creating component page build a js</p>
+              <p class="text-gray mb-0">The total number of sessions</p>
+            </div>
+            <div class="events pt-4 px-3">
+              <div class="wrapper d-flex mb-2">
+                <i class="ti-control-record text-primary mr-2"></i>
+                <span>Feb 7 2018</span>
+              </div>
+              <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
+              <p class="text-gray mb-0 ">Call Sarah Graves</p>
+            </div>
+          </div>
+          <!-- To do section tab ends -->
+          <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
+            <div class="d-flex align-items-center justify-content-between border-bottom">
+              <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
+              <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">See
+                All</small>
+            </div>
+            <ul class="chat-list">
+              <li class="list active">
+                <div class="profile"><img src="images/faces/face1.jpg" alt="image"><span class="online"></span></div>
+                <div class="info">
+                  <p>Thomas Douglas</p>
+                  <p>Available</p>
+                </div>
+                <small class="text-muted my-auto">19 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
+                <div class="info">
+                  <div class="wrapper d-flex">
+                    <p>Catherine</p>
+                  </div>
+                  <p>Away</p>
+                </div>
+                <div class="badge badge-success badge-pill my-auto mx-2">4</div>
+                <small class="text-muted my-auto">23 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="images/faces/face3.jpg" alt="image"><span class="online"></span></div>
+                <div class="info">
+                  <p>Daniel Russell</p>
+                  <p>Available</p>
+                </div>
+                <small class="text-muted my-auto">14 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
+                <div class="info">
+                  <p>James Richardson</p>
+                  <p>Away</p>
+                </div>
+                <small class="text-muted my-auto">2 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="images/faces/face5.jpg" alt="image"><span class="online"></span></div>
+                <div class="info">
+                  <p>Madeline Kennedy</p>
+                  <p>Available</p>
+                </div>
+                <small class="text-muted my-auto">5 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="images/faces/face6.jpg" alt="image"><span class="online"></span></div>
+                <div class="info">
+                  <p>Sarah Graves</p>
+                  <p>Available</p>
+                </div>
+                <small class="text-muted my-auto">47 min</small>
+              </li>
+            </ul>
+          </div>
+          <!-- chat tab ends -->
+        </div>
+      </div>
+      <!-- partial -->
+      <!-- partial:partials/_sidebar.html -->
+      <div id="partials-sidebar"></div>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          // Cargar el contenido de la página anterior de forma asíncrona
+          $("#partials-sidebar").load("./partials/_sidebar.html");
+
+          // Puedes agregar más lógica de inicialización o manipulación del DOM aquí
+        });
+      </script>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">RESERVAS</h4>
+                  <button type="button" class="btn btn-inverse-primary btn-fw" data-toggle="modal"
+                    data-target="#crearReservaModal">Crear Reserva</button>
+                  <p class="card-description">
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Fecha Creación</th>
+                          <th>Fecha reserva</th>
+                          <th>Nombre</th>
+                          <th>Estado</th>
+                          <th>Funciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>01</th>
+                          <th>20/11/2023</th>
+                          <th>27/11/2023</th>
+                          <th>Emmanuel Sanchez</th>
+                          <td><label class="badge badge-warning">Pendiente</label></td>
+                          <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
+                        </tr>
+                        <tr>
+                          <th>02</th>
+                          <th>15/12/2023</th>
+                          <th>20/12/2023</th>
+                          <th>Maria Rodriguez</th>
+                          <td><label class="badge badge-success">Aprobado</label></td>
+                          <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
+                        </tr>
+                        <tr>
+                          <th>03</th>
+                          <th>10/09/2023</th>
+                          <th>12/09/2023</th>
+                          <th>Juan Perez</th>
+                          <td><label class="badge badge-danger">Rechazado</label></td>
+                          <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
+                        </tr>
+                        <tr>
+                          <th>04</th>
+                          <th>18/07/2023</th>
+                          <th>20/07/2023</th>
+                          <th>Isabella Gomez</th>
+                          <td><label class="badge badge-warning">Pendiente</label></td>
+                          <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
+                        </tr>
+                        <tr>
+                          <th>05</th>
+                          <th>01/04/2023</th>
+                          <th>05/04/2023</th>
+                          <th>Luis Hernandez</th>
+                          <td><label class="badge badge-success">Aprobado</label></td>
+                          <th><button type="button" class="btn btn-dark btn-icon-text mdi mdi-eye">Ver más</button></th>
+                        </tr>
+                      </tbody>
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal" id="ModalEditar">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Editar reserva</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal Body -->
+                  <div class="modal-body">
+                    <!-- Aquí puedes mostrar los datos de la reserva -->
+                    <div class="form-group">
+                      <label for="fecha">Fecha:</label>
+                      <input type="text" class="form-control" id="fecha" disabled>
+                    </div>
+                    <div class="form-group">
+                      <label for="nombres">Nombres:</label>
+                      <input type="text" class="form-control" id="nombres" disabled>
+                    </div>
+                    <div class="form-group">
+                      <label for="estado">Estado:</label>
+                      <select class="form-control" id="estado">
+                        <option value="pendiente">Pendiente</option>
+                        <option value="aprobado">Aprobado</option>
+                        <option value="rechazado">Rechazado</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="descripcion">Descripción</label>
+                      <textarea class="form-control" id="descripcion" rows="4" placeholder="Descripción"
+                        disabled></textarea>
+                    </div>
+                  </div>
+
+
+                  <!-- Modal Footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="guardarCambiosBtn">Guardar cambios</button>
+                    <button type="button" class="btn btn-danger">Deshabilitar</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="crearReservaModal" tabindex="-1" role="dialog"
+              aria-labelledby="crearReservaModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="crearReservaModalLabel">Crear Reserva</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Aquí puedes agregar los campos para crear la reserva -->
+                    <form>
+                      <div class="form-group">
+                        <label for="fechaReserva">Fecha</label>
+                        <input type="text" class="form-control" id="fechaReserva" placeholder="Fecha">
+                      </div>
+                      <div class="form-group">
+                        <label for="nombreCliente">Nombre del Cliente</label>
+                        <input type="text" class="form-control" id="nombreCliente" placeholder="Nombre">
+                      </div>
+                      <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                        <textarea class="form-control" id="descripcion" rows="4"
+                          placeholder="Ingresa una descripción"></textarea>
+                      </div>
+                      <!-- Otros campos para la reserva -->
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="guardarReservaBtn">Guardar Reserva</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!-- plugins:js -->
+  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="vendors/chart.js/Chart.min.js"></script>
+  <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+  <script src="js/dataTables.select.min.js"></script>
+
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="js/off-canvas.js"></script>
+  <script src="js/hoverable-collapse.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="js/dashboard.js"></script>
+  <script src="js/Chart.roundedBarCharts.js"></script>
+  <!-- End custom js for this page-->
+  <!-- Preloader -->
+  <script src="./js/preloader.js"></script>
+  <!-- En tu HTML existente -->
+  <script>
+    document.getElementById('guardarReservaBtn').addEventListener('click', function () {
+      // Obtener valores de los campos
+      const fechaReserva = document.getElementById('fechaReserva').value.trim();
+      const nombreCliente = document.getElementById('nombreCliente').value.trim();
+      const descripcion = document.getElementById('descripcion').value.trim();
+  
+      // Validar campos
+      if (fechaReserva === '' || nombreCliente === '' || descripcion === '') {
+        Swal.fire('Error', 'Por favor, completa todos los campos.', 'error');
+      } else {
+        // Si todos los campos están completos, guardar la reserva
+        // Aquí puedes agregar el código para guardar la reserva en tu base de datos o hacer la acción correspondiente
+        Swal.fire('¡Reserva guardada!', '', 'success');
+      }
+    });
+  </script>
+  <script>
+    // Agregamos un listener al botón de "Guardar cambios"
+    document.getElementById('guardarCambiosBtn').addEventListener('click', function () {
+      // Mostrar SweetAlert para confirmar la acción
+      Swal.fire({
+        title: '¿Estás seguro de querer guardar los cambios?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, guardar cambios',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Si el usuario confirma, realizar la lógica para guardar los cambios aquí
+          Swal.fire('¡Los cambios han sido guardados!', '', 'success');
+        } else {
+          // Si el usuario cancela, mostrar un mensaje de cancelación
+          Swal.fire('Los cambios han sido cancelados', '', 'info');
+        }
+      });
+    });
+  </script>
+
+  <!-- Al final del cuerpo del documento -->
+  <script>
+    // Función para mostrar los datos en la modal al hacer clic en el botón "Editar"
+    $(document).ready(function () {
+      $("button.btn-dark").click(function () {
+        // Obtener los datos de la fila de la tabla
+        var fecha = $(this).closest("tr").find("td:eq(0)").text();
+        var nombres = $(this).closest("tr").find("td:eq(1)").text();
+        var estado = $(this).closest("tr").find("td:eq(2)").text();
+
+        // Mostrar los datos en la modal
+        $("#fecha").val(fecha);
+        $("#nombres").val(nombres);
+        $("#estado").val(estado);
+
+        // Mostrar la modal
+        $("#ModalEditar").modal("show");
+      });
+    });
+  </script>
+
+</body>
+
+</html>
