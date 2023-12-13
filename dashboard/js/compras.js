@@ -1,14 +1,14 @@
 
 function validateForm() {
     // Obtener los valores de los campos
-    var nombre = document.getElementById('nombre').value;
-    var imagen = document.getElementById('imagen').value;
-    var descripcion = document.getElementById('descripcion').value;
-    var precio = document.getElementById('precio').value;
+    var v_venta = document.getElementById('v_venta').value;
+    var tipo_servicio = document.getElementById('tipo_servicio').value;
     var tipo_producto = document.getElementById('tipo_producto').value;
+    var fecha_venta = document.getElementById('fecha_venta').value;
+    var subtotal = document.getElementById('subtotal').value;
 
     // Validar que todos los campos estén llenos
-    if (nombre === '' || imagen === '' || descripcion === '' || precio === '' || tipo_producto === '') {
+    if (v_venta === '' || tipo_servicio === '' || tipo_producto === '' || fecha_venta === '' || subtotal === '') {
         // Mostrar un mensaje de error con SweetAlert
         Swal.fire({
             icon: 'error',
@@ -29,7 +29,7 @@ function validateForm() {
             // ...
 
             // Redirigir a la página de inicio después de hacer clic en el botón de confirmación
-            window.location.href = "productos.html";
+            window.location.href = "compras.html";
         });
     }
 
@@ -86,8 +86,6 @@ $(document).ready(function () {
     $("#userTable_filter").detach().appendTo(".top");
 
     // Mover el botón "Agregar" al lado del cuadro de búsqueda
-    $(".top").append('<button type="button" class="btn btn-inverse-success btn-fw ml-2" data-toggle="modal" data-target="#myModal"  style="margin: 5px">Agregar Producto</button>');
-
     // También puedes personalizar el estilo del cuadro de búsqueda si es necesario
     $("#userTable_filter input").addClass("form-control form-control-sm");
 
@@ -191,64 +189,20 @@ $(document).ready(function () {
     });
 
 
-
-
-
-
-
-
-
-
-
-
-    // Agrega evento clic para el botón de eliminación
-    $('.delete-user').on('click', function () {
-        // Mostrar SweetAlert de confirmación
-        Swal.fire({
-            title: 'Eliminar Producto',
-            text: '¿Estás seguro de eliminar este Producto?',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#3085d6',
-            confirmButtonText: 'Sí, eliminar Producto'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Simular la eliminación (aquí deberías hacer la llamada a tu lógica de eliminación)
-                // ...
-
-                // Mostrar SweetAlert de éxito después de la eliminación
-                Swal.fire('Usuario eliminado', 'El usuario se ha eliminado con éxito.', 'success');
-            }
+    $(document).ready(function () {
+        // ... Tu código existente ...
+    
+        // Agregar evento clic al botón de cancelar en la modal
+        $('#cancelarModalBtn').on('click', function () {
+            // Cerrar la modal
+            $('#myModal').modal('hide');
         });
+    
+        // ... Más código si es necesario ...
+    
     });
+    
 
-
-
-
-
-
-    // Agregar evento clic para el botón edit-user
-    $('.edit-user').on('click', function () {
-        // Obtener la información del usuario (puedes ajustar esto según tu lógica)
-        var userInfo = {
-            nombre: "Datos de Usuario",
-            imagen: "Datos de Usuario",
-            descripcion: "Datos de Usuario",
-            precio: "Datos de Usuario",
-            tipo_producto: ""
-        };
-
-        // Llenar la modal con la información del usuario
-        $('#editUserModal #nombre').val(userInfo.nombre);
-        $('#editUserModal #imagen').val(userInfo.imagen);
-        $('#editUserModal #descripcion').val(userInfo.descripcion);
-        $('#editUserModal #precio').val(userInfo.precio);
-        $('#editUserModal #tipo_producto').val(userInfo.tipo_producto);
-
-        // Mostrar la modal
-        $('#editUserModal').modal('show');
-    });
 
 });
 

@@ -374,12 +374,10 @@
                                 role="group"
                                 aria-label="Basic example"
                               >
-                                <button
-                                  type="button"
-                                  class="btn btn-inverse-warning edit-role"
-                                >
-                                  <i class="mdi mdi-pencil"></i>
-                                </button>
+                              <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
+                                data-target="#editUserModal">
+                                <i class="mdi mdi-pencil"></i>
+                              </button>
                                 <button
                                   type="button"
                                   class="btn btn-inverse-danger delete-role"
@@ -403,12 +401,10 @@
                                 role="group"
                                 aria-label="Basic example"
                               >
-                                <button
-                                  type="button"
-                                  class="btn btn-inverse-warning edit-role"
-                                >
-                                  <i class="mdi mdi-pencil"></i>
-                                </button>
+                              <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
+                                data-target="#editUserModal">
+                                <i class="mdi mdi-pencil"></i>
+                              </button>
                                 <button
                                   type="button"
                                   class="btn btn-inverse-danger delete-role"
@@ -432,12 +428,10 @@
                                 role="group"
                                 aria-label="Basic example"
                               >
-                                <button
-                                  type="button"
-                                  class="btn btn-inverse-warning edit-role"
-                                >
-                                  <i class="mdi mdi-pencil"></i>
-                                </button>
+                              <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
+                                data-target="#editUserModal">
+                                <i class="mdi mdi-pencil"></i>
+                              </button>
                                 <button
                                   type="button"
                                   class="btn btn-inverse-danger delete-role"
@@ -554,7 +548,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form class="forms-sample">
+            <form class="forms-sample" onsubmit="return validateForm()">
               <div class="form-group">
                 <label for="t_productosName">Nombre del tipo de producto</label>
                 <input
@@ -569,7 +563,7 @@
               <div class="form-row">
                 <div class="col-md-12">
                   <button type="submit" class="btn btn-primary mr-2">Editar</button>
-                  <button class="btn btn-light">Cancelar</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelarModalBtn">Cancelar</button>
                 </div>
               </div>
             </form>

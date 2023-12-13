@@ -24,138 +24,21 @@
   <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="js/productos.js"></script>
+  <script src="js/compras.js"></script>
 
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css" />
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
 
   <!-- endinject -->
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
-  
   <div class="container-scroller">
-       <!-- partial:partials/_navbar.html -->
-       <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/logo-lg.png" class="mr-2"
-              alt="logo" /></a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo.png" alt="logo"
-              style="border-radius: 50px" /></a>
-        </div>
-        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="icon-menu"></span>
-          </button>
-          <!-- <ul class="navbar-nav mr-lg-2">
-          <li class="nav-item nav-search d-none d-lg-block">
-            <div class="input-group">
-              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                <span class="input-group-text" id="search">
-                  <i class="icon-search"></i>
-                </span>
-              </div>
-              <input type="text" class="form-control" id="navbar-search-input" placeholder="Buscar" aria-label="search"
-                aria-describedby="search">
-            </div>
-          </li>
-        </ul> -->
-          <ul class="navbar-nav navbar-nav-right">
-            <!-- <li class="nav-item dropdown">
-              <a class="nav-link count-indicator dropdown-toggle"
-                id="notificationDropdown" href="#"
-                data-toggle="dropdown">
-                <i class="icon-bell mx-0"></i>
-                <span class="count"></span>
-              </a>
-              <div
-                class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
-                aria-labelledby="notificationDropdown">
-                <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-success">
-                      <i class="ti-info-alt mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">Application
-                      Error</h6>
-                    <p class="font-weight-light small-text mb-0 text-muted">
-                      Just now
-                    </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-warning">
-                      <i class="ti-settings mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">Settings</h6>
-                    <p class="font-weight-light small-text mb-0 text-muted">
-                      Private message
-                    </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-info">
-                      <i class="ti-user mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">New user
-                      registration</h6>
-                    <p class="font-weight-light small-text mb-0 text-muted">
-                      2 days ago
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li> -->
-            <li class="nav-item">
-              <a class="nav-link" href="../views/signin.html">
-                <i class="icon-head menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./pages/samples/login.html">
-                <i class="icon-head menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item nav-profile dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                <img src="https://content.wepik.com/statics/20247441/preview-page0.jpg" alt="profile" />
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                <a class="dropdown-item">
-                  <i class="ti-settings text-primary"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item close-session">
-                  <i class="ti-power-off text-primary"></i>
-                  Cerrar sesion
-                </a>
-              </div>
-            </li>
-            <!-- <li class="nav-item nav-settings d-none d-lg-flex">
-            <a class="nav-link" href="#">
-              <i class="icon-ellipsis"></i>
-            </a>
-          </li> -->
-          </ul>
-          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
-            data-toggle="offcanvas">
-            <span class="icon-menu"></span>
-          </button>
-        </div>
-      </nav>
-
     <!-- partial:partials/_navbar.html -->
     <div id="partials-navbar"></div>
     <script>
@@ -367,81 +250,116 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Productos</h4>
+                  <h4 class="card-title">Compras</h4>
+
                   <div class="table-responsive">
+                                    <!-- Agrega este botón dentro de tu contenido principal en ventas.html -->
                     <table id="userTable" class="table table hover row-border" style="width:100%">
                       <thead>
                         <tr>
                           <th></th>
-                          <th>Nombre</th>
-                          <th>Imagen</th>
+                          <th>Fecha de compra</th>
+                          <th>Imagen de la compra</th>
                           <th>Descripción</th>
-                          <th>Precio</th>
-                          <th>Estado</th>
-                          <th>Tipo Producto</th>
-                          <th>Acción</th>
+                          <th>Subtotal</th>
+                          <th>Total</th>
+                          <th>Detalles</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr class="user-row">
                             <td></td>
-                          <td>Collar de tela</td>
+                          <td>1/12/2023</td>
                           <td><img src="./images/productos/hqdefault.jpg" alt="Imagen 1" style="width: 80px; height: 80px;"></td>
-                          <td>Hermosos collares de tela, disponible con varios colores y presentación</td>
-                          <td>20000</td>
-                          <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
-                          <td>Accesorios</td>
-                          <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
-                                data-target="#editUserModal">
-                                <i class="mdi mdi-pencil"></i>
-                              </button>
-                              <button type="button" class="btn btn-inverse-danger delete-user">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="user-row">
-                            <td></td>
-                          <td>Buso y sudadera TikTok</td>
-                          <td><img src="./images/productos/prenda vestir.jpg" alt="Imagen 1" style="width: 80px; height: 80px;"></td>
-                          <td>Sudadera y buso con estanpados de la aplicación TikTok</td>
-                          <td>60000</td>
-                          <td><label class="badge btn-inverse-danger hover-cursor change-status">Inactivo</label></td>
-                          <td> Prendas de vestir</td>
-                          <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
-                                data-target="#editUserModal">
-                                <i class="mdi mdi-pencil"></i>
-                              </button>
-                              <button type="button" class="btn btn-inverse-danger delete-user">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="user-row">
-                            <td></td>
-                          <td>Muñecos de nieve</td>
-                          <td><img src="./images/productos/manualidades.jpg" alt="Imagen 1" style="width: 80px; height: 80px;"></td>
-                          <td>Muñecos de nieve muy lindos de diferentes colores</td>
+                          <td>Collar que de tela muy bonito </td>
+                          <td>50000</td>
                           <td>25000</td>
-                          <td><label class="badge btn-inverse-danger hover-cursor change-status">Inactivo</label></td>
-                          <td>Manuealidades</td>
-                          <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
-                                data-target="#editUserModal">
-                                <i class="mdi mdi-pencil"></i>
-                              </button>
-                              <button type="button" class="btn btn-inverse-danger delete-user">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
+                            <td>
+                            <button
+                              type="button"
+                              class="btn btn-primary"
+                              onclick="mostrarDetallesPedido(1)"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-eye"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"
+                                ></path>
+                                <path
+                                  d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"
+                                ></path>
+                              </svg>
+                            </button>
                           </td>
+                        </tr>
+                        <tr class="user-row">
+                            <td></td>
+                          <td>30/11/2023</td>
+                          <td><img src="./images/productos/prenda vestir.jpg" alt="Imagen 1" style="width: 80px; height: 80px;"></td>
+                          <td>Outfit de pijama con estampado de TikTok</td>
+                          <td>30000</td>
+                          <td>30000</td>
+                            <td>
+                                <button
+                                  type="button"
+                                  class="btn btn-primary"
+                                  onclick="mostrarDetallesPedido(1)"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="bi bi-eye"
+                                    viewBox="0 0 16 16"
+                                  >
+                                    <path
+                                      d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"
+                                    ></path>
+                                    <path
+                                      d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"
+                                    ></path>
+                                  </svg>
+                                </button>
+                              </td>
+
+                        </tr>
+                        <tr class="user-row">
+                            <td></td>
+                          <td>20/12/2023</td>
+                          <td><img src="./images/productos/manualidades.jpg" alt="Imagen 1" style="width: 80px; height: 80px;"></td>
+                          <td>Muñecos de nieve muy lindos de varios colores</td>
+                          <td>60000</td>
+                          <td>60000</td>
+                                <td>
+                                    <button
+                                      type="button"
+                                      class="btn btn-primary"
+                                      onclick="mostrarDetallesPedido(1)"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-eye"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"
+                                        ></path>
+                                        <path
+                                          d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"
+                                        ></path>
+                                      </svg>
+                                    </button>
+                                  </td>
                         </tr>
 
                       </tbody>
@@ -468,13 +386,68 @@
   <!-- container-scroller -->
 
 
+  <!-- Modal para mostrar el informe de ventas -->
+<div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="reportModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <!-- Contenido del informe de ventas (datos aleatorios) -->
+      <p>Período: noviembre 2023 - diciembre 2023</p>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Servicios</th>
+            <th>Productos</th>
+            <th>Subtotal</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01-12-2023</td>
+            <td>Creación de muñeco de nieve</td>
+            <td>Collar de tela</td>
+            <td>25000</td>
+            <td>$50000</td>
+          </tr>
+          <tr>
+            <td>28-11-2023</td>
+            <td>Arreglo de pantalón</td>
+            <td>Mariposa de tela</td>
+            <td>50000</td>
+            <td>$100000</td>
+          </tr>
+          <tr>
+            <td>28-11-2023</td>
+            <td>Ninguno</td>
+            <td>Vestido sencillo</td>
+            <td>30000</td>
+            <td>$30000</td>
+          </tr>
+          <!-- Agrega más filas según sea necesario con datos aleatorios -->
+        </tbody>
+      </table>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" id="generatePDFBtn">Generar</button>
+      </div>
+  </div>
+</div>
+</div>
 
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Registro de productos</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -485,48 +458,43 @@
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="nombre">Nombre</label>
-                  <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                  <label for="nombre">Valor de la venta</label>
+                  <input type="text" class="form-control" id="v_venta" placeholder="valor de venta">
                 </div>
-                <div class="form-group">
-                    <label for="imagen">Imagen</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="imagen" placeholder="Seleccione una imagen" readonly>
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" onclick="document.getElementById('fileInput').click();">Buscar</button>
-                        </div>
+                    <div class="form-group">
+                        <label for="tipo_servicio">Tipo Servicio</label>
+                        <select class="form-control" id="tipo_servicio">
+                          <option value="manualidades">Manualidades</option>
+                          <option value="arreglos_prendas">Arreglo de prendas</option>
+                          <option value="confecciones">Confecciones</option>
+                        </select>
                     </div>
-                    <input type="file" id="fileInput" style="display:none;" onchange="updateImageDisplay()">
+                    <div class="form-group">
+                        <label for="tipo_producto">Tipo Producto</label>
+                        <select class="form-control" id="tipo_producto">
+                          <option value="Accesorios">Accesorios</option>
+                          <option value="Prendas_vestir">Prendas de vestir</option>
+                          <option value="manualidades">Manualidades</option>
+                        </select>
+                      </div>
                 </div>
                 <div class="form-group">
-                  <label for="usuario">Descripción</label>
-                  <input type="text" class="form-control" id="descripcion" placeholder="Descripcion">
+                  <label for="fecha_venta">Fecha de venta</label>
+                  <input type="date" class="form-control" id="fecha_venta" placeholder="Fecha Venta">
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="form-group">
                 <div class="form-group">
-                  <label for="telefono">Precio</label>
-                  <input type="text" class="form-control" id="precio" placeholder="Precio">
+                  <label for="subtotal">Subtotal</label>
+                  <input type="text" class="form-control" id="subtotal" placeholder="subtotal">
                 </div>
-              </div>
-            </div>
-
-            <!-- Fila adicional para el rol -->
-            <div class="form-row">
-              <div class="form-group col-md-12">
-                <label for="tipo_producto">Tipo Producto</label>
-                <select class="form-control" id="tipo_producto">
-                  <option value="Accesorios">Accesorios</option>
-                  <option value="Prendas_vestir">Prendas de vestir</option>
-                  <option value="manualidades">Manualidades</option>
-                </select>
               </div>
             </div>
 
             <!-- Botones -->
             <div class="form-row">
               <div class="col-md-12">
-                <button type="submit" class="btn btn-primary mr-2">Registrar</button>
+                <button type="submit" class="btn btn-primary mr-2" style="right: 100px">Registrar</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelarModalBtn">Cancelar</button>
               </div>
             </div>
@@ -535,74 +503,6 @@
       </div>
     </div>
   </div>
-
-
-
-
-  <!-- Modal para editar usuario -->
-  <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editUserModalLabel">Editar Producto</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form class="forms-sample" onsubmit="return validateForm()">
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="nombre">Nombre</label>
-                  <input type="text" class="form-control" id="nombre" value="Datos de Usuario">
-                </div>
-                <div class="form-group">
-                    <label for="imagen">Imagen</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="imagen" placeholder="Seleccione una imagen" readonly>
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" onclick="document.getElementById('fileInput').click();">Buscar</button>
-                        </div>
-                    </div>
-                    <input type="file" id="fileInput" style="display:none;" onchange="updateImageDisplay()">
-                </div>
-                <div class="form-group">
-                  <label for="usuario">Descripción</label>
-                  <input type="text" class="form-control" id="descripcion" value="Datos de Usuario">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="telefono">Precio</label>
-                  <input type="text" class="form-control" id="precio" value="Datos de Usuario">
-                </div>
-                <div class="form-group">
-                  <label for="tipo_producto">Tipos de productos</label>
-                  <select class="form-control" id="tipo_producto">
-                    <option value="Accesorios">Accesorios</option>
-                    <option value="Prendas_vestir">Prendas de vestir</option>
-                    <option value="Manualidades">Manualidades</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <!-- Botones -->
-            <div class="form-row">
-              <div class="col-md-12">
-                <button class="btn btn-primary mr-2">Editar</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelarModalBtn">Cancelar</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
 
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>
@@ -626,6 +526,33 @@
   <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
   <script src="js/preloader.js"></script>
+
+  <script>
+    // Función para generar y descargar el PDF
+    function generatePDF() {
+      const doc = new jsPDF();
+      
+      // Agregar el título al PDF
+      doc.text("Informe de Ventas", 20, 10);
+  
+      // Obtener la tabla de la modal
+      const table = document.querySelector("#reportModal table");
+  
+      // Agregar la tabla al PDF utilizando jsPDF AutoTable
+      doc.autoTable({
+        html: table,
+        startY: 20,
+        margin: { top: 15 },
+      });
+  
+      // Descargar el PDF
+      doc.save("Informe_Ventas.pdf");
+    }
+  
+    // Asociar la función al botón "Generar"
+    document.getElementById("generatePDFBtn").addEventListener("click", generatePDF);
+  </script>
+
 </body>
 
 </html>
@@ -652,5 +579,14 @@
 
   .table.dataTable.no-footer {
     border-bottom: none
+  }
+
+  .modal-content {
+    overflow: auto;
+  }
+
+  .modal-body {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
   }
 </style>

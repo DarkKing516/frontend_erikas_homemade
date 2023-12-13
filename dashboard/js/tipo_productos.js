@@ -5,17 +5,35 @@ var nombresExistentes = ["Accesorios", "Prestas de vestir", "Manualidades"];
 function validateForm() {
   // Obtener los valores de los campos
   var nombre = document.getElementById("t_productosName").value;
+  
 
   // Validar que todos los campos estén llenos
-  if (nombre === "") {
+  if (nombre === '') {
     // Mostrar un mensaje de error con SweetAlert
     Swal.fire({
       icon: "error",
       title: "Error",
       text: "Por favor, completa todos los campos",
     });
-    return false; // Evitar que el formulario se envíe normalmente
-  }
+  }else {
+    // Aquí puedes agregar más validaciones según tus necesidades
+
+    // Mostrar un mensaje de éxito con SweetAlert
+    Swal.fire({
+        icon: 'success',
+        title: 'Éxito',
+        text: 'Formulario enviado correctamente',
+    }).then(() => {
+        // Puedes agregar más acciones después de hacer clic en el botón de confirmación
+        // Por ejemplo, enviar el formulario a través de AJAX o redirigir a otra página
+        // ...
+
+        // Redirigir a la página de inicio después de hacer clic en el botón de confirmación
+        window.location.href = "tipo_productos.html";
+    });
+}
+return false;
+
 
   // Convertir el nombre del rol a minúsculas para evitar duplicados sin importar la capitalización
   var nombreMinusc = nombre.toLowerCase();
