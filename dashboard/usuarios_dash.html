@@ -1,509 +1,373 @@
-<!DOCTYPE html>
-<html lang="es">
+  <!DOCTYPE html>
+  <html lang="es">
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>Erika's HomeMade</title>
-  <link rel="shortcut icon" href="https://cdn.pixabay.com/photo/2023/04/17/07/26/ai-generated-7931805_960_720.jpg" />
-  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/513/513865.png" />
-  <link rel="shortcut icon" href="./images/logo.png" />
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="vendors/feather/feather.css" />
-  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css" />
-  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css" />
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css" />
-  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css" />
-  <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css" />
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="css/vertical-layout-light/style.css" />
-  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Erika's HomeMade</title>
+    <link rel="shortcut icon" href="https://cdn.pixabay.com/photo/2023/04/17/07/26/ai-generated-7931805_960_720.jpg" />
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/513/513865.png" />
+    <link rel="shortcut icon" href="./images/logo.png" />
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="vendors/feather/feather.css" />
+    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css" />
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css" />
+    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css" />
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/vertical-layout-light/style.css" />
+    <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css" />
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
 
-  <!-- endinject -->
-  <script src="js/usuarios.js"></script>
+    <!-- endinject -->
+    <script src="js/usuarios.js"></script>
 
-</head>
+  </head>
 
-<body>
-  <div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/logo-lg.png" class="mr-2"
-            alt="logo" /></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo.png" alt="logo"
-            style="border-radius: 50px" /></a>
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="icon-menu"></span>
-        </button>
-        <!-- <ul class="navbar-nav mr-lg-2">
-        <li class="nav-item nav-search d-none d-lg-block">
-          <div class="input-group">
-            <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-              <span class="input-group-text" id="search">
-                <i class="icon-search"></i>
-              </span>
-            </div>
-            <input type="text" class="form-control" id="navbar-search-input" placeholder="Buscar" aria-label="search"
-              aria-describedby="search">
-          </div>
-        </li>
-      </ul> -->
-        <ul class="navbar-nav navbar-nav-right">
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link count-indicator dropdown-toggle"
-              id="notificationDropdown" href="#"
-              data-toggle="dropdown">
-              <i class="icon-bell mx-0"></i>
-              <span class="count"></span>
-            </a>
-            <div
-              class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
-              aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-success">
-                    <i class="ti-info-alt mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">Application
-                    Error</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Just now
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-warning">
-                    <i class="ti-settings mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">Settings</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Private message
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-info">
-                    <i class="ti-user mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">New user
-                    registration</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    2 days ago
-                  </p>
-                </div>
-              </a>
-            </div>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link" href="../views/signin.html">
-              <i class="icon-head menu-icon"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./pages/samples/login.html">
-              <i class="icon-head menu-icon"></i>
-            </a>
-          </li>
-          <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="https://content.wepik.com/statics/20247441/preview-page0.jpg" alt="profile" />
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <!-- <a class="dropdown-item">
-                <i class="ti-settings text-primary"></i>
-                Settings
-              </a> -->
-              <a class="dropdown-item close-session">
-                <i class="ti-power-off text-primary"></i>
-                Cerrar sesion
-              </a>
-            </div>
-          </li>
-          <!-- <li class="nav-item nav-settings d-none d-lg-flex">
-          <a class="nav-link" href="#">
-            <i class="icon-ellipsis"></i>
-          </a>
-        </li> -->
-        </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
-          data-toggle="offcanvas">
-          <span class="icon-menu"></span>
-        </button>
-      </div>
-    </nav>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_settings-panel.html -->
-
-      <!-- partial -->
-      <!-- partial:partials/_sidebar.html -->
-      <div id="partials-sidebar"></div>
-      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-      <script>
-        $(document).ready(function () {
-          // Cargar el contenido de la página anterior de forma asíncrona
-          $("#partials-sidebar").load("./partials/_sidebar.html");
-
-          // Puedes agregar más lógica de inicialización o manipulación del DOM aquí
-        });
-      </script>
-      <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-
-          <!-- Contenido principal -->
-          <div class="row">
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Usuarios</h4>
-                  <div class="table-responsive">
-                    <table id="userTable" class="table table hover row-border" style="width:100%">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th>Nombre</th>
-                          <th>Usuario</th>
-                          <th>Rol</th>
-                          <th>Documento</th>
-                          <th>Teléfono</th>
-                          <th>Correo</th>
-                          <th>Estado</th>
-                          <th>Acción</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="table-info user-row">
-                          <td class=" py-1">
-                            <img src="https://content.wepik.com/statics/20247441/preview-page0.jpg" alt="image" />
-                          </td>
-                          <td>1234</td>
-                          <td>1234_user</td>
-                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Administrador</label>
-                          </td>
-                          <td>5123123</td>
-                          <td>122-426-7292</td>
-                          <td>1234@gmail.com</td>
-                          <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
-                          <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
-                                data-target="#editUserModal">
-                                <i class="mdi mdi-pencil"></i>
-                              </button>
-                              <button type="button" class="btn btn-inverse-danger delete-user">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="user-row">
-                          <td class="py-1">
-                            <img
-                              src="https://img.freepik.com/vector-premium/perfil-avatar-ilustraciones-vectoriales-sitio-web-redes-sociales-icono-perfil-usuario_495897-224.jpg"
-                              alt="image" />
-                          </td>
-                          <td>Jacob</td>
-                          <td>jacob_user</td>
-                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Administrador</label>
-                          </td>
-                          <td>53275531</td>
-                          <td>123-456-7890</td>
-                          <td>jacob@email.com</td>
-                          <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
-                          <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
-                                data-target="#editUserModal">
-                                <i class="mdi mdi-pencil"></i>
-                              </button>
-                              <button type="button" class="btn btn-inverse-danger delete-user">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="user-row">
-                          <td class="py-1">
-                            <img
-                              src="https://img.freepik.com/vector-premium/marco-gradiente-historias-sociales-avatar_41737-3.jpg"
-                              alt="image" />
-                          </td>
-                          <td>Messsy</td>
-                          <td>messsy_user</td>
-                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Administrador</label>
-                          </td>
-                          <td>53275532</td>
-                          <td>987-654-3210</td>
-                          <td>messsy@email.com</td>
-                          <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
-                          <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
-                                data-target="#editUserModal">
-                                <i class="mdi mdi-pencil"></i>
-                              </button>
-                              <button type="button" class="btn btn-inverse-danger delete-user">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="user-row">
-                          <td class="py-1">
-                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="image" />
-                          </td>
-                          <td>Alice</td>
-                          <td>alice_user</td>
-                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Trabajador</label></td>
-                          <td>12345678</td>
-                          <td>111-222-3333</td>
-                          <td>alice@email.com</td>
-                          <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
-                          <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
-                                data-target="#editUserModal">
-                                <i class="mdi mdi-pencil"></i>
-                              </button>
-                              <button type="button" class="btn btn-inverse-danger delete-user">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="user-row">
-                          <td class="py-1">
-                            <img src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" alt="image" />
-                          </td>
-                          <td>Bob</td>
-                          <td>bob_user</td>
-                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Trabajador</label></td>
-                          <td>87654321</td>
-                          <td>444-555-6666</td>
-                          <td>bob@email.com</td>
-                          <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
-                          <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
-                                data-target="#editUserModal">
-                                <i class="mdi mdi-pencil"></i>
-                              </button>
-                              <button type="button" class="btn btn-inverse-danger delete-user">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="user-row">
-                          <td class="py-1">
-                            <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359554_960_720.png"
-                              alt="image" />
-                          </td>
-                          <td>Charlie</td>
-                          <td>charlie_user</td>
-                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Trabajador</label></td>
-                          <td>13579246</td>
-                          <td>777-888-9999</td>
-                          <td>charlie@email.com</td>
-                          <td><label class="badge btn-inverse-danger hover-cursor change-status">Inactivo</label></td>
-                          <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
-                                data-target="#editUserModal">
-                                <i class="mdi mdi-pencil"></i>
-                              </button>
-                              <button type="button" class="btn btn-inverse-danger delete-user">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="user-row">
-                          <td class="py-1">
-                            <img
-                              src="https://images.vexels.com/media/users/3/137047/isolated/preview/5831a17a290077c646a48c4db78a81bb-icono-de-perfil-de-usuario-azul.png"
-                              alt="image" />
-                          </td>
-                          <td>Diana</td>
-                          <td>diana_user</td>
-                          <td><label class="badge badge-outline-primary hover-cursor change-rol">Trabajador</label></td>
-                          <td>98765432</td>
-                          <td>101-202-3030</td>
-                          <td>diana@email.com</td>
-                          <td><label class="badge btn-inverse-danger hover-cursor change-status">Inactivo</label></td>
-                          <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
-                                data-target="#editUserModal">
-                                <i class="mdi mdi-pencil"></i>
-                              </button>
-                              <button type="button" class="btn btn-inverse-danger delete-user">
-                                <i class="mdi mdi-delete"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin del contenido principal -->
-
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/logo-lg.png" class="mr-2"
+              alt="logo" /></a>
+          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo.png" alt="logo"
+              style="border-radius: 50px" /></a>
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <!-- footer  -->
-        </footer>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="icon-menu"></span>
+          </button>
+
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item">
+              <a class="nav-link" href="../views/signin.html">
+                <i class="icon-head menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/samples/login.html">
+                <i class="icon-head menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item nav-profile dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                <img src="https://content.wepik.com/statics/20247441/preview-page0.jpg" alt="profile" />
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+
+                <a class="dropdown-item close-session">
+                  <i class="ti-power-off text-primary"></i>
+                  Cerrar sesion
+                </a>
+              </div>
+            </li>
+
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+            data-toggle="offcanvas">
+            <span class="icon-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_settings-panel.html -->
+
         <!-- partial -->
+        <!-- partial:partials/_sidebar.html -->
+        <div id="partials-sidebar"></div>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script>
+          $(document).ready(function () {
+            // Cargar el contenido de la página anterior de forma asíncrona
+            $("#partials-sidebar").load("./partials/_sidebar.html");
+
+            // Puedes agregar más lógica de inicialización o manipulación del DOM aquí
+          });
+        </script>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+
+            <!-- Contenido principal -->
+            <div class="row">
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Usuarios</h4>
+                    <div class="table-responsive">
+                      <table id="userTable" class="table table hover row-border" style="width:100%">
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th>Nombre</th>
+                            <th>Usuario</th>
+                            <th>Rol</th>
+                            <th>Documento</th>
+                            <th>Teléfono</th>
+                            <th>Correo</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="table-info user-row">
+                            <td class=" py-1">
+                              <img src="https://content.wepik.com/statics/20247441/preview-page0.jpg" alt="image" />
+                            </td>
+                            <td>1234</td>
+                            <td>1234_user</td>
+                            <td><label class="badge badge-outline-primary hover-cursor change-rol">Administrador</label>
+                            </td>
+                            <td>5123123</td>
+                            <td>122-426-7292</td>
+                            <td>1234@gmail.com</td>
+                            <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
+                            <td>
+                              <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
+                                  data-target="#editUserModal">
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button type="button" class="btn btn-inverse-danger delete-user">
+                                  <i class="mdi mdi-delete"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="user-row">
+                            <td class="py-1">
+                              <img
+                                src="https://img.freepik.com/vector-premium/perfil-avatar-ilustraciones-vectoriales-sitio-web-redes-sociales-icono-perfil-usuario_495897-224.jpg"
+                                alt="image" />
+                            </td>
+                            <td>Jacob</td>
+                            <td>jacob_user</td>
+                            <td><label class="badge badge-outline-primary hover-cursor change-rol">Administrador</label>
+                            </td>
+                            <td>53275531</td>
+                            <td>123-456-7890</td>
+                            <td>jacob@email.com</td>
+                            <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
+                            <td>
+                              <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
+                                  data-target="#editUserModal">
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button type="button" class="btn btn-inverse-danger delete-user">
+                                  <i class="mdi mdi-delete"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="user-row">
+                            <td class="py-1">
+                              <img
+                                src="https://img.freepik.com/vector-premium/marco-gradiente-historias-sociales-avatar_41737-3.jpg"
+                                alt="image" />
+                            </td>
+                            <td>Messsy</td>
+                            <td>messsy_user</td>
+                            <td><label class="badge badge-outline-primary hover-cursor change-rol">Administrador</label>
+                            </td>
+                            <td>53275532</td>
+                            <td>987-654-3210</td>
+                            <td>messsy@email.com</td>
+                            <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
+                            <td>
+                              <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
+                                  data-target="#editUserModal">
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button type="button" class="btn btn-inverse-danger delete-user">
+                                  <i class="mdi mdi-delete"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="user-row">
+                            <td class="py-1">
+                              <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="image" />
+                            </td>
+                            <td>Alice</td>
+                            <td>alice_user</td>
+                            <td><label class="badge badge-outline-primary hover-cursor change-rol">Trabajador</label></td>
+                            <td>12345678</td>
+                            <td>111-222-3333</td>
+                            <td>alice@email.com</td>
+                            <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
+                            <td>
+                              <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
+                                  data-target="#editUserModal">
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button type="button" class="btn btn-inverse-danger delete-user">
+                                  <i class="mdi mdi-delete"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="user-row">
+                            <td class="py-1">
+                              <img src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" alt="image" />
+                            </td>
+                            <td>Bob</td>
+                            <td>bob_user</td>
+                            <td><label class="badge badge-outline-primary hover-cursor change-rol">Trabajador</label></td>
+                            <td>87654321</td>
+                            <td>444-555-6666</td>
+                            <td>bob@email.com</td>
+                            <td><label class="badge btn-inverse-success hover-cursor change-status">Activo</label></td>
+                            <td>
+                              <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
+                                  data-target="#editUserModal">
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button type="button" class="btn btn-inverse-danger delete-user">
+                                  <i class="mdi mdi-delete"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="user-row">
+                            <td class="py-1">
+                              <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359554_960_720.png"
+                                alt="image" />
+                            </td>
+                            <td>Charlie</td>
+                            <td>charlie_user</td>
+                            <td><label class="badge badge-outline-primary hover-cursor change-rol">Trabajador</label></td>
+                            <td>13579246</td>
+                            <td>777-888-9999</td>
+                            <td>charlie@email.com</td>
+                            <td><label class="badge btn-inverse-danger hover-cursor change-status">Inactivo</label></td>
+                            <td>
+                              <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
+                                  data-target="#editUserModal">
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button type="button" class="btn btn-inverse-danger delete-user">
+                                  <i class="mdi mdi-delete"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="user-row">
+                            <td class="py-1">
+                              <img
+                                src="https://images.vexels.com/media/users/3/137047/isolated/preview/5831a17a290077c646a48c4db78a81bb-icono-de-perfil-de-usuario-azul.png"
+                                alt="image" />
+                            </td>
+                            <td>Diana</td>
+                            <td>diana_user</td>
+                            <td><label class="badge badge-outline-primary hover-cursor change-rol">Trabajador</label></td>
+                            <td>98765432</td>
+                            <td>101-202-3030</td>
+                            <td>diana@email.com</td>
+                            <td><label class="badge btn-inverse-danger hover-cursor change-status">Inactivo</label></td>
+                            <td>
+                              <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-inverse-warning edit-user" data-toggle="modal"
+                                  data-target="#editUserModal">
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button type="button" class="btn btn-inverse-danger delete-user">
+                                  <i class="mdi mdi-delete"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Fin del contenido principal -->
+
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <!-- footer  -->
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
       </div>
-      <!-- main-panel ends -->
+      <!-- page-body-wrapper ends -->
     </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
+    <!-- container-scroller -->
 
 
 
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Registro de Usuario</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- Contenido del formulario con Bootstrap grid system -->
-          <form class="forms-sample" onsubmit="return validateForm()">
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="nombre">Nombre</label>
-                  <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Registro de Usuario</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Contenido del formulario con Bootstrap grid system -->
+            <form class="forms-sample" onsubmit="return validateForm()">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                  </div>
+                  <div class="form-group">
+                    <label for="documento">Documento</label>
+                    <input type="text" class="form-control" id="documento" placeholder="Documento">
+                  </div>
+                  <div class="form-group">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" class="form-control" id="usuario" placeholder="Usuario">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="documento">Documento</label>
-                  <input type="text" class="form-control" id="documento" placeholder="Documento">
-                </div>
-                <div class="form-group">
-                  <label for="usuario">Usuario</label>
-                  <input type="text" class="form-control" id="usuario" placeholder="Usuario">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
+                  </div>
+                  <div class="form-group">
+                    <label for="correo">Correo</label>
+                    <input type="email" class="form-control" id="correo" placeholder="Correo">
+                  </div>
+                  <div class="form-group">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
+                  </div>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="telefono">Teléfono</label>
-                  <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
-                </div>
-                <div class="form-group">
-                  <label for="correo">Correo</label>
-                  <input type="email" class="form-control" id="correo" placeholder="Correo">
-                </div>
-                <div class="form-group">
-                  <label for="contrasena">Contraseña</label>
-                  <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
-                </div>
-              </div>
-            </div>
 
-            <!-- Fila adicional para el rol -->
-            <div class="form-row">
-              <div class="form-group col-md-12">
-                <label for="rol">Rol</label>
-                <select class="form-control" id="rol">
-                  <option value="trabajador">Trabajador</option>
-                  <option value="administrador">Administrador</option>
-                  <option value="cliente">Cliente</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Botones -->
-            <div class="form-row">
-              <div class="col-md-12">
-                <button type="submit" class="btn btn-primary mr-2">Registrar</button>
-                <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-  <!-- Modal para editar usuario -->
-  <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editUserModalLabel">Editar Usuario</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form class="forms-sample" onsubmit="return validateForm()">
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="nombre">Nombre</label>
-                  <input type="text" class="form-control" id="nombre" value="Datos de Usuario">
-                </div>
-                <div class="form-group">
-                  <label for="documento">Documento</label>
-                  <input type="text" class="form-control" id="documento" value="Datos de Usuario">
-                </div>
-                <div class="form-group">
-                  <label for="usuario">Usuario</label>
-                  <input type="text" class="form-control" id="usuario" value="Datos de Usuario">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="telefono">Teléfono</label>
-                  <input type="text" class="form-control" id="telefono" value="Datos de Usuario">
-                </div>
-                <div class="form-group">
-                  <label for="correo">Correo</label>
-                  <input type="email" class="form-control" id="correo" value="Datos@Usuario">
-                </div>
-                <div class="form-group">
+              <!-- Fila adicional para el rol -->
+              <div class="form-row">
+                <div class="form-group col-md-12">
                   <label for="rol">Rol</label>
                   <select class="form-control" id="rol">
                     <option value="trabajador">Trabajador</option>
@@ -512,71 +376,352 @@
                   </select>
                 </div>
               </div>
-            </div>
 
-            <!-- Botones -->
-            <div class="form-row">
-              <div class="col-md-12">
-                <button class="btn btn-primary mr-2">Editar</button>
-                <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+              <!-- Botones -->
+              <div class="form-row">
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-primary mr-2">Registrar</button>
+                  <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
 
 
 
-  <!-- plugins:js -->
-  <script src="vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <script src="vendors/chart.js/Chart.min.js"></script>
-  <script src="vendors/datatables.net/jquery.dataTables.js"></script>
-  <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
-  <script src="js/dataTables.select.min.js"></script>
+    <!-- Modal para editar usuario -->
+    <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editUserModalLabel">Editar Usuario</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="forms-sample" onsubmit="return validateForm()">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" value="Datos de Usuario">
+                  </div>
+                  <div class="form-group">
+                    <label for="documento">Documento</label>
+                    <input type="text" class="form-control" id="documento" value="Datos de Usuario">
+                  </div>
+                  <div class="form-group">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" class="form-control" id="usuario" value="Datos de Usuario">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" value="Datos de Usuario">
+                  </div>
+                  <div class="form-group">
+                    <label for="correo">Correo</label>
+                    <input type="email" class="form-control" id="correo" value="Datos@Usuario">
+                  </div>
+                  <div class="form-group">
+                    <label for="rol">Rol</label>
+                    <select class="form-control" id="rol">
+                      <option value="trabajador">Trabajador</option>
+                      <option value="administrador">Administrador</option>
+                      <option value="cliente">Cliente</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
 
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/hoverable-collapse.js"></script>
-  <script src="js/template.js"></script>
-  <script src="js/settings.js"></script>
-  <script src="js/todolist.js"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <script src="js/dashboard.js"></script>
-  <script src="js/Chart.roundedBarCharts.js"></script>
-  <!-- End custom js for this page-->
-  <script src="js/preloader.js"></script>
-</body>
+              <!-- Botones -->
+              <div class="form-row">
+                <div class="col-md-12">
+                  <button class="btn btn-primary mr-2">Editar</button>
+                  <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
-</html>
+  <script>
+    var correoExistente = "1234@gmail.com";
 
-<style>
-  .top {
-    min-width: 9px;
-    display: flex;
-    min-height: 50px;
-    align-items: flex-end;
-    justify-content: space-between;
+  function validateForm() {
+      // Obtener los valores de los campos
+      var nombre = document.getElementById('nombre').value;
+      var telefono = document.getElementById('telefono').value;
+      var documento = document.getElementById('documento').value;
+      var correo = document.getElementById('correo').value;
+      var usuario = document.getElementById('usuario').value;
+      var contrasena = document.getElementById('contrasena').value;
+      var rol = document.getElementById('rol').value;
+
+      // Validar que todos los campos estén llenos
+      if (nombre === '' || telefono === '' || documento === '' || correo === '' || usuario === '' || contrasena === '' || rol === '') {
+          // Mostrar un mensaje de error con SweetAlert
+          Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'Por favor, completa todos los campos',
+          });
+      } else if (correo === correoExistente) {
+          // Si el correo es igual al correo existente, mostrar un mensaje de error
+          Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'El correo electrónico ya está registrado. Por favor, utiliza otro correo electrónico.',
+          });
+      } else {
+          // Aquí puedes agregar más validaciones según tus necesidades
+
+          // Mostrar un mensaje de éxito con SweetAlert
+          Swal.fire({
+              icon: 'success',
+              title: 'Éxito',
+              text: 'Formulario enviado correctamente',
+          }).then(() => {
+
+              window.location.href = "usuarios_dash.html.html";
+          });
+      }
+
+      // Evitar que el formulario se envíe normalmente
+      return false;
   }
 
-  .swal2-popup {
-    min-height: 400px !important;
-  }
 
-  .swal2-select {
-    width: 100%;
-    margin: 10px 0;
-    /* Puedes ajustar según sea necesario */
 
-  }
 
-  .table.dataTable.no-footer {
-    border-bottom: none
-  }
-</style>
+  $(document).ready(function () {
+      // Destruir la instancia actual, si existe
+      if ($.fn.DataTable.isDataTable('#userTable')) {
+          $('#userTable').DataTable().destroy();
+      }
+
+      // Configuración personalizada para DataTables
+      var dataTableConfig = {
+          // "pagingType": "full_numbers",
+          "lengthChange": false,
+          "pageLength": 5,
+          "searching": true,
+          "language": {
+              "search": "Buscar:",
+              "zeroRecords": "No se encontraron resultados",
+              "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+              "infoEmpty": "Mostrando 0 a 0 de 0 registros",
+              "infoFiltered": "(filtrados de _MAX_ registros en total)",
+              "paginate": {
+                  "first": "Primero",
+                  "last": "Último",
+                  "next": "Siguiente",
+                  "previous": "Anterior"
+              }
+          },
+          "dom": '<"top"lf>rt<"bottom"ip>',
+      };
+
+      // Inicializar DataTable con la configuración personalizada
+      var table = $('#userTable').DataTable(dataTableConfig);
+
+      // Mover el cuadro de búsqueda al lugar deseado
+      $("#userTable_filter").detach().appendTo(".top");
+
+      // Mover el botón "Agregar" al lado del cuadro de búsqueda
+      $(".top").append('<button type="button" class="btn btn-inverse-success btn-fw ml-2" data-toggle="modal" data-target="#myModal"  style="margin: 5px">Agregar</button>');
+
+      // También puedes personalizar el estilo del cuadro de búsqueda si es necesario
+      $("#userTable_filter input").addClass("form-control form-control-sm");
+
+      // Puedes agregar más personalizaciones según tus necesidades
+
+
+
+  });
+
+
+
+  $(document).ready(function () {
+      // ... Tu código existente ...
+
+      // Agregar evento clic para las etiquetas de estado
+      $('#userTable').on('click', 'td .change-status.btn-inverse-success, td .change-status.btn-inverse-danger', function () {
+          // Obtener la fila correspondiente
+          var row = $(this).closest('tr');
+
+          // Determinar el estado actual
+          var currentState = row.find('.change-status').hasClass('btn-inverse-success') ? 'Activo' : 'Inactivo';
+
+          // Mostrar SweetAlert de confirmación
+          Swal.fire({
+              title: 'Cambiar estado',
+              text: '¿Estás seguro de cambiar el estado?',
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#d33',
+              cancelButtonColor: '#3085d6',
+              confirmButtonText: 'Sí, cambiar estado'
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  // Cambiar la clase y el texto de la etiqueta según el nuevo estado
+                  var estadoLabel = row.find('.change-status');
+                  if (currentState === 'Activo') {
+                      estadoLabel.removeClass('btn-inverse-success').addClass('btn-inverse-danger');
+                      estadoLabel.text('Inactivo');
+                  } else {
+                      estadoLabel.removeClass('btn-inverse-danger').addClass('btn-inverse-success');
+                      estadoLabel.text('Activo');
+                  }
+
+                  // Mostrar SweetAlert de éxito
+                  Swal.fire('¡Estado cambiado!', 'El estado se ha cambiado correctamente.', 'success');
+              }
+          });
+      });
+
+
+
+      $('#userTable').on('click', 'td .change-rol', function () {
+          // Obtener la fila correspondiente
+          var row = $(this).closest('tr');
+
+          // Mostrar SweetAlert con el campo de selección
+          Swal.fire({
+              title: 'Cambiar Rol',
+              html: '<select id="rolSelect" class="form-control">' +
+                  '<option value="administrador">Administrador</option>' +
+                  '<option value="cliente">Cliente</option>' +
+                  '<option value="trabajador">Trabajador</option>' +
+                  '</select>',
+              icon: 'info',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Cambiar'
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  // Obtener el valor seleccionado del select
+                  var nuevoRol = $('#rolSelect').val();
+
+                  // Actualizar el contenido del label con el nuevo rol
+                  row.find('.change-rol').text(nuevoRol);
+
+                  // Mostrar SweetAlert de éxito
+                  Swal.fire('¡Rol cambiado!', 'El rol se ha cambiado correctamente.', 'success');
+              }
+          });
+      });
+
+
+      // Agrega evento clic para el botón de eliminación
+      $('.delete-user').on('click', function () {
+          // Mostrar SweetAlert de confirmación
+          Swal.fire({
+              title: 'Eliminar Usuario',
+              text: '¿Estás seguro de eliminar este usuario?',
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#d33',
+              cancelButtonColor: '#3085d6',
+              confirmButtonText: 'Sí, eliminar usuario'
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  // Simular la eliminación (aquí deberías hacer la llamada a tu lógica de eliminación)
+                  // ...
+
+                  // Mostrar SweetAlert de éxito después de la eliminación
+                  Swal.fire('Usuario eliminado', 'El usuario se ha eliminado con éxito.', 'success');
+              }
+          });
+      });
+
+      // Agregar evento clic para el botón edit-user
+      $('.edit-user').on('click', function () {
+          // Obtener la información del usuario (puedes ajustar esto según tu lógica)
+          var userInfo = {
+              nombre: "Datos de Usuario",
+              documento: "Datos de Usuario",
+              usuario: "Datos de Usuario",
+              telefono: "Datos de Usuario",
+              correo: "Datos@Usuario",
+              rol: "trabajador"
+          };
+
+          // Llenar la modal con la información del usuario
+          $('#editUserModal #nombre').val(userInfo.nombre);
+          $('#editUserModal #documento').val(userInfo.documento);
+          $('#editUserModal #usuario').val(userInfo.usuario);
+          $('#editUserModal #telefono').val(userInfo.telefono);
+          $('#editUserModal #correo').val(userInfo.correo);
+          $('#editUserModal #rol').val(userInfo.rol);
+
+          // Mostrar la modal
+          $('#editUserModal').modal('show');
+      });
+
+  });
+
+
+  </script>
+
+
+    <!-- plugins:js -->
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="vendors/chart.js/Chart.min.js"></script>
+    <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="js/dataTables.select.min.js"></script>
+
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="js/off-canvas.js"></script>
+    <script src="js/hoverable-collapse.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="js/dashboard.js"></script>
+    <script src="js/Chart.roundedBarCharts.js"></script>
+    <!-- End custom js for this page-->
+    <script src="js/preloader.js"></script>
+  </body>
+
+  </html>
+
+  <style>
+    .top {
+      min-width: 9px;
+      display: flex;
+      min-height: 50px;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .swal2-popup {
+      min-height: 400px !important;
+    }
+
+    .swal2-select {
+      width: 100%;
+      margin: 10px 0;
+      /* Puedes ajustar según sea necesario */
+
+    }
+
+    .table.dataTable.no-footer {
+      border-bottom: none
+    }
+  </style>
